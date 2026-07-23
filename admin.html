@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Gamut Pro Sdn Bhd</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#516FB4">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="Photos/GP%20LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .admin-bar{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    padding:14px 24px; background:var(--ink); color:var(--white);
+  }
+  .admin-bar-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--white); }
+  .admin-bar-logo-chip{ display:inline-flex; align-items:center; background:var(--white); padding:5px 8px; border-radius:7px; line-height:0; }
+  .admin-bar-logo{ height:18px; width:auto; }
+  .admin-bar-title{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12.5px; color:#C7CBD1; }
+  .admin-bar-actions{ display:flex; align-items:center; gap:10px; }
+
+  .admin-wrap{ max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  .admin-wrap.wide{ max-width:920px; }
+
+  /* login */
+  .login-card{
+    max-width:420px; margin:64px auto 0; background:var(--white);
+    border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow-md);
+    padding:36px;
+  }
+  .login-card h1{ font-size:22px; font-weight:600; margin-bottom:6px; }
+  .login-card .sub{ color:var(--grey); font-size:14px; margin-bottom:24px; }
+  .field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+  .field label{ font-size:13px; font-weight:600; color:var(--ink); }
+  .field input, .field select, .field textarea{
+    font:inherit; font-size:14.5px; padding:11px 13px;
+    border:1.5px solid var(--border); border-radius:9px; color:var(--ink); background:var(--white);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--blue); }
+  .field textarea{ resize:vertical; min-height:90px; }
+  .form-msg{ font-size:13.5px; margin-bottom:14px; padding:10px 13px; border-radius:9px; display:none; }
+  .form-msg.show{ display:block; }
+  .form-msg.error{ background:var(--red-tint); color:var(--red); }
+  .form-msg.success{ background:#EAF6EE; color:var(--green-text); }
+
+  /* dashboard */
+  .dash-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+  .dash-head h1{ font-size:26px; font-weight:700; }
+  .dash-sub{ color:var(--grey); font-size:14.5px; margin-bottom:32px; }
+
+  .job-form-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:24px; margin-bottom:36px;
+  }
+  .job-form-card h2{ font-size:17px; font-weight:600; margin-bottom:16px; }
+  .field-row{ display:grid; grid-template-columns:1fr; gap:14px; }
+  @media (min-width:600px){ .field-row{ grid-template-columns:1fr 1fr; } }
+  .form-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+
+  .postings h2{ font-size:17px; font-weight:600; margin-bottom:16px; }
+  .posting-list{ display:flex; flex-direction:column; gap:12px; }
+  .posting-row{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    background:var(--white); border:1px solid var(--border); border-radius:12px; padding:16px 18px;
+  }
+  .posting-info h3{ font-size:15.5px; font-weight:600; margin-bottom:4px; }
+  .posting-info p{ font-size:13px; color:var(--grey); }
+  .posting-actions{ display:flex; gap:8px; flex-shrink:0; }
+  .empty-note{ color:var(--grey); font-size:14px; padding:20px; border:1px dashed var(--border); border-radius:12px; text-align:center; }
+
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+
+<div class="admin-bar">
+  <a class="admin-bar-brand" href="index.html#top">
+    <span class="admin-bar-logo-chip">
+      <img class="admin-bar-logo" src="Photos/GP%20LOGO.png" alt="Gamut Pro" decoding="async"
+        onerror="this.parentElement.style.display='none';">
+    </span>
+    <span class="admin-bar-title">admin console</span>
+  </a>
+  <div class="admin-bar-actions">
+    <a class="btn btn-ghost btn-sm" href="careers.html">View careers page</a>
+    <button type="button" class="btn btn-ghost btn-sm" id="signOutBtn" hidden>Sign out</button>
+  </div>
+</div>
+
+<!-- ---------- LOGIN VIEW ---------- -->
+<div id="loginView">
+  <div class="login-card">
+    <h1>Admin login</h1>
+    <p class="sub">Sign in to manage job postings on the careers page.</p>
+    <div class="form-msg error" id="loginMsg"></div>
+    <form id="loginForm">
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" name="email" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="loginBtn">Log in</button>
+    </form>
+  </div>
+</div>
+
+<!-- ---------- DASHBOARD VIEW ---------- -->
+<div id="dashView" hidden>
+  <div class="admin-wrap wide">
+    <div class="dash-head">
+      <h1>Job postings</h1>
+    </div>
+    <p class="dash-sub">Postings here appear live on the public <a href="careers.html">careers page</a>.</p>
+
+    <div class="job-form-card">
+      <h2 id="formTitle">Add a new job posting</h2>
+      <div class="form-msg" id="jobFormMsg"></div>
+      <form id="jobForm">
+        <input type="hidden" id="jobId" value="">
+        <div class="field">
+          <label for="jobTitle">Job title</label>
+          <input type="text" id="jobTitle" required placeholder="e.g. Digital Marketing Manager">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="jobLocation">Location</label>
+            <input type="text" id="jobLocation" required placeholder="e.g. Johor Bahru, Johor">
+          </div>
+          <div class="field">
+            <label for="jobType">Job type</label>
+            <select id="jobType" required>
+              <option value="">Select…</option>
+              <option>Full time</option>
+              <option>Part time</option>
+              <option>Contract/Temp</option>
+              <option>Internship</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="jobSalary">Salary range (optional)</label>
+            <input type="text" id="jobSalary" placeholder="e.g. RM 4,000 – RM 6,000 per month">
+          </div>
+          <div class="field">
+            <label for="jobClassification">Classification (optional)</label>
+            <input type="text" id="jobClassification" placeholder="e.g. Marketing & Communications">
+          </div>
+        </div>
+        <div class="field">
+          <label for="jobSummary">Summary</label>
+          <textarea id="jobSummary" required placeholder="One or two sentences describing the role."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="jobSubmitBtn">Post job</button>
+          <button type="button" class="btn btn-secondary" id="jobCancelBtn" hidden>Cancel edit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="postings">
+      <h2>Current postings</h2>
+      <div class="posting-list" id="postingList">
+        <p class="empty-note">Loading…</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ---- one-time setup: paste your Supabase project values here ---- */
+  var SUPABASE_URL = 'https://atoyhaqcjzmdqsbneefi.supabase.co';
+  var SUPABASE_ANON_KEY = 'sb_publishable_ZsM5KKqCC4kBFr3vPGapTQ_R5Fri8qm';
+
+  var isConfigured = SUPABASE_URL.indexOf('YOUR_SUPABASE') === -1 && SUPABASE_ANON_KEY.indexOf('YOUR_SUPABASE') === -1;
+
+  var loginView = document.getElementById('loginView');
+  var dashView = document.getElementById('dashView');
+  var signOutBtn = document.getElementById('signOutBtn');
+  var loginForm = document.getElementById('loginForm');
+  var loginMsg = document.getElementById('loginMsg');
+  var loginBtn = document.getElementById('loginBtn');
+  var jobForm = document.getElementById('jobForm');
+  var jobFormMsg = document.getElementById('jobFormMsg');
+  var jobSubmitBtn = document.getElementById('jobSubmitBtn');
+  var jobCancelBtn = document.getElementById('jobCancelBtn');
+  var formTitle = document.getElementById('formTitle');
+  var jobIdField = document.getElementById('jobId');
+  var postingList = document.getElementById('postingList');
+
+  if(!isConfigured){
+    loginMsg.textContent = 'The admin console isn’t connected yet — finish the one-time Supabase setup first.';
+    loginMsg.classList.add('show');
+    loginForm.querySelectorAll('input,button').forEach(function(el){ el.disabled = true; });
+    return;
+  }
+
+  var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  function escapeHtml(str){
+    var map = { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' };
+    return String(str == null ? '' : str).replace(/[&<>"']/g, function(c){ return map[c]; });
+  }
+
+  function showMsg(el, text, kind){
+    el.textContent = text;
+    el.classList.remove('error','success');
+    el.classList.add('show', kind);
+  }
+  function clearMsg(el){ el.classList.remove('show','error','success'); el.textContent=''; }
+
+  function showDashboard(){
+    loginView.hidden = true;
+    dashView.hidden = false;
+    signOutBtn.hidden = false;
+    loadPostings();
+  }
+  function showLogin(){
+    loginView.hidden = false;
+    dashView.hidden = true;
+    signOutBtn.hidden = true;
+  }
+
+  /* ---- auth ---- */
+  sb.auth.getSession().then(function(res){
+    if(res.data && res.data.session){ showDashboard(); } else { showLogin(); }
+  });
+
+  loginForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    clearMsg(loginMsg);
+    loginBtn.disabled = true;
+    loginBtn.textContent = 'Signing in…';
+    var email = document.getElementById('loginEmail').value.trim();
+    var password = document.getElementById('loginPassword').value;
+
+    var res = await sb.auth.signInWithPassword({ email: email, password: password });
+
+    loginBtn.disabled = false;
+    loginBtn.textContent = 'Log in';
+
+    if(res.error){
+      showMsg(loginMsg, 'Login failed — check your email and password and try again.', 'error');
+      return;
+    }
+    loginForm.reset();
+    showDashboard();
+  });
+
+  signOutBtn.addEventListener('click', async function(){
+    await sb.auth.signOut();
+    showLogin();
+  });
+
+  /* ---- job form (add / edit) ---- */
+  function resetJobForm(){
+    jobForm.reset();
+    jobIdField.value = '';
+    formTitle.textContent = 'Add a new job posting';
+    jobSubmitBtn.textContent = 'Post job';
+    jobCancelBtn.hidden = true;
+    clearMsg(jobFormMsg);
+  }
+
+  jobCancelBtn.addEventListener('click', resetJobForm);
+
+  jobForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    clearMsg(jobFormMsg);
+
+    var record = {
+      title: document.getElementById('jobTitle').value.trim(),
+      location: document.getElementById('jobLocation').value.trim(),
+      job_type: document.getElementById('jobType').value,
+      salary_range: document.getElementById('jobSalary').value.trim() || null,
+      classification: document.getElementById('jobClassification').value.trim() || null,
+      summary: document.getElementById('jobSummary').value.trim()
+    };
+
+    jobSubmitBtn.disabled = true;
+    var editingId = jobIdField.value;
+    var res;
+    if(editingId){
+      res = await sb.from('jobs').update(record).eq('id', editingId);
+    } else {
+      res = await sb.from('jobs').insert(record);
+    }
+    jobSubmitBtn.disabled = false;
+
+    if(res.error){
+      showMsg(jobFormMsg, 'Could not save this posting: ' + res.error.message, 'error');
+      return;
+    }
+    showMsg(jobFormMsg, editingId ? 'Posting updated.' : 'Posting published.', 'success');
+    resetJobForm();
+    loadPostings();
+  });
+
+  function editPosting(job){
+    jobIdField.value = job.id;
+    document.getElementById('jobTitle').value = job.title || '';
+    document.getElementById('jobLocation').value = job.location || '';
+    document.getElementById('jobType').value = job.job_type || '';
+    document.getElementById('jobSalary').value = job.salary_range || '';
+    document.getElementById('jobClassification').value = job.classification || '';
+    document.getElementById('jobSummary').value = job.summary || '';
+    formTitle.textContent = 'Edit job posting';
+    jobSubmitBtn.textContent = 'Update job';
+    jobCancelBtn.hidden = false;
+    jobForm.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  async function deletePosting(id){
+    if(!window.confirm('Remove this job posting? This can\'t be undone.')){ return; }
+    var res = await sb.from('jobs').delete().eq('id', id);
+    if(res.error){
+      window.alert('Could not delete this posting: ' + res.error.message);
+      return;
+    }
+    loadPostings();
+  }
+
+  var currentJobs = [];
+
+  async function loadPostings(){
+    postingList.innerHTML = '<p class="empty-note">Loading…</p>';
+    var res = await sb.from('jobs').select('*').order('created_at', { ascending:false });
+    if(res.error){
+      postingList.innerHTML = '<p class="empty-note">Could not load postings: ' + escapeHtml(res.error.message) + '</p>';
+      return;
+    }
+    currentJobs = res.data || [];
+    if(currentJobs.length === 0){
+      postingList.innerHTML = '<p class="empty-note">No postings yet — add your first one above.</p>';
+      return;
+    }
+    postingList.innerHTML = currentJobs.map(function(job){
+      return (
+        '<div class="posting-row">' +
+          '<div class="posting-info">' +
+            '<h3>' + escapeHtml(job.title) + '</h3>' +
+            '<p>' + escapeHtml(job.location) + (job.job_type ? ' · ' + escapeHtml(job.job_type) : '') + '</p>' +
+          '</div>' +
+          '<div class="posting-actions">' +
+            '<button type="button" class="btn btn-secondary btn-sm" data-edit="' + job.id + '">Edit</button>' +
+            '<button type="button" class="btn btn-danger btn-sm" data-delete="' + job.id + '">Delete</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  postingList.addEventListener('click', function(e){
+    var editId = e.target.getAttribute('data-edit');
+    var deleteId = e.target.getAttribute('data-delete');
+    if(editId){
+      var job = currentJobs.filter(function(j){ return String(j.id) === editId; })[0];
+      if(job){ editPosting(job); }
+    }
+    if(deleteId){ deletePosting(deleteId); }
+  });
+})();
+</script>
+</body>
+</html>

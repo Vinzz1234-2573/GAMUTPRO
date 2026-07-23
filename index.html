@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gamut Pro Sdn Bhd — Business Consultancy in Johor Bahru</title>
 <meta name="description" content="Gamut Pro Sdn Bhd is a Johor Bahru business consultancy covering marketing, financial advisory, HR management, management consultancy, and digital transformation.">
 <meta name="theme-color" content="#516FB4">
 <meta name="color-scheme" content="light">
-<link rel="icon" href="gamutpro-logo.png">
-<link rel="apple-touch-icon" href="gamutpro-logo.png">
+<link rel="icon" href="Photos/GP%20LOGO.png">
+<link rel="apple-touch-icon" href="Photos/GP%20LOGO.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -123,9 +124,12 @@
     100%{ box-shadow:0 0 0 0 rgba(63,166,92,0); }
   }
   .nav-spectrum{
-    height:4px; width:100%;
-    background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F);
+    height:5px; width:100%;
+    background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#4C5FD5);
+    background-size:200% 100%;
+    animation:spectrum-shift 10s linear infinite;
   }
+  @keyframes spectrum-shift{ from{ background-position:0% 0; } to{ background-position:-100% 0; } }
   .nav-toggle{
     display:none; flex-direction:column; justify-content:center; gap:4px;
     width:34px; height:34px; background:none; border:1px solid var(--border); border-radius:8px; cursor:pointer;
@@ -156,7 +160,7 @@
   .hero{ position:relative; overflow:hidden; padding:76px 0 88px; }
   .hero-blobs{ position:absolute; inset:0; z-index:0; pointer-events:none; }
   .hero-blobs span{
-    position:absolute; border-radius:50%; filter:blur(70px); opacity:.22;
+    position:absolute; border-radius:50%; filter:blur(70px); opacity:.34;
     animation:drift 26s ease-in-out infinite alternate;
   }
   .hero-blobs .b1{ width:420px; height:420px; background:#4C5FD5; top:-140px; left:-100px; }
@@ -240,7 +244,11 @@
   .why-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
   @media (min-width:600px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (min-width:1000px){ .why-grid{ grid-template-columns:repeat(4,1fr); } }
-  .why-card{ padding:4px; }
+  .why-card{
+    padding:24px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
+    box-shadow:var(--shadow-sm); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .why-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--blue); }
   .why-num{
     font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:600; color:var(--blue);
     display:inline-flex; align-items:center; justify-content:center;
@@ -256,7 +264,9 @@
   .stat-tile{
     background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
     padding:22px; display:flex; flex-direction:column; gap:6px; box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease;
   }
+  .stat-tile:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
   .stat-tile.wide{ grid-column:1/-1; flex-direction:row; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
   .stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
   .stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:26px; font-weight:600; }
@@ -325,6 +335,12 @@
   }
   .recap-empty{ font-size:13.5px; color:#8890A0; }
   .contact-actions{ display:flex; flex-direction:column; gap:12px; }
+  .contact-map{
+    margin-top:28px; border-radius:var(--radius); overflow:hidden;
+    border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.06);
+  }
+  .contact-map iframe{ width:100%; height:320px; border:0; display:block; }
+  @media (max-width:600px){ .contact-map iframe{ height:240px; } }
 
   /* ---------- footer ---------- */
   .footer{ padding:48px 0 28px; background:var(--ink); color:#9AA0AC; }
@@ -344,6 +360,42 @@
   .footer-links a:hover{ color:var(--white); }
   .footer-bottom{ padding-top:20px; font-size:12.5px; color:#666D7A; font-family:'IBM Plex Mono',ui-monospace,monospace; }
 
+  /* ---------- scroll reveal ---------- */
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:none; } }
+  .hero-inner{ animation:fadeUp .7s ease both; }
+
+  .js .section-head,
+  .js .service-picker,
+  .js .service-detail,
+  .js .why-grid .why-card,
+  .js .stats-bento .stat-tile,
+  .js .partner-grid .partner-card,
+  .js .contact-grid,
+  .js .contact-map{
+    opacity:0; transform:translateY(20px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .section-head.is-visible,
+  .service-picker.is-visible,
+  .service-detail.is-visible,
+  .why-grid.is-visible .why-card,
+  .stats-bento.is-visible .stat-tile,
+  .partner-grid.is-visible .partner-card,
+  .contact-grid.is-visible,
+  .contact-map.is-visible{
+    opacity:1; transform:none;
+  }
+  .why-grid.is-visible .why-card:nth-child(2){ transition-delay:.08s; }
+  .why-grid.is-visible .why-card:nth-child(3){ transition-delay:.16s; }
+  .why-grid.is-visible .why-card:nth-child(4){ transition-delay:.24s; }
+  .stats-bento.is-visible .stat-tile:nth-child(2){ transition-delay:.06s; }
+  .stats-bento.is-visible .stat-tile:nth-child(3){ transition-delay:.12s; }
+  .stats-bento.is-visible .stat-tile:nth-child(4){ transition-delay:.18s; }
+  .stats-bento.is-visible .stat-tile:nth-child(5){ transition-delay:.24s; }
+  .partner-grid.is-visible .partner-card:nth-child(2){ transition-delay:.08s; }
+  .partner-grid.is-visible .partner-card:nth-child(3){ transition-delay:.16s; }
+  .partner-grid.is-visible .partner-card:nth-child(4){ transition-delay:.24s; }
+
   @media (prefers-reduced-motion:reduce){
     *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
     html{ scroll-behavior:auto; }
@@ -355,7 +407,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="#top" aria-label="Gamut Pro — home">
-      <img class="nav-logo" src="gamutpro-logo.png" alt="Gamut Pro" decoding="async"
+      <img class="nav-logo" src="Photos/GP%20LOGO.png" alt="Gamut Pro" decoding="async"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
       <span class="nav-brand-fallback" style="display:none">gamut<span class="accent">pro</span></span>
     </a>
@@ -364,6 +416,7 @@
       <a href="#why">Why us</a>
       <a href="#about">About</a>
       <a href="#partners">Partners</a>
+      <a href="careers.html">Careers</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
@@ -380,6 +433,7 @@
     <a href="#why">Why us</a>
     <a href="#about">About</a>
     <a href="#partners">Partners</a>
+    <a href="careers.html">Careers</a>
     <a href="#contact">Contact</a>
     <a class="btn btn-primary" href="#contact">Get in touch</a>
   </div>
@@ -603,6 +657,7 @@
           </div>
           <div class="contact-actions" style="flex-direction:row; flex-wrap:wrap; margin-top:8px;">
             <a class="btn btn-primary" href="tel:0192662291">Call now</a>
+            <a class="btn btn-ghost" href="https://wa.me/60192662291" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
             <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Gamut+Pro+Sdn+Bhd,+Unit+M-02,+15+Jalan+Dato+Abdullah+Tahir,+Taman+Abad,+80300+Johor+Bahru,+Malaysia" target="_blank" rel="noopener noreferrer">Get directions</a>
           </div>
         </div>
@@ -615,6 +670,15 @@
           <p style="font-size:13.5px; color:#B9BEC9;">Pick services in the section above — we'll bring this list into the conversation when you call.</p>
         </div>
       </div>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=Gamut+Pro+Sdn+Bhd,+Unit+M-02,+15+Jalan+Dato+Abdullah+Tahir,+Taman+Abad,+80300+Johor+Bahru,+Malaysia&output=embed"
+          title="Gamut Pro Sdn Bhd — Menara Zurich Office Tower, Johor Bahru"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -626,7 +690,7 @@
       <div>
         <div class="footer-brand">
           <span class="footer-logo-chip">
-            <img class="footer-logo" src="gamutpro-logo.png" alt="Gamut Pro" decoding="async"
+            <img class="footer-logo" src="Photos/GP%20LOGO.png" alt="Gamut Pro" decoding="async"
               onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='inline-flex';">
           </span>
           <span class="footer-brand-fallback" style="display:none">gamutpro</span>
@@ -639,6 +703,7 @@
           <a href="#services">Services</a>
           <a href="#why">Why us</a>
           <a href="#partners">Partners</a>
+          <a href="careers.html">Careers</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -646,6 +711,7 @@
         <h4>Contact</h4>
         <div class="footer-links">
           <a href="tel:0192662291">019-266 2291</a>
+          <a href="https://wa.me/60192662291" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
           <a href="#contact">Unit M-02, 15, Jalan Dato Abdullah Tahir, Johor Bahru</a>
         </div>
       </div>
@@ -784,6 +850,22 @@
       closeMenu();
     }
   });
+
+  /* ---- scroll reveal ---- */
+  var revealEls = document.querySelectorAll('.section-head, .service-picker, .service-detail, .why-grid, .stats-bento, .partner-grid, .contact-grid, .contact-map');
+  if('IntersectionObserver' in window){
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
 
   render();
 })();
