@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gamut Pro Sdn Bhd — Business Consultancy in Johor Bahru</title>
+<meta name="description" content="Gamut Pro Sdn Bhd is a Johor Bahru business consultancy covering marketing, financial advisory, HR management, management consultancy, and digital transformation.">
+<meta name="theme-color" content="#516FB4">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="gamutpro-logo.png">
+<link rel="apple-touch-icon" href="gamutpro-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --panel:#F5F6F8;
+    --ink:#14161A;
+    --grey:#6B7280;
+    --border:#E3E6EC;
+    --blue:#516FB4;
+    --blue-hover:#43609F;
+    --blue-tint:#E9EDF6;
+    --green:#3FA65C;
+    --green-text:#256B3B;
+
+    --c-marketing:#4C5FD5;   --c-marketing-tint:#EDEFFB;
+    --c-financial:#2BB4A6;   --c-financial-tint:#E9F8F5;
+    --c-hr:#3FA65C;          --c-hr-tint:#ECF6EF;
+    --c-management:#E8A33D;  --c-management-tint:#FDF6EC;
+    --c-digital:#E2604F;     --c-digital-tint:#FCEFED;
+
+    --shadow-sm:0 2px 8px rgba(20,22,26,.06);
+    --shadow-md:0 12px 30px rgba(20,22,26,.10);
+    --shadow-lg:0 24px 60px rgba(20,22,26,.16);
+    --radius:16px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; height:auto; display:block; }
+  button{ font-family:inherit; }
+  a{ color:inherit; }
+  h1,h2,h3{ font-family:'Poppins',system-ui,sans-serif; margin:0; color:var(--ink); }
+  p{ margin:0; }
+  section{ scroll-margin-top:84px; }
+
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
+  :focus{ outline:none; }
+  :focus-visible{ outline:2px solid var(--blue); outline-offset:2px; border-radius:4px; }
+  .contact :focus-visible{ outline-color:#BFD3FF; }
+
+  .container{ max-width:1180px; margin:0 auto; padding:0 24px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--blue); margin:0 0 10px; font-weight:600;
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    padding:13px 24px; border-radius:999px; font-size:15px; font-weight:600;
+    text-decoration:none; cursor:pointer; border:1.5px solid transparent;
+    transition:background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-primary{ background:var(--blue); color:var(--white); }
+  .btn-primary:hover{ background:var(--blue-hover); }
+  .btn-secondary{ background:transparent; border-color:var(--border); color:var(--ink); }
+  .btn-secondary:hover{ border-color:var(--blue); color:var(--blue); }
+  .btn-ghost{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.35); color:var(--white); }
+  .btn-ghost:hover{ background:rgba(255,255,255,.16); }
+  .btn-sm{ padding:9px 18px; font-size:13.5px; }
+  .btn-lg{ padding:15px 28px; font-size:16px; }
+  .btn-block{ width:100%; }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    box-shadow:var(--shadow-sm);
+  }
+  .nav-inner{
+    max-width:1180px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; gap:20px;
+  }
+  .nav-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto; }
+  .nav-logo{ height:32px; width:auto; }
+  .nav-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:20px; color:var(--ink); }
+  .nav-brand-fallback .accent{ color:var(--blue); }
+  .nav-links{ display:flex; align-items:center; gap:26px; }
+  .nav-links a{
+    text-decoration:none; color:var(--ink); font-size:14.5px; font-weight:500;
+    padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .15s ease, color .15s ease;
+  }
+  .nav-links a:hover{ border-bottom-color:var(--blue); color:var(--blue); }
+  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .live-pill{
+    display:flex; align-items:center; gap:7px;
+    font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--green-text);
+    background:#EAF6EE; border:1px solid #CFEAD8; padding:6px 12px; border-radius:999px;
+    white-space:nowrap;
+  }
+  .live-dot{ width:7px; height:7px; border-radius:50%; background:var(--green); flex-shrink:0; animation:pulse 2s infinite; }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(63,166,92,.55); }
+    70%{ box-shadow:0 0 0 6px rgba(63,166,92,0); }
+    100%{ box-shadow:0 0 0 0 rgba(63,166,92,0); }
+  }
+  .nav-spectrum{
+    height:4px; width:100%;
+    background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F);
+  }
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:4px;
+    width:34px; height:34px; background:none; border:1px solid var(--border); border-radius:8px; cursor:pointer;
+  }
+  .nav-toggle span{ display:block; height:2px; background:var(--ink); border-radius:2px; margin:0 7px; }
+  .mobile-menu{
+    flex-direction:column; gap:2px;
+    padding:10px 24px 18px; border-top:1px solid var(--border);
+  }
+  .mobile-menu a{
+    padding:12px 4px; text-decoration:none; color:var(--ink); font-size:15px; font-weight:500;
+    border-bottom:1px solid var(--border);
+  }
+  .mobile-menu .btn{ margin-top:12px; }
+
+  @media (max-width:880px){
+    .nav-links{ display:none; }
+    .nav-actions .btn{ display:none; }
+    .nav-toggle{ display:flex; }
+    .mobile-menu:not([hidden]){ display:flex; }
+  }
+  @media (max-width:420px){
+    .live-pill-text{ display:none; }
+    .live-pill{ padding:6px 9px; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{ position:relative; overflow:hidden; padding:76px 0 88px; }
+  .hero-blobs{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .hero-blobs span{
+    position:absolute; border-radius:50%; filter:blur(70px); opacity:.22;
+    animation:drift 26s ease-in-out infinite alternate;
+  }
+  .hero-blobs .b1{ width:420px; height:420px; background:#4C5FD5; top:-140px; left:-100px; }
+  .hero-blobs .b2{ width:380px; height:380px; background:#E2604F; top:40px; right:-120px; animation-delay:-8s; }
+  .hero-blobs .b3{ width:340px; height:340px; background:#3FA65C; bottom:-180px; left:35%; animation-delay:-16s; }
+  @keyframes drift{
+    0%{ transform:translate(0,0) scale(1); }
+    100%{ transform:translate(30px,-20px) scale(1.08); }
+  }
+  .hero-inner{ position:relative; z-index:1; max-width:760px; }
+  .hero h1{ font-size:clamp(2.5rem,6vw,4.1rem); font-weight:700; line-height:1.06; letter-spacing:-.02em; }
+  .hero-sub{ margin-top:22px; font-size:clamp(16px,2vw,18.5px); color:var(--grey); max-width:56ch; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+
+  /* ---------- section heads ---------- */
+  .section-head{ max-width:640px; margin-bottom:36px; }
+  .section-head h2{ font-size:clamp(1.7rem,3.2vw,2.35rem); font-weight:600; letter-spacing:-.01em; }
+  .section-head p{ margin-top:12px; color:var(--grey); font-size:16px; }
+
+  /* ---------- services ---------- */
+  .services{ padding:88px 0; background:var(--panel); }
+  .service-picker{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+  .service-tab{
+    display:flex; align-items:center; gap:9px;
+    background:var(--white); border:1.5px solid var(--border); border-radius:999px;
+    padding:11px 18px; cursor:pointer; font-size:14.5px; font-weight:500; color:var(--ink);
+    transition:background .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .service-tab:hover{ transform:translateY(-1px); border-color:var(--blue); }
+  .tab-dot{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+  .service-tab[data-key="marketing"] .tab-dot{ background:var(--c-marketing); }
+  .service-tab[data-key="financial"] .tab-dot{ background:var(--c-financial); }
+  .service-tab[data-key="hr"] .tab-dot{ background:var(--c-hr); }
+  .service-tab[data-key="management"] .tab-dot{ background:var(--c-management); }
+  .service-tab[data-key="digital"] .tab-dot{ background:var(--c-digital); }
+  .service-tab[data-key="marketing"].is-active{ background:var(--c-marketing-tint); border-color:var(--c-marketing); }
+  .service-tab[data-key="financial"].is-active{ background:var(--c-financial-tint); border-color:var(--c-financial); }
+  .service-tab[data-key="hr"].is-active{ background:var(--c-hr-tint); border-color:var(--c-hr); }
+  .service-tab[data-key="management"].is-active{ background:var(--c-management-tint); border-color:var(--c-management); }
+  .service-tab[data-key="digital"].is-active{ background:var(--c-digital-tint); border-color:var(--c-digital); }
+  .tab-badge{ display:none; font-size:11px; color:var(--green-text); }
+  .service-tab.is-enabled .tab-badge{ display:inline; }
+
+  .service-detail{
+    background:var(--white); border:1px solid var(--border); border-top:4px solid var(--blue);
+    border-radius:var(--radius); padding:32px; box-shadow:var(--shadow-sm);
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .service-detail[data-active="marketing"]{ background:var(--c-marketing-tint); border-top-color:var(--c-marketing); }
+  .service-detail[data-active="financial"]{ background:var(--c-financial-tint); border-top-color:var(--c-financial); }
+  .service-detail[data-active="hr"]{ background:var(--c-hr-tint); border-top-color:var(--c-hr); }
+  .service-detail[data-active="management"]{ background:var(--c-management-tint); border-top-color:var(--c-management); }
+  .service-detail[data-active="digital"]{ background:var(--c-digital-tint); border-top-color:var(--c-digital); }
+
+  .detail-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .detail-dot{ width:14px; height:14px; border-radius:50%; flex-shrink:0; box-shadow:inset 0 0 0 1px rgba(0,0,0,.08); }
+  .service-detail[data-active="marketing"] .detail-dot{ background:var(--c-marketing); }
+  .service-detail[data-active="financial"] .detail-dot{ background:var(--c-financial); }
+  .service-detail[data-active="hr"] .detail-dot{ background:var(--c-hr); }
+  .service-detail[data-active="management"] .detail-dot{ background:var(--c-management); }
+  .service-detail[data-active="digital"] .detail-dot{ background:var(--c-digital); }
+  .detail-head h3{ font-size:clamp(20px,3.4vw,26px); font-weight:600; }
+  .detail-desc{ color:var(--ink); opacity:.75; font-size:15.5px; max-width:58ch; margin-bottom:22px; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:10px; }
+  .chip{
+    background:rgba(255,255,255,.7); border:1px solid rgba(20,22,26,.08); border-radius:10px;
+    padding:11px 14px; display:flex; flex-direction:column; gap:4px; min-width:140px; flex:1 1 140px;
+  }
+  .chip-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
+  .chip-value{ font-size:14.5px; font-weight:600; color:var(--ink); }
+
+  .detail-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+  .engagement-note{
+    margin-top:18px; font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12.5px; color:var(--grey);
+  }
+  .engagement-note strong{ color:var(--ink); }
+
+  /* ---------- why ---------- */
+  .why{ padding:88px 0; }
+  .why-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
+  @media (min-width:600px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:1000px){ .why-grid{ grid-template-columns:repeat(4,1fr); } }
+  .why-card{ padding:4px; }
+  .why-num{
+    font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:600; color:var(--blue);
+    display:inline-flex; align-items:center; justify-content:center;
+    width:34px; height:34px; border-radius:10px; background:var(--blue-tint); margin-bottom:16px;
+  }
+  .why-card h3{ font-size:17px; font-weight:600; margin-bottom:8px; }
+  .why-card p{ font-size:14.5px; color:var(--grey); }
+
+  /* ---------- bento stats ---------- */
+  .stats{ padding:88px 0; background:var(--panel); }
+  .stats-bento{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  @media (min-width:760px){ .stats-bento{ grid-template-columns:repeat(4,1fr); } }
+  .stat-tile{
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
+    padding:22px; display:flex; flex-direction:column; gap:6px; box-shadow:var(--shadow-sm);
+  }
+  .stat-tile.wide{ grid-column:1/-1; flex-direction:row; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
+  .stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:26px; font-weight:600; }
+  .stat-tile.wide .stat-value{ display:flex; align-items:center; gap:8px; font-size:20px; }
+  .status-dot{ width:9px; height:9px; border-radius:50%; background:var(--green); flex-shrink:0; }
+  .stat-sub{ font-size:12.5px; color:var(--grey); font-family:'IBM Plex Mono',ui-monospace,monospace; }
+
+  /* ---------- partners ---------- */
+  .partners{ padding:88px 0; }
+  .section-heading-row{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .section-tag{
+    font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11.5px; color:var(--green-text);
+    background:#EAF6EE; border:1px solid #CFEAD8; padding:3px 9px; border-radius:999px;
+  }
+  .partner-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:620px){ .partner-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:960px){ .partner-grid{ grid-template-columns:repeat(4,1fr); } }
+  .partner-card{
+    display:flex; flex-direction:column; gap:12px;
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
+    padding:20px; text-decoration:none; color:inherit; box-shadow:var(--shadow-sm);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .partner-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--blue); }
+  .partner-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .partner-logo-wrap{
+    width:42px; height:42px; border-radius:10px; overflow:hidden; background:var(--blue-tint); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .partner-logo{ max-width:100%; max-height:100%; object-fit:contain; }
+  .partner-logo-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:16px; color:var(--blue); }
+  .live-badge{ display:flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; color:var(--green-text); }
+  .live-badge .dot{ width:6px; height:6px; border-radius:50%; background:var(--green); }
+  .partner-card h3{ font-size:16px; font-weight:600; }
+  .partner-card p{ font-size:13.5px; color:var(--grey); flex:1; }
+  .partner-domain{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--blue); }
+  .partner-note{ margin-top:20px; font-size:12.5px; color:var(--grey); font-style:italic; text-align:center; }
+
+  /* ---------- contact ---------- */
+  .contact{
+    padding:88px 0; color:#E7E9ED;
+    background:linear-gradient(135deg,#14161A 0%,#1B2340 55%,#243361 100%);
+  }
+  .contact .eyebrow{ color:#9FD9AE; }
+  .contact h2{ color:var(--white); font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:600; }
+  .contact-sub{ margin-top:14px; color:#B9BEC9; font-size:16px; max-width:52ch; }
+  .contact-grid{ display:grid; grid-template-columns:1fr; gap:28px; margin-top:40px; }
+  @media (min-width:820px){ .contact-grid{ grid-template-columns:1fr 1fr; } }
+  .contact-info{ display:flex; flex-direction:column; gap:18px; }
+  .info-row{ display:flex; flex-direction:column; gap:4px; }
+  .info-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#8890A0; }
+  .info-value{ font-size:16px; color:var(--white); font-weight:500; }
+  .info-value a{ color:var(--white); text-decoration:none; border-bottom:1px solid rgba(255,255,255,.3); }
+  .info-value a:hover{ border-bottom-color:var(--white); }
+
+  .contact-card{
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius);
+    padding:26px; display:flex; flex-direction:column; gap:18px;
+  }
+  .recap-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#8890A0; display:block; margin-bottom:10px; }
+  .recap-chips{ display:flex; flex-wrap:wrap; gap:8px; min-height:32px; }
+  .recap-chip{
+    font-size:13px; font-weight:500; color:var(--white);
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
+    padding:6px 13px; border-radius:999px;
+  }
+  .recap-empty{ font-size:13.5px; color:#8890A0; }
+  .contact-actions{ display:flex; flex-direction:column; gap:12px; }
+
+  /* ---------- footer ---------- */
+  .footer{ padding:48px 0 28px; background:var(--ink); color:#9AA0AC; }
+  .footer-grid{ display:grid; grid-template-columns:1fr; gap:28px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,.1); }
+  @media (min-width:700px){ .footer-grid{ grid-template-columns:1.4fr 1fr 1fr; } }
+  .footer-brand{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .footer-logo-chip{ display:inline-flex; align-items:center; background:var(--white); padding:6px 10px; border-radius:8px; line-height:0; }
+  .footer-logo{ height:20px; width:auto; }
+  .footer-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:18px; color:var(--white); }
+  @media (max-width:420px){
+    .nav-logo{ height:28px; }
+  }
+  .footer p{ font-size:13.5px; line-height:1.7; }
+  .footer h4{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#666D7A; margin-bottom:14px; }
+  .footer-links{ display:flex; flex-direction:column; gap:10px; }
+  .footer-links a{ font-size:14px; color:#C7CBD1; text-decoration:none; }
+  .footer-links a:hover{ color:var(--white); }
+  .footer-bottom{ padding-top:20px; font-size:12.5px; color:#666D7A; font-family:'IBM Plex Mono',ui-monospace,monospace; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="Gamut Pro — home">
+      <img class="nav-logo" src="gamutpro-logo.png" alt="Gamut Pro" decoding="async"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+      <span class="nav-brand-fallback" style="display:none">gamut<span class="accent">pro</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#about">About</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <span class="live-pill"><span class="live-dot" aria-hidden="true"></span><span class="live-pill-text">Live · Johor Bahru</span></span>
+      <a class="btn btn-primary btn-sm" href="#contact">Get in touch</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-spectrum" aria-hidden="true"></div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#services">Services</a>
+    <a href="#why">Why us</a>
+    <a href="#about">About</a>
+    <a href="#partners">Partners</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-primary" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="hero-blobs" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow">Business Consulting · Since 2023</p>
+        <h1>Grow Brand.<br>Grow Business.</h1>
+        <p class="hero-sub">Gamut Pro is a Johor Bahru consultancy helping businesses unlock growth through tailored marketing, financial, HR, management, and digital transformation strategies — built around your goals, not a template.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#contact">Get a free consultation</a>
+          <a class="btn btn-secondary btn-lg" href="#services">Explore services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>Five disciplines. One partner.</h2>
+        <p>Gamut Pro spans the full gamut of what a growing business needs. Switch on the services relevant to you and see how we'd approach it.</p>
+      </div>
+
+      <div class="service-picker" role="group" aria-label="Service modules" id="servicePicker">
+        <button type="button" class="service-tab" data-key="marketing" aria-pressed="true">
+          <span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Marketing</span><span class="tab-badge" aria-hidden="true">✓ added</span>
+        </button>
+        <button type="button" class="service-tab" data-key="financial" aria-pressed="false">
+          <span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Financial</span><span class="tab-badge" aria-hidden="true">✓ added</span>
+        </button>
+        <button type="button" class="service-tab" data-key="hr" aria-pressed="false">
+          <span class="tab-dot" aria-hidden="true"></span><span class="tab-label">HR</span><span class="tab-badge" aria-hidden="true">✓ added</span>
+        </button>
+        <button type="button" class="service-tab" data-key="management" aria-pressed="false">
+          <span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Management</span><span class="tab-badge" aria-hidden="true">✓ added</span>
+        </button>
+        <button type="button" class="service-tab" data-key="digital" aria-pressed="false">
+          <span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Digital</span><span class="tab-badge" aria-hidden="true">✓ added</span>
+        </button>
+      </div>
+
+      <div class="service-detail" id="serviceDetail" data-active="marketing">
+        <div class="detail-head">
+          <span class="detail-dot" aria-hidden="true"></span>
+          <h3 id="detailName">Marketing Consultancy</h3>
+        </div>
+        <p class="detail-desc" id="detailDesc">Sharpen your positioning and messaging, and build campaigns that turn attention into growth.</p>
+        <div class="chips">
+          <div class="chip"><span class="chip-label">Focus</span><span class="chip-value" id="chipFocus">Positioning &amp; Messaging</span></div>
+          <div class="chip"><span class="chip-label">Engagement type</span><span class="chip-value" id="chipEngagement">Retainer</span></div>
+          <div class="chip"><span class="chip-label">Typical scope</span><span class="chip-value" id="chipScope">3–6 months</span></div>
+        </div>
+        <div class="detail-actions">
+          <button type="button" class="btn btn-primary" id="engageBtn" aria-pressed="true">Remove from engagement</button>
+          <a class="btn btn-secondary" href="#contact" id="talkBtn">Talk to a consultant</a>
+        </div>
+      </div>
+      <p class="engagement-note" aria-live="polite"><strong id="enabledCount">1</strong> of 5 services selected for your engagement.</p>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Why Gamut Pro</p>
+        <h2>Built around your business, not a template.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-num">01</span>
+          <h3>Tailored solutions</h3>
+          <p>No templates, no shortcuts — every strategy is built around your business.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-num">02</span>
+          <h3>Cross-industry expertise</h3>
+          <p>Experience across marketing, finance, HR, and operations.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-num">03</span>
+          <h3>Trusted partnerships</h3>
+          <p>Backed by strong relationships with respected organizations.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-num">04</span>
+          <h3>Growing team</h3>
+          <p>51–200 consultants and specialists ready to support you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" id="about">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:28px;">
+        <p class="eyebrow">At a glance</p>
+        <h2>Gamut Pro, in numbers.</h2>
+      </div>
+      <div class="stats-bento">
+        <div class="stat-tile">
+          <span class="stat-label">Founded</span>
+          <span class="stat-value">2023</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label">Team</span>
+          <span class="stat-value">51–200</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label">Modules</span>
+          <span class="stat-value">5</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label">HQ</span>
+          <span class="stat-value">Johor Bahru</span>
+        </div>
+        <div class="stat-tile wide">
+          <div>
+            <span class="stat-label">Status</span>
+            <span class="stat-value"><span class="status-dot" aria-hidden="true"></span>Open</span>
+          </div>
+          <span class="stat-sub">Closes 5:30 pm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners" id="partners">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-heading-row">
+          <p class="eyebrow" style="margin-bottom:0;">Connected partners</p>
+          <span class="section-tag">4 active</span>
+        </div>
+        <h2>Organizations we work alongside.</h2>
+      </div>
+      <div class="partner-grid">
+
+        <a class="partner-card" href="https://amitabhafoundation.my/" target="_blank" rel="noopener noreferrer">
+          <div class="partner-top">
+            <span class="partner-logo-wrap">
+              <img class="partner-logo" src="amitabha-foundation.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <span class="partner-logo-fallback" style="display:none">A</span>
+            </span>
+            <span class="live-badge"><span class="dot" aria-hidden="true"></span>Live</span>
+          </div>
+          <h3>Amitabha Foundation</h3>
+          <p>Malaysian charity since 1998 — children's home, dialysis centre, elder support, and community assistance.</p>
+          <span class="partner-domain">amitabhafoundation.my ↗</span>
+        </a>
+
+        <a class="partner-card" href="https://putuovillage.com.my/" target="_blank" rel="noopener noreferrer">
+          <div class="partner-top">
+            <span class="partner-logo-wrap">
+              <img class="partner-logo" src="putuo-village.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <span class="partner-logo-fallback" style="display:none">P</span>
+            </span>
+            <span class="live-badge"><span class="dot" aria-hidden="true"></span>Live</span>
+          </div>
+          <h3>Putuo Village</h3>
+          <p>A 43-acre Buddhist cultural village and bamboo forest attraction in Kulai, Johor.</p>
+          <span class="partner-domain">putuovillage.com.my ↗</span>
+        </a>
+
+        <a class="partner-card" href="https://gentlehill.my/" target="_blank" rel="noopener noreferrer">
+          <div class="partner-top">
+            <span class="partner-logo-wrap">
+              <img class="partner-logo" src="gentle-hill.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <span class="partner-logo-fallback" style="display:none">G</span>
+            </span>
+            <span class="live-badge"><span class="dot" aria-hidden="true"></span>Live</span>
+          </div>
+          <h3>Gentle Hill</h3>
+          <p>Premium 24/7 elder care and nursing home in Kulai, Johor, serving Johor &amp; Singapore families.</p>
+          <span class="partner-domain">gentlehill.my ↗</span>
+        </a>
+
+        <a class="partner-card" href="https://yellowbin.com.my/" target="_blank" rel="noopener noreferrer">
+          <div class="partner-top">
+            <span class="partner-logo-wrap">
+              <img class="partner-logo" src="yellow-bin.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <span class="partner-logo-fallback" style="display:none">Y</span>
+            </span>
+            <span class="live-badge"><span class="dot" aria-hidden="true"></span>Live</span>
+          </div>
+          <h3>Yellow Bin</h3>
+          <p>Johor's textile recycling social enterprise — free community clothing drop-off bins.</p>
+          <span class="partner-domain">yellowbin.com.my ↗</span>
+        </a>
+
+      </div>
+      <p class="partner-note">Wordmark cards shown above · swap in partner logo files whenever you have them on hand.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="eyebrow">Get in touch</p>
+      <h2 id="contactHeading" tabindex="-1">Let's talk about your growth.</h2>
+      <p class="contact-sub">Tell us which services you're interested in and we'll have a consultant reach out — or call us directly during business hours.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-row">
+            <span class="info-label">Phone</span>
+            <span class="info-value"><a href="tel:0192662291">019-266 2291</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Address</span>
+            <span class="info-value">Unit M-02, 15, Jalan Dato Abdullah Tahir, Taman Abad, 80300 Johor Bahru, Johor Darul Ta'zim<br>(Menara Zurich Office Tower)</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Hours</span>
+            <span class="info-value">Open daily · closes 5:30 pm</span>
+          </div>
+          <div class="contact-actions" style="flex-direction:row; flex-wrap:wrap; margin-top:8px;">
+            <a class="btn btn-primary" href="tel:0192662291">Call now</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Gamut+Pro+Sdn+Bhd,+Unit+M-02,+15+Jalan+Dato+Abdullah+Tahir,+Taman+Abad,+80300+Johor+Bahru,+Malaysia" target="_blank" rel="noopener noreferrer">Get directions</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <span class="recap-label">Your engagement so far</span>
+            <div class="recap-chips" id="recapChips" aria-live="polite"></div>
+          </div>
+          <p style="font-size:13.5px; color:#B9BEC9;">Pick services in the section above — we'll bring this list into the conversation when you call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="footer-logo-chip">
+            <img class="footer-logo" src="gamutpro-logo.png" alt="Gamut Pro" decoding="async"
+              onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='inline-flex';">
+          </span>
+          <span class="footer-brand-fallback" style="display:none">gamutpro</span>
+        </div>
+        <p>Grow Brand Grow Business. A Johor Bahru consultancy for marketing, financial, HR, management, and digital transformation strategy.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#why">Why us</a>
+          <a href="#partners">Partners</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="tel:0192662291">019-266 2291</a>
+          <a href="#contact">Unit M-02, 15, Jalan Dato Abdullah Tahir, Johor Bahru</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 Gamut Pro Sdn Bhd · Johor Bahru, Malaysia</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var modules = [
+    {
+      key:'marketing', short:'Marketing', name:'Marketing Consultancy',
+      desc:'Sharpen your positioning and messaging, and build campaigns that turn attention into growth.',
+      focus:'Positioning & Messaging', engagement:'Retainer', scope:'3–6 months',
+      enabled:true
+    },
+    {
+      key:'financial', short:'Financial', name:'Financial Advisory',
+      desc:'Plan, forecast, and structure your finances for stability today and growth tomorrow.',
+      focus:'Forecasting & Structure', engagement:'Advisory', scope:'Ongoing',
+      enabled:false
+    },
+    {
+      key:'hr', short:'HR', name:'HR Management',
+      desc:'Build recruitment, talent, and organizational frameworks that let your people do their best work.',
+      focus:'Recruitment & Talent', engagement:'Project', scope:'4–8 months',
+      enabled:false
+    },
+    {
+      key:'management', short:'Management', name:'Management Consultancy',
+      desc:'Find where operations slow the business down and fix it, so leadership can make faster, better calls.',
+      focus:'Operations & Process', engagement:'Advisory', scope:'3–9 months',
+      enabled:false
+    },
+    {
+      key:'digital', short:'Digital', name:'Digital Transformation',
+      desc:'Modernize the systems and workflows behind your customer experience.',
+      focus:'Systems & Workflow', engagement:'Project', scope:'6–12 months',
+      enabled:false
+    }
+  ];
+
+  var activeKey = 'marketing';
+
+  var servicePicker = document.getElementById('servicePicker');
+  var serviceDetail = document.getElementById('serviceDetail');
+  var detailName = document.getElementById('detailName');
+  var detailDesc = document.getElementById('detailDesc');
+  var chipFocus = document.getElementById('chipFocus');
+  var chipEngagement = document.getElementById('chipEngagement');
+  var chipScope = document.getElementById('chipScope');
+  var engageBtn = document.getElementById('engageBtn');
+  var enabledCountEl = document.getElementById('enabledCount');
+  var talkBtn = document.getElementById('talkBtn');
+  var contactHeading = document.getElementById('contactHeading');
+  var recapChips = document.getElementById('recapChips');
+
+  function findModule(key){
+    for(var i=0;i<modules.length;i++){ if(modules[i].key===key){ return modules[i]; } }
+    return modules[0];
+  }
+
+  function render(){
+    var active = findModule(activeKey);
+
+    var tabs = servicePicker.querySelectorAll('.service-tab');
+    tabs.forEach(function(tab){
+      var key = tab.getAttribute('data-key');
+      var m = findModule(key);
+      var isActive = key === activeKey;
+      tab.classList.toggle('is-active', isActive);
+      tab.classList.toggle('is-enabled', m.enabled);
+      tab.setAttribute('aria-pressed', String(isActive));
+    });
+
+    serviceDetail.setAttribute('data-active', active.key);
+    detailName.textContent = active.name;
+    detailDesc.textContent = active.desc;
+    chipFocus.textContent = active.focus;
+    chipEngagement.textContent = active.engagement;
+    chipScope.textContent = active.scope;
+
+    engageBtn.textContent = active.enabled ? 'Remove from engagement' : 'Add to my engagement';
+    engageBtn.setAttribute('aria-pressed', String(active.enabled));
+
+    var enabledMods = modules.filter(function(m){ return m.enabled; });
+    enabledCountEl.textContent = String(enabledMods.length);
+
+    if(enabledMods.length === 0){
+      recapChips.innerHTML = '<span class="recap-empty">No services selected yet — pick what you need above.</span>';
+    } else {
+      recapChips.innerHTML = enabledMods.map(function(m){
+        return '<span class="recap-chip">'+m.short+'</span>';
+      }).join('');
+    }
+  }
+
+  servicePicker.addEventListener('click', function(e){
+    var tab = e.target.closest('.service-tab');
+    if(!tab) return;
+    activeKey = tab.getAttribute('data-key');
+    render();
+  });
+
+  engageBtn.addEventListener('click', function(){
+    var active = findModule(activeKey);
+    active.enabled = !active.enabled;
+    render();
+  });
+
+  talkBtn.addEventListener('click', function(){
+    window.setTimeout(function(){ contactHeading.focus(); }, 450);
+  });
+
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMenu(){ mobileMenu.hidden = true; navToggle.setAttribute('aria-expanded','false'); }
+  function openMenu(){ mobileMenu.hidden = false; navToggle.setAttribute('aria-expanded','true'); }
+
+  navToggle.addEventListener('click', function(){
+    var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    if(isOpen){ closeMenu(); } else { openMenu(); }
+  });
+  mobileMenu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ closeMenu(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeMenu(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!mobileMenu.hidden && !mobileMenu.contains(e.target) && !navToggle.contains(e.target)){
+      closeMenu();
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
