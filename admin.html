@@ -23,16 +23,36 @@
   .admin-bar-logo{ height:18px; width:auto; }
   .admin-bar-title{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12.5px; color:#C7CBD1; }
   .admin-bar-actions{ display:flex; align-items:center; gap:10px; }
+  .admin-spectrum{
+    height:3px; width:100%;
+    background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#4C5FD5);
+    background-size:200% 100%;
+    animation:spectrum-shift 10s linear infinite;
+  }
+  @keyframes spectrum-shift{ from{ background-position:0% 0; } to{ background-position:-100% 0; } }
 
-  .admin-wrap{ max-width:720px; margin:0 auto; padding:56px 24px 96px; }
-  .admin-wrap.wide{ max-width:920px; }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
+
+  .admin-wrap{ max-width:760px; margin:0 auto; padding:40px 24px 72px; }
+  .admin-wrap.wide{ max-width:960px; }
 
   /* login */
+  #loginView{ position:relative; overflow:hidden; min-height:calc(100vh - 60px); display:flex; align-items:center; }
+  .login-blobs{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .login-blobs span{ position:absolute; border-radius:50%; filter:blur(80px); opacity:.28; animation:login-drift 26s ease-in-out infinite alternate; }
+  .login-blobs .b1{ width:420px; height:420px; background:#4C5FD5; top:-140px; left:-120px; }
+  .login-blobs .b2{ width:360px; height:360px; background:#3FA65C; bottom:-160px; right:-100px; animation-delay:-10s; }
+  @keyframes login-drift{ 0%{ transform:translate(0,0) scale(1); } 100%{ transform:translate(24px,-16px) scale(1.06); } }
   .login-card{
-    max-width:420px; margin:64px auto 0; background:var(--white);
-    border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow-md);
+    position:relative; z-index:1;
+    max-width:420px; margin:48px auto 0; background:rgba(255,255,255,.75);
+    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.6); border-radius:var(--radius); box-shadow:var(--shadow-premium);
     padding:36px;
+    animation:fadeUp .5s ease both;
+    transition:box-shadow .2s ease, transform .2s ease;
   }
+  .login-card:hover{ box-shadow:var(--shadow-lg); transform:translateY(-2px); }
   .login-card h1{ font-size:22px; font-weight:600; margin-bottom:6px; }
   .login-card .sub{ color:var(--grey); font-size:14px; margin-bottom:24px; }
   .field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
@@ -41,21 +61,27 @@
     font:inherit; font-size:14.5px; padding:11px 13px;
     border:1.5px solid var(--border); border-radius:9px; color:var(--ink); background:var(--white);
   }
-  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--blue); }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-tint); }
+  .field input, .field select, .field textarea{ transition:border-color .15s ease, box-shadow .15s ease; }
   .field textarea{ resize:vertical; min-height:90px; }
   .form-msg{ font-size:13.5px; margin-bottom:14px; padding:10px 13px; border-radius:9px; display:none; }
-  .form-msg.show{ display:block; }
+  .form-msg.show{ display:block; animation:fadeUp .25s ease both; }
   .form-msg.error{ background:var(--red-tint); color:var(--red); }
   .form-msg.success{ background:#EAF6EE; color:var(--green-text); }
 
   /* dashboard */
-  .dash-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+  .dash-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
   .dash-head h1{ font-size:26px; font-weight:700; }
-  .dash-sub{ color:var(--grey); font-size:14.5px; margin-bottom:32px; }
+  .dash-sub{ color:var(--grey); font-size:14.5px; margin-bottom:24px; }
+
+  #dashView .dash-head{ animation:fadeUp .5s ease both; }
+  #dashView .dash-sub{ animation:fadeUp .5s ease .05s both; }
+  .job-form-card{ animation:fadeUp .5s ease .1s both; }
+  .postings{ animation:fadeUp .5s ease .15s both; }
 
   .job-form-card{
     background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-    padding:24px; margin-bottom:36px;
+    padding:22px; margin-bottom:28px;
   }
   .job-form-card h2{ font-size:17px; font-weight:600; margin-bottom:16px; }
   .field-row{ display:grid; grid-template-columns:1fr; gap:14px; }
@@ -63,17 +89,23 @@
   .form-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
 
   .postings h2{ font-size:17px; font-weight:600; margin-bottom:16px; }
-  .posting-list{ display:flex; flex-direction:column; gap:12px; }
+  .posting-list{ display:flex; flex-direction:column; gap:10px; }
   .posting-row{
     display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap;
-    background:var(--white); border:1px solid var(--border); border-radius:12px; padding:16px 18px;
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:18px 22px;
+    transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
   }
+  .posting-row:hover{ border-color:var(--blue); box-shadow:var(--shadow-premium); transform:translateY(-2px); }
   .posting-info h3{ font-size:15.5px; font-weight:600; margin-bottom:4px; }
   .posting-info p{ font-size:13px; color:var(--grey); }
   .posting-actions{ display:flex; gap:8px; flex-shrink:0; }
-  .empty-note{ color:var(--grey); font-size:14px; padding:20px; border:1px dashed var(--border); border-radius:12px; text-align:center; }
+  .empty-note{ color:var(--grey); font-size:14px; padding:20px; border:1px dashed var(--border); border-radius:var(--radius); text-align:center; }
 
   [hidden]{ display:none !important; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  }
 </style>
 </head>
 <body>
@@ -87,16 +119,17 @@
     <span class="admin-bar-title">admin console</span>
   </a>
   <div class="admin-bar-actions">
-    <a class="btn btn-ghost btn-sm" href="careers.html">View careers page</a>
     <button type="button" class="btn btn-ghost btn-sm" id="signOutBtn" hidden>Sign out</button>
   </div>
 </div>
+<div class="admin-spectrum" aria-hidden="true"></div>
 
 <!-- ---------- LOGIN VIEW ---------- -->
 <div id="loginView">
+  <div class="login-blobs" aria-hidden="true"><span class="b1"></span><span class="b2"></span></div>
   <div class="login-card">
     <h1>Admin login</h1>
-    <p class="sub">Sign in to manage job postings on the careers page.</p>
+    <p class="sub">Sign in to manage job postings.</p>
     <div class="form-msg error" id="loginMsg"></div>
     <form id="loginForm">
       <div class="field">
@@ -117,8 +150,9 @@
   <div class="admin-wrap wide">
     <div class="dash-head">
       <h1>Job postings</h1>
+      <a class="btn btn-secondary btn-sm" href="careers.html">View careers page</a>
     </div>
-    <p class="dash-sub">Postings here appear live on the public <a href="careers.html">careers page</a>.</p>
+    <p class="dash-sub">Live on the public <a href="careers.html">careers page</a>.</p>
 
     <div class="job-form-card">
       <h2 id="formTitle">Add a new job posting</h2>

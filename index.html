@@ -16,10 +16,12 @@
 <style>
   :root{
     --white:#FFFFFF;
+    --bg:#FAFBFD;
     --panel:#F5F6F8;
-    --ink:#14161A;
+    --ink:#111827;
+    --body-text:#374151;
     --grey:#6B7280;
-    --border:#E3E6EC;
+    --border:#E5E7EB;
     --blue:#516FB4;
     --blue-hover:#43609F;
     --blue-tint:#E9EDF6;
@@ -32,18 +34,19 @@
     --c-management:#E8A33D;  --c-management-tint:#FDF6EC;
     --c-digital:#E2604F;     --c-digital-tint:#FCEFED;
 
-    --shadow-sm:0 2px 8px rgba(20,22,26,.06);
-    --shadow-md:0 12px 30px rgba(20,22,26,.10);
-    --shadow-lg:0 24px 60px rgba(20,22,26,.16);
-    --radius:16px;
+    --shadow-sm:0 2px 8px rgba(17,24,39,.06);
+    --shadow-md:0 12px 30px rgba(17,24,39,.10);
+    --shadow-lg:0 24px 60px rgba(17,24,39,.16);
+    --shadow-premium:0 30px 80px rgba(17,24,39,.08);
+    --radius:28px;
   }
 
   *,*::before,*::after{ box-sizing:border-box; }
   html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
   body{
     margin:0;
-    background:var(--white);
-    color:var(--ink);
+    background:var(--bg);
+    color:var(--body-text);
     font-family:'Inter',system-ui,sans-serif;
     line-height:1.6;
     overflow-x:hidden;
@@ -64,11 +67,19 @@
   :focus-visible{ outline:2px solid var(--blue); outline-offset:2px; border-radius:4px; }
   .contact :focus-visible{ outline-color:#BFD3FF; }
 
-  .container{ max-width:1180px; margin:0 auto; padding:0 24px; }
+  .container{ max-width:1440px; margin:0 auto; padding:0 32px; }
   .eyebrow{
     font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:12px; letter-spacing:.09em; text-transform:uppercase;
     color:var(--blue); margin:0 0 10px; font-weight:600;
+  }
+  .footnote{ margin-top:20px; font-size:12.5px; color:var(--grey); font-style:italic; text-align:center; }
+
+  .glass{
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.5);
+    box-shadow:var(--shadow-premium);
   }
 
   .btn{
@@ -92,21 +103,26 @@
   /* ---------- nav ---------- */
   .nav{
     position:sticky; top:0; z-index:50;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
     box-shadow:var(--shadow-sm);
+    transition:box-shadow .25s ease, background .25s ease;
   }
+  .nav.is-scrolled{ box-shadow:var(--shadow-md); background:rgba(255,255,255,.94); }
   .nav-inner{
-    max-width:1180px; margin:0 auto; padding:14px 24px;
+    max-width:1440px; margin:0 auto; padding:20px 32px;
     display:flex; align-items:center; gap:20px;
+    transition:padding .25s ease;
   }
+  .nav.is-scrolled .nav-inner{ padding:12px 32px; }
   .nav-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto; }
-  .nav-logo{ height:32px; width:auto; }
-  .nav-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:20px; color:var(--ink); }
+  .nav-logo{ height:72px; width:auto; transition:height .25s ease; }
+  .nav.is-scrolled .nav-logo{ height:48px; }
+  .nav-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:24px; color:var(--ink); }
   .nav-brand-fallback .accent{ color:var(--blue); }
   .nav-links{ display:flex; align-items:center; gap:26px; }
   .nav-links a{
-    text-decoration:none; color:var(--ink); font-size:14.5px; font-weight:500;
+    text-decoration:none; color:var(--ink); font-size:15px; font-weight:500;
     padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .15s ease, color .15s ease;
   }
   .nav-links a:hover{ border-bottom-color:var(--blue); color:var(--blue); }
@@ -157,32 +173,61 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{ position:relative; overflow:hidden; padding:76px 0 88px; }
-  .hero-blobs{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .hero{ position:relative; overflow:hidden; padding:64px 0 100px; min-height:92vh; display:flex; align-items:center; color:#E7E9ED; }
+  .hero-photo{
+    position:absolute; inset:0; z-index:-2; background-size:cover; background-position:center;
+  }
+  .hero-photo::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(120deg, rgba(17,24,39,.90) 0%, rgba(27,35,64,.80) 55%, rgba(36,51,97,.62) 100%);
+  }
+  .hero-blobs{ position:absolute; inset:0; z-index:-1; pointer-events:none; }
   .hero-blobs span{
-    position:absolute; border-radius:50%; filter:blur(70px); opacity:.34;
+    position:absolute; border-radius:50%; filter:blur(80px); opacity:.4;
     animation:drift 26s ease-in-out infinite alternate;
   }
-  .hero-blobs .b1{ width:420px; height:420px; background:#4C5FD5; top:-140px; left:-100px; }
-  .hero-blobs .b2{ width:380px; height:380px; background:#E2604F; top:40px; right:-120px; animation-delay:-8s; }
-  .hero-blobs .b3{ width:340px; height:340px; background:#3FA65C; bottom:-180px; left:35%; animation-delay:-16s; }
+  .hero-blobs .b1{ width:520px; height:520px; background:#4C5FD5; top:-160px; left:-140px; }
+  .hero-blobs .b2{ width:460px; height:460px; background:#E2604F; top:20px; right:-160px; animation-delay:-8s; }
+  .hero-blobs .b3{ width:420px; height:420px; background:#3FA65C; bottom:-220px; left:35%; animation-delay:-16s; }
   @keyframes drift{
     0%{ transform:translate(0,0) scale(1); }
     100%{ transform:translate(30px,-20px) scale(1.08); }
   }
+  .hero-geo{ position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.35; }
+  .hero-geo circle, .hero-geo line{ stroke:#fff; }
+  .hero .container{ position:relative; z-index:1; width:100%; }
+  .hero-grid{ display:grid; grid-template-columns:1fr; gap:56px; align-items:center; }
+  @media (min-width:960px){ .hero-grid{ grid-template-columns:1.15fr 1fr; gap:48px; } }
   .hero-inner{ position:relative; z-index:1; max-width:760px; }
-  .hero h1{ font-size:clamp(2.5rem,6vw,4.1rem); font-weight:700; line-height:1.06; letter-spacing:-.02em; }
-  .hero-sub{ margin-top:22px; font-size:clamp(16px,2vw,18.5px); color:var(--grey); max-width:56ch; }
-  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+  .hero .eyebrow{ color:#BFD3FF; }
+  .hero h1{ font-size:clamp(2.6rem,6vw,4.4rem); font-weight:700; line-height:1.05; letter-spacing:-.02em; color:#fff; }
+  .hero-sub{ margin-top:22px; font-size:clamp(16px,2vw,18.5px); color:#D7DBE3; max-width:56ch; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:36px; }
+  .hero .btn-secondary{ border-color:rgba(255,255,255,.45); color:#fff; }
+  .hero .btn-secondary:hover{ border-color:#fff; background:rgba(255,255,255,.1); color:#fff; }
+
+  .hero-stats-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .hero-stat-card{
+    padding:26px 22px; border-radius:var(--radius); text-align:left;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .hero-stat-card:hover{ transform:translateY(-5px); }
+  .hero-stat-card:nth-child(2){ margin-top:32px; }
+  .hero-stat-card:nth-child(3){ margin-top:-10px; }
+  .hero-stat-card:nth-child(4){ margin-top:22px; grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .hero-stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
+  .hero-stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:24px; font-weight:600; color:var(--ink); margin-top:6px; display:block; }
+  .hero-stat-card:nth-child(4) .hero-stat-value{ display:flex; align-items:center; gap:8px; font-size:16px; }
 
   /* ---------- section heads ---------- */
-  .section-head{ max-width:640px; margin-bottom:36px; }
-  .section-head h2{ font-size:clamp(1.7rem,3.2vw,2.35rem); font-weight:600; letter-spacing:-.01em; }
-  .section-head p{ margin-top:12px; color:var(--grey); font-size:16px; }
+  .section-head{ max-width:640px; margin-bottom:44px; }
+  .section-head h2{ font-size:clamp(1.9rem,3.4vw,2.7rem); font-weight:600; letter-spacing:-.01em; }
+  .section-head p{ margin-top:14px; color:var(--body-text); font-size:16px; }
+  .footnote{ margin-top:24px; font-size:12.5px; color:var(--grey); font-style:italic; text-align:center; }
 
   /* ---------- services ---------- */
-  .services{ padding:88px 0; background:var(--panel); }
-  .service-picker{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+  .services{ padding:140px 0; background:var(--panel); }
+  .service-picker{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
   .service-tab{
     display:flex; align-items:center; gap:9px;
     background:var(--white); border:1.5px solid var(--border); border-radius:999px;
@@ -205,27 +250,32 @@
   .service-tab.is-enabled .tab-badge{ display:inline; }
 
   .service-detail{
+    position:relative; overflow:hidden;
     background:var(--white); border:1px solid var(--border); border-top:4px solid var(--blue);
-    border-radius:var(--radius); padding:32px; box-shadow:var(--shadow-sm);
+    border-radius:var(--radius); padding:36px; box-shadow:var(--shadow-premium);
     transition:background .2s ease, border-color .2s ease;
   }
-  .service-detail[data-active="marketing"]{ background:var(--c-marketing-tint); border-top-color:var(--c-marketing); }
-  .service-detail[data-active="financial"]{ background:var(--c-financial-tint); border-top-color:var(--c-financial); }
-  .service-detail[data-active="hr"]{ background:var(--c-hr-tint); border-top-color:var(--c-hr); }
-  .service-detail[data-active="management"]{ background:var(--c-management-tint); border-top-color:var(--c-management); }
-  .service-detail[data-active="digital"]{ background:var(--c-digital-tint); border-top-color:var(--c-digital); }
+  .service-detail::after{
+    content:''; position:absolute; top:-60px; right:-60px; width:200px; height:200px;
+    border-radius:50%; background:currentColor; opacity:.08; pointer-events:none;
+  }
+  .service-detail[data-active="marketing"]{ background:var(--c-marketing-tint); border-top-color:var(--c-marketing); color:var(--c-marketing); }
+  .service-detail[data-active="financial"]{ background:var(--c-financial-tint); border-top-color:var(--c-financial); color:var(--c-financial); }
+  .service-detail[data-active="hr"]{ background:var(--c-hr-tint); border-top-color:var(--c-hr); color:var(--c-hr); }
+  .service-detail[data-active="management"]{ background:var(--c-management-tint); border-top-color:var(--c-management); color:var(--c-management); }
+  .service-detail[data-active="digital"]{ background:var(--c-digital-tint); border-top-color:var(--c-digital); color:var(--c-digital); }
 
-  .detail-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .detail-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; position:relative; }
   .detail-dot{ width:14px; height:14px; border-radius:50%; flex-shrink:0; box-shadow:inset 0 0 0 1px rgba(0,0,0,.08); }
   .service-detail[data-active="marketing"] .detail-dot{ background:var(--c-marketing); }
   .service-detail[data-active="financial"] .detail-dot{ background:var(--c-financial); }
   .service-detail[data-active="hr"] .detail-dot{ background:var(--c-hr); }
   .service-detail[data-active="management"] .detail-dot{ background:var(--c-management); }
   .service-detail[data-active="digital"] .detail-dot{ background:var(--c-digital); }
-  .detail-head h3{ font-size:clamp(20px,3.4vw,26px); font-weight:600; }
-  .detail-desc{ color:var(--ink); opacity:.75; font-size:15.5px; max-width:58ch; margin-bottom:22px; }
+  .detail-head h3{ font-size:clamp(20px,3.4vw,26px); font-weight:600; color:var(--ink); }
+  .detail-desc{ position:relative; color:var(--ink); opacity:.75; font-size:15.5px; max-width:58ch; margin-bottom:22px; }
 
-  .chips{ display:flex; flex-wrap:wrap; gap:10px; }
+  .chips{ position:relative; display:flex; flex-wrap:wrap; gap:10px; }
   .chip{
     background:rgba(255,255,255,.7); border:1px solid rgba(20,22,26,.08); border-radius:10px;
     padding:11px 14px; display:flex; flex-direction:column; gap:4px; min-width:140px; flex:1 1 140px;
@@ -233,67 +283,96 @@
   .chip-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
   .chip-value{ font-size:14.5px; font-weight:600; color:var(--ink); }
 
-  .detail-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+  .detail-actions{ position:relative; display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
   .engagement-note{
     margin-top:18px; font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12.5px; color:var(--grey);
   }
   .engagement-note strong{ color:var(--ink); }
 
-  /* ---------- why ---------- */
-  .why{ padding:88px 0; }
-  .why-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
-  @media (min-width:600px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (min-width:1000px){ .why-grid{ grid-template-columns:repeat(4,1fr); } }
-  .why-card{
-    padding:24px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
-    box-shadow:var(--shadow-sm); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  /* ---------- approach (built around your business) ---------- */
+  .approach{ padding:140px 0; }
+  .approach-grid{ display:grid; grid-template-columns:1fr; gap:48px; }
+  @media (min-width:960px){ .approach-grid{ grid-template-columns:1fr 1fr; gap:64px; align-items:center; } }
+  .approach-quote{
+    font-family:'Poppins',system-ui,sans-serif; font-size:clamp(20px,2.6vw,27px); font-weight:600;
+    color:var(--ink); line-height:1.4; margin:26px 0; padding-left:22px; border-left:3px solid var(--blue);
   }
-  .why-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--blue); }
-  .why-num{
+  .approach-copy p{ font-size:15.5px; color:var(--body-text); max-width:52ch; }
+  .approach-stages{ position:relative; display:flex; flex-direction:column; gap:18px; }
+  .approach-line{
+    position:absolute; left:23px; top:38px; bottom:38px; width:2px; z-index:0;
+    background:repeating-linear-gradient(to bottom, var(--border) 0 6px, transparent 6px 13px);
+  }
+  .approach-stage{
+    position:relative; z-index:1; background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
+    padding:26px 30px; box-shadow:var(--shadow-sm); display:flex; align-items:flex-start; gap:18px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .approach-stage:hover{ transform:translateX(6px); box-shadow:var(--shadow-md); }
+  .approach-num{
     font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:600; color:var(--blue);
-    display:inline-flex; align-items:center; justify-content:center;
-    width:34px; height:34px; border-radius:10px; background:var(--blue-tint); margin-bottom:16px;
+    width:46px; height:46px; border-radius:50%; background:var(--blue-tint);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
   }
-  .why-card h3{ font-size:17px; font-weight:600; margin-bottom:8px; }
-  .why-card p{ font-size:14.5px; color:var(--grey); }
+  .approach-stage h3{ font-size:18px; font-weight:600; margin-bottom:4px; }
+  .approach-stage p{ font-size:14px; color:var(--grey); }
 
   /* ---------- bento stats ---------- */
-  .stats{ padding:88px 0; background:var(--panel); }
-  .stats-bento{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .stats{ padding:140px 0; background:var(--panel); }
+  .stats-bento{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
   @media (min-width:760px){ .stats-bento{ grid-template-columns:repeat(4,1fr); } }
   .stat-tile{
     background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
-    padding:22px; display:flex; flex-direction:column; gap:6px; box-shadow:var(--shadow-sm);
+    padding:28px; display:flex; flex-direction:column; gap:6px; box-shadow:var(--shadow-sm);
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .stat-tile:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+  .stat-tile:hover{ transform:translateY(-4px); box-shadow:var(--shadow-premium); }
   .stat-tile.wide{ grid-column:1/-1; flex-direction:row; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .stat-tile.placeholder .stat-value{ color:var(--grey); }
   .stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
-  .stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:26px; font-weight:600; }
+  .stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:28px; font-weight:600; }
   .stat-tile.wide .stat-value{ display:flex; align-items:center; gap:8px; font-size:20px; }
   .status-dot{ width:9px; height:9px; border-radius:50%; background:var(--green); flex-shrink:0; }
   .stat-sub{ font-size:12.5px; color:var(--grey); font-family:'IBM Plex Mono',ui-monospace,monospace; }
 
+  /* ---------- process ---------- */
+  .process{ padding:140px 0; }
+  .process-track{ position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+  .process-line{ position:absolute; top:23px; left:0; right:0; height:2px; background:var(--border); z-index:0; }
+  @media (max-width:900px){
+    .process-track{ grid-template-columns:1fr; gap:32px; }
+    .process-line{ top:0; bottom:0; left:23px; right:auto; width:2px; height:auto; }
+  }
+  .process-stage{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; }
+  @media (max-width:900px){ .process-stage{ flex-direction:row; text-align:left; } }
+  .process-dot{
+    width:48px; height:48px; border-radius:50%; background:var(--white); border:2px solid var(--blue);
+    display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-weight:600; color:var(--blue); flex-shrink:0;
+  }
+  .process-stage h3{ font-size:15.5px; font-weight:600; }
+  .process-stage p{ font-size:13px; color:var(--grey); max-width:24ch; }
+
   /* ---------- partners ---------- */
-  .partners{ padding:88px 0; }
+  .partners{ padding:140px 0; background:var(--panel); }
   .section-heading-row{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
   .section-tag{
     font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11.5px; color:var(--green-text);
     background:#EAF6EE; border:1px solid #CFEAD8; padding:3px 9px; border-radius:999px;
   }
-  .partner-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .partner-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
   @media (min-width:620px){ .partner-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (min-width:960px){ .partner-grid{ grid-template-columns:repeat(4,1fr); } }
   .partner-card{
-    display:flex; flex-direction:column; gap:12px;
+    display:flex; flex-direction:column; gap:14px;
     background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
-    padding:20px; text-decoration:none; color:inherit; box-shadow:var(--shadow-sm);
-    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    padding:28px; text-decoration:none; color:inherit; box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .partner-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--blue); }
+  .partner-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-premium); border-color:var(--blue); }
   .partner-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
   .partner-logo-wrap{
-    width:42px; height:42px; border-radius:10px; overflow:hidden; background:var(--blue-tint); flex-shrink:0;
+    width:46px; height:46px; border-radius:12px; overflow:hidden; background:var(--blue-tint); flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
   }
   .partner-logo{ max-width:100%; max-height:100%; object-fit:contain; }
@@ -303,13 +382,113 @@
   .partner-card h3{ font-size:16px; font-weight:600; }
   .partner-card p{ font-size:13.5px; color:var(--grey); flex:1; }
   .partner-domain{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--blue); }
-  .partner-note{ margin-top:20px; font-size:12.5px; color:var(--grey); font-style:italic; text-align:center; }
+
+  /* ---------- why choose (alternating editorial) ---------- */
+  .choose{ padding:140px 0; }
+  .choose-row{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; margin-bottom:64px; }
+  .choose-row:last-child{ margin-bottom:0; }
+  @media (min-width:860px){
+    .choose-row{ grid-template-columns:1fr 1fr; gap:56px; }
+    .choose-row.reverse .choose-visual{ order:2; }
+    .choose-row.reverse .choose-copy{ order:1; }
+  }
+  .choose-visual{
+    position:relative; aspect-ratio:4/3; border-radius:var(--radius); overflow:hidden;
+    background:var(--panel); background-size:cover; background-position:center;
+  }
+  .choose-visual .tint{ position:absolute; inset:0; mix-blend-mode:multiply; opacity:.55; }
+  .choose-eyebrow{
+    font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+    margin-bottom:10px; display:block; font-weight:600;
+  }
+  .choose-copy h3{ font-size:clamp(22px,2.6vw,30px); font-weight:600; margin-bottom:14px; color:var(--ink); }
+  .choose-copy p{ font-size:15.5px; color:var(--body-text); max-width:52ch; }
+
+  /* ---------- client success metrics ---------- */
+  .metrics{ padding:140px 0; background:var(--panel); }
+  .metrics-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media (min-width:760px){ .metrics-grid{ grid-template-columns:repeat(4,1fr); } }
+  .metric-card{
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
+    padding:32px 24px; display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;
+    box-shadow:var(--shadow-sm); transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .metric-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-premium); }
+  .metric-ring-wrap{ position:relative; width:104px; height:104px; }
+  .metric-ring{ width:104px; height:104px; }
+  .metric-ring .track{ fill:none; stroke:var(--border); stroke-width:8; }
+  .metric-ring .progress{ fill:none; stroke:var(--blue); stroke-width:8; stroke-linecap:round; stroke-dasharray:5 11; }
+  .metric-ring-value{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Poppins',system-ui,sans-serif; font-size:17px; font-weight:600; color:var(--grey);
+  }
+  .metric-card h4{ font-size:14px; font-weight:600; }
+
+  /* ---------- testimonials ---------- */
+  .testimonials{ padding:140px 0; background:#FBF8F2; }
+  .testimonial-grid{ display:grid; grid-template-columns:1fr; gap:24px; }
+  @media (min-width:760px){ .testimonial-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:1100px){ .testimonial-grid{ grid-template-columns:repeat(3,1fr); } }
+  .testimonial-card{
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
+    padding:32px; display:flex; flex-direction:column; gap:22px; box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .testimonial-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-premium); }
+  .testimonial-tag{
+    align-self:flex-start; font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--grey); background:var(--panel);
+    border:1px solid var(--border); padding:4px 10px; border-radius:999px;
+  }
+  .testimonial-quote{ font-family:'Poppins',system-ui,sans-serif; font-size:16.5px; font-weight:500; color:var(--ink); line-height:1.55; font-style:italic; }
+  .testimonial-person{ display:flex; align-items:center; gap:12px; }
+  .testimonial-avatar{
+    width:44px; height:44px; border-radius:50%; background:var(--blue-tint); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; font-family:'Poppins',system-ui,sans-serif;
+    font-weight:600; font-size:14px; flex-shrink:0;
+  }
+  .testimonial-name{ font-size:14px; font-weight:600; color:var(--ink); }
+  .testimonial-role{ font-size:12.5px; color:var(--grey); }
+
+  /* ---------- insights ---------- */
+  .insights{ padding:140px 0; }
+  .insights-grid{ display:grid; grid-template-columns:1fr; gap:24px; }
+  @media (min-width:860px){
+    .insights-grid{ grid-template-columns:1.4fr 1fr; grid-template-rows:repeat(2,1fr); gap:24px; }
+    .insight-card.featured{ grid-row:1/3; }
+  }
+  .insight-card{
+    position:relative; border-radius:var(--radius); overflow:hidden; background:var(--ink) center/cover no-repeat; color:#fff;
+    padding:30px; display:flex; flex-direction:column; justify-content:flex-end; min-height:220px;
+    transition:transform .2s ease;
+  }
+  .insight-card:hover{ transform:translateY(-4px); }
+  .insight-card.featured{ min-height:420px; padding:40px; }
+  .insight-card::before{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(160deg, rgba(42,47,58,.55) 0%, rgba(17,24,39,.92) 75%);
+    z-index:0;
+  }
+  .insight-card > *{ position:relative; z-index:1; }
+  .insight-tag{
+    font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:#9FD9AE; margin-bottom:10px; background:rgba(159,217,174,.12); border:1px solid rgba(159,217,174,.3);
+    padding:4px 10px; border-radius:999px; display:inline-block; width:fit-content;
+  }
+  .insight-card h3{ font-size:clamp(18px,2vw,25px); font-weight:600; color:#fff; }
+  .insight-card p{ font-size:13.5px; color:#C7CBD1; margin-top:10px; }
 
   /* ---------- contact ---------- */
   .contact{
-    padding:88px 0; color:#E7E9ED;
-    background:linear-gradient(135deg,#14161A 0%,#1B2340 55%,#243361 100%);
+    position:relative; overflow:hidden;
+    padding:140px 0; color:#E7E9ED;
+    background:linear-gradient(135deg,#111827 0%,#1B2340 55%,#243361 100%);
   }
+  .contact-glow{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .contact-glow span{ position:absolute; border-radius:50%; filter:blur(90px); opacity:.28; animation:drift 30s ease-in-out infinite alternate; }
+  .contact-glow .g1{ width:420px; height:420px; background:#516FB4; top:-140px; right:10%; }
+  .contact-glow .g2{ width:360px; height:360px; background:#3FA65C; bottom:-160px; left:-80px; animation-delay:-12s; }
+  .contact .container{ position:relative; z-index:1; }
   .contact .eyebrow{ color:#9FD9AE; }
   .contact h2{ color:var(--white); font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:600; }
   .contact-sub{ margin-top:14px; color:#B9BEC9; font-size:16px; max-width:52ch; }
@@ -323,8 +502,9 @@
   .info-value a:hover{ border-bottom-color:var(--white); }
 
   .contact-card{
-    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius);
-    padding:26px; display:flex; flex-direction:column; gap:18px;
+    background:rgba(255,255,255,.08); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.14); border-radius:var(--radius);
+    padding:30px; display:flex; flex-direction:column; gap:18px;
   }
   .recap-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#8890A0; display:block; margin-bottom:10px; }
   .recap-chips{ display:flex; flex-wrap:wrap; gap:8px; min-height:32px; }
@@ -343,15 +523,15 @@
   @media (max-width:600px){ .contact-map iframe{ height:240px; } }
 
   /* ---------- footer ---------- */
-  .footer{ padding:48px 0 28px; background:var(--ink); color:#9AA0AC; }
-  .footer-grid{ display:grid; grid-template-columns:1fr; gap:28px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,.1); }
-  @media (min-width:700px){ .footer-grid{ grid-template-columns:1.4fr 1fr 1fr; } }
-  .footer-brand{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
-  .footer-logo-chip{ display:inline-flex; align-items:center; background:var(--white); padding:6px 10px; border-radius:8px; line-height:0; }
-  .footer-logo{ height:20px; width:auto; }
-  .footer-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:18px; color:var(--white); }
+  .footer{ padding:64px 0 28px; background:var(--ink); color:#9AA0AC; }
+  .footer-grid{ display:grid; grid-template-columns:1fr; gap:28px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.1); }
+  @media (min-width:700px){ .footer-grid{ grid-template-columns:1.4fr 1fr 1fr 1fr; } }
+  .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .footer-logo-chip{ display:inline-flex; align-items:center; background:var(--white); padding:10px 14px; border-radius:12px; line-height:0; }
+  .footer-logo{ height:48px; width:auto; }
+  .footer-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:26px; color:var(--white); }
   @media (max-width:420px){
-    .nav-logo{ height:28px; }
+    .nav-logo{ height:48px; }
   }
   .footer p{ font-size:13.5px; line-height:1.7; }
   .footer h4{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#666D7A; margin-bottom:14px; }
@@ -363,13 +543,20 @@
   /* ---------- scroll reveal ---------- */
   @keyframes fadeUp{ from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:none; } }
   .hero-inner{ animation:fadeUp .7s ease both; }
+  .hero-stats-grid{ animation:fadeUp .7s ease .15s both; }
 
   .js .section-head,
   .js .service-picker,
   .js .service-detail,
-  .js .why-grid .why-card,
+  .js .approach-copy,
+  .js .approach-stages .approach-stage,
   .js .stats-bento .stat-tile,
+  .js .process-track .process-stage,
   .js .partner-grid .partner-card,
+  .js .choose-row,
+  .js .metrics-grid .metric-card,
+  .js .testimonial-grid .testimonial-card,
+  .js .insights-grid .insight-card,
   .js .contact-grid,
   .js .contact-map{
     opacity:0; transform:translateY(20px);
@@ -378,23 +565,41 @@
   .section-head.is-visible,
   .service-picker.is-visible,
   .service-detail.is-visible,
-  .why-grid.is-visible .why-card,
+  .approach-copy.is-visible,
+  .approach-stages.is-visible .approach-stage,
   .stats-bento.is-visible .stat-tile,
+  .process-track.is-visible .process-stage,
   .partner-grid.is-visible .partner-card,
+  .choose-row.is-visible,
+  .metrics-grid.is-visible .metric-card,
+  .testimonial-grid.is-visible .testimonial-card,
+  .insights-grid.is-visible .insight-card,
   .contact-grid.is-visible,
   .contact-map.is-visible{
     opacity:1; transform:none;
   }
-  .why-grid.is-visible .why-card:nth-child(2){ transition-delay:.08s; }
-  .why-grid.is-visible .why-card:nth-child(3){ transition-delay:.16s; }
-  .why-grid.is-visible .why-card:nth-child(4){ transition-delay:.24s; }
+  .approach-stages.is-visible .approach-stage:nth-child(2){ transition-delay:.08s; }
+  .approach-stages.is-visible .approach-stage:nth-child(3){ transition-delay:.16s; }
   .stats-bento.is-visible .stat-tile:nth-child(2){ transition-delay:.06s; }
   .stats-bento.is-visible .stat-tile:nth-child(3){ transition-delay:.12s; }
   .stats-bento.is-visible .stat-tile:nth-child(4){ transition-delay:.18s; }
   .stats-bento.is-visible .stat-tile:nth-child(5){ transition-delay:.24s; }
+  .stats-bento.is-visible .stat-tile:nth-child(6){ transition-delay:.30s; }
+  .stats-bento.is-visible .stat-tile:nth-child(7){ transition-delay:.36s; }
+  .process-track.is-visible .process-stage:nth-child(2){ transition-delay:.08s; }
+  .process-track.is-visible .process-stage:nth-child(3){ transition-delay:.16s; }
+  .process-track.is-visible .process-stage:nth-child(4){ transition-delay:.24s; }
+  .process-track.is-visible .process-stage:nth-child(5){ transition-delay:.32s; }
   .partner-grid.is-visible .partner-card:nth-child(2){ transition-delay:.08s; }
   .partner-grid.is-visible .partner-card:nth-child(3){ transition-delay:.16s; }
   .partner-grid.is-visible .partner-card:nth-child(4){ transition-delay:.24s; }
+  .metrics-grid.is-visible .metric-card:nth-child(2){ transition-delay:.08s; }
+  .metrics-grid.is-visible .metric-card:nth-child(3){ transition-delay:.16s; }
+  .metrics-grid.is-visible .metric-card:nth-child(4){ transition-delay:.24s; }
+  .testimonial-grid.is-visible .testimonial-card:nth-child(2){ transition-delay:.08s; }
+  .testimonial-grid.is-visible .testimonial-card:nth-child(3){ transition-delay:.16s; }
+  .insights-grid.is-visible .insight-card:nth-child(2){ transition-delay:.08s; }
+  .insights-grid.is-visible .insight-card:nth-child(3){ transition-delay:.16s; }
 
   @media (prefers-reduced-motion:reduce){
     *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
@@ -442,15 +647,41 @@
 <main>
 
   <section class="hero" id="top">
+    <div class="hero-photo" aria-hidden="true" style="background-image:url('https://images.pexels.com/photos/36733323/pexels-photo-36733323.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
     <div class="hero-blobs" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+    <svg class="hero-geo" aria-hidden="true" viewBox="0 0 800 800" preserveAspectRatio="xMaxYMid slice">
+      <circle cx="720" cy="160" r="120" fill="none" stroke="#516FB4" stroke-width="1"/>
+      <circle cx="720" cy="160" r="180" fill="none" stroke="#516FB4" stroke-width="1"/>
+      <line x1="560" y1="40" x2="760" y2="340" stroke="#516FB4" stroke-width="1"/>
+    </svg>
     <div class="container">
-      <div class="hero-inner">
-        <p class="eyebrow">Business Consulting · Since 2023</p>
-        <h1>Grow Brand.<br>Grow Business.</h1>
-        <p class="hero-sub">Gamut Pro is a Johor Bahru consultancy helping businesses unlock growth through tailored marketing, financial, HR, management, and digital transformation strategies — built around your goals, not a template.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#contact">Get a free consultation</a>
-          <a class="btn btn-secondary btn-lg" href="#services">Explore services</a>
+      <div class="hero-grid">
+        <div class="hero-inner">
+          <p class="eyebrow">Business Consulting · Since 2023</p>
+          <h1>Grow Brand.<br>Grow Business.</h1>
+          <p class="hero-sub">Gamut Pro is a Johor Bahru consultancy helping Malaysian businesses grow through strategic marketing, financial advisory, HR management, and digital transformation — built around your goals, not a template.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#contact">Start Your Journey</a>
+            <a class="btn btn-secondary btn-lg" href="#services">View Our Services</a>
+          </div>
+        </div>
+        <div class="hero-stats-grid">
+          <div class="hero-stat-card glass">
+            <span class="hero-stat-label">Team</span>
+            <span class="hero-stat-value">51–200 Employees</span>
+          </div>
+          <div class="hero-stat-card glass">
+            <span class="hero-stat-label">Founded</span>
+            <span class="hero-stat-value">2023</span>
+          </div>
+          <div class="hero-stat-card glass">
+            <span class="hero-stat-label">Headquarters</span>
+            <span class="hero-stat-value">Johor Bahru</span>
+          </div>
+          <div class="hero-stat-card glass">
+            <span class="hero-stat-label">Reputation</span>
+            <span class="hero-stat-value"><span class="status-dot" aria-hidden="true"></span>Trusted multi-industry consultancy</span>
+          </div>
         </div>
       </div>
     </div>
@@ -502,32 +733,29 @@
     </div>
   </section>
 
-  <section class="why" id="why">
+  <section class="approach" id="why">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Why Gamut Pro</p>
-        <h2>Built around your business, not a template.</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <span class="why-num">01</span>
-          <h3>Tailored solutions</h3>
-          <p>No templates, no shortcuts — every strategy is built around your business.</p>
+      <div class="approach-grid">
+        <div class="approach-copy">
+          <p class="eyebrow">Why Gamut Pro</p>
+          <h2>Built around your business, not a template.</h2>
+          <blockquote class="approach-quote">"No templates, no shortcuts — every engagement starts with your business, not a playbook."</blockquote>
+          <p>We spend real time understanding how your business actually runs before we recommend anything. That consultative approach — across marketing, finance, HR, management, and digital — is what a 51–200-strong team backed by trusted partnerships makes possible.</p>
         </div>
-        <div class="why-card">
-          <span class="why-num">02</span>
-          <h3>Cross-industry expertise</h3>
-          <p>Experience across marketing, finance, HR, and operations.</p>
-        </div>
-        <div class="why-card">
-          <span class="why-num">03</span>
-          <h3>Trusted partnerships</h3>
-          <p>Backed by strong relationships with respected organizations.</p>
-        </div>
-        <div class="why-card">
-          <span class="why-num">04</span>
-          <h3>Growing team</h3>
-          <p>51–200 consultants and specialists ready to support you.</p>
+        <div class="approach-stages">
+          <div class="approach-line" aria-hidden="true"></div>
+          <div class="approach-stage">
+            <span class="approach-num">01</span>
+            <div><h3>Understand</h3><p>We map your goals, constraints, and current operations before proposing a direction.</p></div>
+          </div>
+          <div class="approach-stage">
+            <span class="approach-num">02</span>
+            <div><h3>Plan</h3><p>A tailored strategy across the disciplines you need — nothing bundled in you don't.</p></div>
+          </div>
+          <div class="approach-stage">
+            <span class="approach-num">03</span>
+            <div><h3>Execute</h3><p>Our consultants embed with your team to see the plan through to results.</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -542,19 +770,27 @@
       <div class="stats-bento">
         <div class="stat-tile">
           <span class="stat-label">Founded</span>
-          <span class="stat-value">2023</span>
+          <span class="stat-value" data-count-to="2023">2023</span>
         </div>
         <div class="stat-tile">
           <span class="stat-label">Team</span>
           <span class="stat-value">51–200</span>
         </div>
         <div class="stat-tile">
-          <span class="stat-label">Modules</span>
-          <span class="stat-value">5</span>
+          <span class="stat-label">Core disciplines</span>
+          <span class="stat-value" data-count-to="5">5</span>
         </div>
         <div class="stat-tile">
-          <span class="stat-label">HQ</span>
+          <span class="stat-label">Headquarters</span>
           <span class="stat-value">Johor Bahru</span>
+        </div>
+        <div class="stat-tile placeholder">
+          <span class="stat-label">Business projects</span>
+          <span class="stat-value">—</span>
+        </div>
+        <div class="stat-tile placeholder">
+          <span class="stat-label">Client satisfaction</span>
+          <span class="stat-value">—</span>
         </div>
         <div class="stat-tile wide">
           <div>
@@ -563,6 +799,25 @@
           </div>
           <span class="stat-sub">Closes 5:30 pm</span>
         </div>
+      </div>
+      <p class="footnote">Business projects and client satisfaction are placeholders — swap in verified figures when available.</p>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How we work</p>
+        <h2>Our process.</h2>
+        <p>A clear path from first conversation to measurable growth.</p>
+      </div>
+      <div class="process-track">
+        <div class="process-line" aria-hidden="true"></div>
+        <div class="process-stage"><span class="process-dot">01</span><div><h3>Discovery</h3><p>Understand your business, goals, and constraints.</p></div></div>
+        <div class="process-stage"><span class="process-dot">02</span><div><h3>Analysis</h3><p>Assess what's working and what's holding growth back.</p></div></div>
+        <div class="process-stage"><span class="process-dot">03</span><div><h3>Strategy</h3><p>Build a tailored plan across the disciplines you need.</p></div></div>
+        <div class="process-stage"><span class="process-dot">04</span><div><h3>Implementation</h3><p>Our consultants execute alongside your team.</p></div></div>
+        <div class="process-stage"><span class="process-dot">05</span><div><h3>Growth</h3><p>Track results and refine the plan as your business scales.</p></div></div>
       </div>
     </div>
   </section>
@@ -631,11 +886,156 @@
         </a>
 
       </div>
-      <p class="partner-note">Wordmark cards shown above · swap in partner logo files whenever you have them on hand.</p>
+      <p class="footnote">Wordmark cards shown above · swap in partner logo files whenever you have them on hand.</p>
+    </div>
+  </section>
+
+  <section class="choose" id="choose">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Why Choose Gamut Pro</p>
+        <h2>Three ways we move the needle.</h2>
+      </div>
+
+      <div class="choose-row">
+        <div class="choose-visual" style="background-image:url('https://images.pexels.com/photos/36733315/pexels-photo-36733315.jpeg?auto=compress&cs=tinysrgb&w=1000');">
+          <div class="tint" style="background:var(--c-management-tint);" aria-hidden="true"></div>
+        </div>
+        <div class="choose-copy">
+          <span class="choose-eyebrow" style="color:var(--c-management);">Business Strategy</span>
+          <h3>Direction backed by evidence, not guesswork.</h3>
+          <p>Our management consultants look at how your operations actually run, then chart a growth strategy built around your real constraints and goals — not a generic playbook.</p>
+        </div>
+      </div>
+
+      <div class="choose-row reverse">
+        <div class="choose-visual" style="background-image:url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=1000');">
+          <div class="tint" style="background:var(--c-financial-tint);" aria-hidden="true"></div>
+        </div>
+        <div class="choose-copy">
+          <span class="choose-eyebrow" style="color:var(--c-financial);">Financial Excellence</span>
+          <h3>Forecasting and structure built for stability.</h3>
+          <p>Our financial advisory practice helps you plan, forecast, and structure your finances so today's stability supports tomorrow's growth.</p>
+        </div>
+      </div>
+
+      <div class="choose-row">
+        <div class="choose-visual" style="background-image:url('https://images.pexels.com/photos/29267512/pexels-photo-29267512.jpeg?auto=compress&cs=tinysrgb&w=1000');">
+          <div class="tint" style="background:var(--c-digital-tint);" aria-hidden="true"></div>
+        </div>
+        <div class="choose-copy">
+          <span class="choose-eyebrow" style="color:var(--c-digital);">Digital Innovation</span>
+          <h3>Modern systems behind the customer experience.</h3>
+          <p>Our digital transformation team modernizes the workflows and systems your customers and staff interact with every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="metrics" id="metrics">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Client Success Metrics</p>
+        <h2>What clients typically track.</h2>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-ring-wrap">
+            <svg class="metric-ring" viewBox="0 0 104 104"><circle class="track" cx="52" cy="52" r="44"/><circle class="progress" cx="52" cy="52" r="44"/></svg>
+            <span class="metric-ring-value">—%</span>
+          </div>
+          <h4>Revenue Growth</h4>
+        </div>
+        <div class="metric-card">
+          <div class="metric-ring-wrap">
+            <svg class="metric-ring" viewBox="0 0 104 104"><circle class="track" cx="52" cy="52" r="44"/><circle class="progress" cx="52" cy="52" r="44"/></svg>
+            <span class="metric-ring-value">—%</span>
+          </div>
+          <h4>Operational Efficiency</h4>
+        </div>
+        <div class="metric-card">
+          <div class="metric-ring-wrap">
+            <svg class="metric-ring" viewBox="0 0 104 104"><circle class="track" cx="52" cy="52" r="44"/><circle class="progress" cx="52" cy="52" r="44"/></svg>
+            <span class="metric-ring-value">—%</span>
+          </div>
+          <h4>Digital Adoption</h4>
+        </div>
+        <div class="metric-card">
+          <div class="metric-ring-wrap">
+            <svg class="metric-ring" viewBox="0 0 104 104"><circle class="track" cx="52" cy="52" r="44"/><circle class="progress" cx="52" cy="52" r="44"/></svg>
+            <span class="metric-ring-value">—%</span>
+          </div>
+          <h4>Employee Performance</h4>
+        </div>
+      </div>
+      <p class="footnote">Illustrative placeholders — swap in verified client figures when available.</p>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Testimonials</p>
+        <h2>What we hope to hear from clients.</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <span class="testimonial-tag">Sample placeholder</span>
+          <p class="testimonial-quote">"Add a real client quote here once you have one ready to share — this space is reserved for the impact a client saw from working with Gamut Pro."</p>
+          <div class="testimonial-person">
+            <span class="testimonial-avatar">?</span>
+            <div><div class="testimonial-name">Client name</div><div class="testimonial-role">Company · Role</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <span class="testimonial-tag">Sample placeholder</span>
+          <p class="testimonial-quote">"Add a second testimonial here — ideally naming the specific service (marketing, financial, HR, management, or digital) that made the difference."</p>
+          <div class="testimonial-person">
+            <span class="testimonial-avatar">?</span>
+            <div><div class="testimonial-name">Client name</div><div class="testimonial-role">Company · Role</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <span class="testimonial-tag">Sample placeholder</span>
+          <p class="testimonial-quote">"A third slot for whenever you have another client happy to be quoted — swap this text out any time."</p>
+          <div class="testimonial-person">
+            <span class="testimonial-avatar">?</span>
+            <div><div class="testimonial-name">Client name</div><div class="testimonial-role">Company · Role</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="footnote">Placeholder quotes shown above · swap in real client testimonials whenever you have them on hand.</p>
+    </div>
+  </section>
+
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Insights</p>
+        <h2>From the Gamut Pro desk.</h2>
+      </div>
+      <div class="insights-grid">
+        <div class="insight-card featured" style="background-image:url('https://images.pexels.com/photos/4342498/pexels-photo-4342498.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+          <span class="insight-tag">Coming soon</span>
+          <h3>Long-form insight on Malaysian business growth — coming soon</h3>
+          <p>This space is reserved for a featured article once your first piece is ready.</p>
+        </div>
+        <div class="insight-card" style="background-image:url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=800');">
+          <span class="insight-tag">Coming soon</span>
+          <h3>Second article slot</h3>
+          <p>Reserved for an upcoming piece.</p>
+        </div>
+        <div class="insight-card" style="background-image:url('https://images.pexels.com/photos/29267512/pexels-photo-29267512.jpeg?auto=compress&cs=tinysrgb&w=800');">
+          <span class="insight-tag">Coming soon</span>
+          <h3>Third article slot</h3>
+          <p>Reserved for an upcoming piece.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
+    <div class="contact-glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span></div>
     <div class="container">
       <p class="eyebrow">Get in touch</p>
       <h2 id="contactHeading" tabindex="-1">Let's talk about your growth.</h2>
@@ -656,8 +1056,8 @@
             <span class="info-value">Open daily · closes 5:30 pm</span>
           </div>
           <div class="contact-actions" style="flex-direction:row; flex-wrap:wrap; margin-top:8px;">
-            <a class="btn btn-primary" href="tel:0192662291">Call now</a>
-            <a class="btn btn-ghost" href="https://wa.me/60192662291" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+            <a class="btn btn-primary" href="https://wa.me/60192662291" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+            <a class="btn btn-ghost" href="tel:0192662291">Call Us</a>
             <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Gamut+Pro+Sdn+Bhd,+Unit+M-02,+15+Jalan+Dato+Abdullah+Tahir,+Taman+Abad,+80300+Johor+Bahru,+Malaysia" target="_blank" rel="noopener noreferrer">Get directions</a>
           </div>
         </div>
@@ -698,13 +1098,24 @@
         <p>Grow Brand Grow Business. A Johor Bahru consultancy for marketing, financial, HR, management, and digital transformation strategy.</p>
       </div>
       <div>
-        <h4>Site</h4>
+        <h4>Services</h4>
         <div class="footer-links">
-          <a href="#services">Services</a>
+          <a href="#services">Marketing Consultancy</a>
+          <a href="#services">Financial Advisory</a>
+          <a href="#services">HR Management</a>
+          <a href="#services">Management Consultancy</a>
+          <a href="#services">Digital Transformation</a>
+        </div>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <div class="footer-links">
           <a href="#why">Why us</a>
+          <a href="#process">Our Process</a>
+          <a href="#metrics">Client Success</a>
+          <a href="#insights">Insights</a>
           <a href="#partners">Partners</a>
           <a href="careers.html">Careers</a>
-          <a href="#contact">Contact</a>
         </div>
       </div>
       <div>
@@ -713,6 +1124,7 @@
           <a href="tel:0192662291">019-266 2291</a>
           <a href="https://wa.me/60192662291" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
           <a href="#contact">Unit M-02, 15, Jalan Dato Abdullah Tahir, Johor Bahru</a>
+          <a href="admin.html">Admin login</a>
         </div>
       </div>
     </div>
@@ -852,7 +1264,7 @@
   });
 
   /* ---- scroll reveal ---- */
-  var revealEls = document.querySelectorAll('.section-head, .service-picker, .service-detail, .why-grid, .stats-bento, .partner-grid, .contact-grid, .contact-map');
+  var revealEls = document.querySelectorAll('.section-head, .service-picker, .service-detail, .approach-copy, .approach-stages, .stats-bento, .process-track, .partner-grid, .choose-row, .metrics-grid, .testimonial-grid, .insights-grid, .contact-grid, .contact-map');
   if('IntersectionObserver' in window){
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -866,6 +1278,38 @@
   } else {
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
+
+  /* ---- animated stat counters ---- */
+  var countEls = document.querySelectorAll('[data-count-to]');
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count-to'), 10);
+    var duration = 900;
+    var start = null;
+    function step(ts){
+      if(start === null){ start = ts; }
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = String(Math.floor(progress * target));
+      if(progress < 1){ window.requestAnimationFrame(step); } else { el.textContent = String(target); }
+    }
+    window.requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window && countEls.length){
+    var countObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.6 });
+    countEls.forEach(function(el){ el.textContent = '0'; countObserver.observe(el); });
+  }
+
+  /* ---- nav shrink on scroll ---- */
+  var navEl = document.querySelector('.nav');
+  function onNavScroll(){ navEl.classList.toggle('is-scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onNavScroll, { passive:true });
+  onNavScroll();
 
   render();
 })();
