@@ -37,19 +37,25 @@
     --shadow-sm:0 2px 8px rgba(17,24,39,.06);
     --shadow-md:0 12px 30px rgba(17,24,39,.10);
     --shadow-lg:0 24px 60px rgba(17,24,39,.16);
-    --shadow-premium:0 30px 80px rgba(17,24,39,.08);
+    --shadow-premium:0 2px 4px rgba(17,24,39,.05), 0 30px 80px rgba(17,24,39,.10);
     --radius:28px;
   }
 
   *,*::before,*::after{ box-sizing:border-box; }
   html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
   body{
+    position:relative;
     margin:0;
     background:var(--bg);
     color:var(--body-text);
     font-family:'Inter',system-ui,sans-serif;
     line-height:1.6;
     overflow-x:hidden;
+  }
+  body::after{
+    content:''; position:fixed; inset:0; z-index:2147483647; pointer-events:none;
+    opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   img{ max-width:100%; height:auto; display:block; }
   button{ font-family:inherit; }
@@ -86,12 +92,12 @@
     display:inline-flex; align-items:center; justify-content:center; gap:6px;
     padding:13px 24px; border-radius:999px; font-size:15px; font-weight:600;
     text-decoration:none; cursor:pointer; border:1.5px solid transparent;
-    transition:background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+    transition:background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease, box-shadow .2s ease;
     white-space:nowrap;
   }
   .btn:hover{ transform:translateY(-1px); }
   .btn-primary{ background:var(--blue); color:var(--white); }
-  .btn-primary:hover{ background:var(--blue-hover); }
+  .btn-primary:hover{ background:var(--blue-hover); box-shadow:0 10px 24px rgba(81,111,180,.35); }
   .btn-secondary{ background:transparent; border-color:var(--border); color:var(--ink); }
   .btn-secondary:hover{ border-color:var(--blue); color:var(--blue); }
   .btn-ghost{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.35); color:var(--white); }
@@ -122,10 +128,15 @@
   .nav-brand-fallback .accent{ color:var(--blue); }
   .nav-links{ display:flex; align-items:center; gap:26px; }
   .nav-links a{
-    text-decoration:none; color:var(--ink); font-size:15px; font-weight:500;
-    padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .15s ease, color .15s ease;
+    position:relative; text-decoration:none; color:var(--ink); font-size:15px; font-weight:500;
+    padding:6px 2px; transition:color .15s ease;
   }
-  .nav-links a:hover{ border-bottom-color:var(--blue); color:var(--blue); }
+  .nav-links a::after{
+    content:''; position:absolute; left:2px; right:2px; bottom:0; height:2px; background:var(--blue);
+    transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  .nav-links a:hover{ color:var(--blue); }
+  .nav-links a:hover::after{ transform:scaleX(1); }
   .nav-actions{ display:flex; align-items:center; gap:14px; }
   .live-pill{
     display:flex; align-items:center; gap:7px;
@@ -175,8 +186,10 @@
   /* ---------- hero ---------- */
   .hero{ position:relative; overflow:hidden; padding:64px 0 100px; min-height:92vh; display:flex; align-items:center; color:#E7E9ED; }
   .hero-photo{
-    position:absolute; inset:0; z-index:-2; background-size:cover; background-position:center;
+    position:absolute; inset:-3%; z-index:-2; background-size:cover; background-position:center;
+    animation:ken-burns 26s ease-in-out infinite alternate;
   }
+  @keyframes ken-burns{ from{ transform:scale(1); } to{ transform:scale(1.07); } }
   .hero-photo::after{
     content:''; position:absolute; inset:0;
     background:linear-gradient(120deg, rgba(17,24,39,.90) 0%, rgba(27,35,64,.80) 55%, rgba(36,51,97,.62) 100%);
@@ -218,6 +231,16 @@
   .hero-stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
   .hero-stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:24px; font-weight:600; color:var(--ink); margin-top:6px; display:block; }
   .hero-stat-card:nth-child(4) .hero-stat-value{ display:flex; align-items:center; gap:8px; font-size:16px; }
+
+  /* ---------- trust ticker ---------- */
+  .trust-ticker{ padding:32px 0; background:var(--white); border-bottom:1px solid var(--border); overflow:hidden; }
+  .trust-label{
+    font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--grey); text-align:center; margin-bottom:16px;
+  }
+  .trust-track{ display:flex; gap:64px; width:max-content; animation:ticker-scroll 26s linear infinite; }
+  .trust-track span{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:19px; color:var(--grey); white-space:nowrap; opacity:.65; }
+  @keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
   /* ---------- section heads ---------- */
   .section-head{ max-width:640px; margin-bottom:44px; }
@@ -394,8 +417,13 @@
   }
   .choose-visual{
     position:relative; aspect-ratio:4/3; border-radius:var(--radius); overflow:hidden;
-    background:var(--panel); background-size:cover; background-position:center;
+    background:var(--panel); box-shadow:var(--shadow-premium);
   }
+  .choose-visual::before{
+    content:''; position:absolute; inset:-4%; background-image:var(--photo);
+    background-size:cover; background-position:center; transition:transform .5s ease;
+  }
+  .choose-row:hover .choose-visual::before{ transform:scale(1.08); }
   .choose-visual .tint{ position:absolute; inset:0; mix-blend-mode:multiply; opacity:.55; }
   .choose-eyebrow{
     font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
@@ -458,13 +486,18 @@
     .insight-card.featured{ grid-row:1/3; }
   }
   .insight-card{
-    position:relative; border-radius:var(--radius); overflow:hidden; background:var(--ink) center/cover no-repeat; color:#fff;
+    position:relative; border-radius:var(--radius); overflow:hidden; background:var(--ink); color:#fff;
     padding:30px; display:flex; flex-direction:column; justify-content:flex-end; min-height:220px;
     transition:transform .2s ease;
   }
   .insight-card:hover{ transform:translateY(-4px); }
   .insight-card.featured{ min-height:420px; padding:40px; }
   .insight-card::before{
+    content:''; position:absolute; inset:-4%; background-image:var(--photo);
+    background-size:cover; background-position:center; transition:transform .6s ease; z-index:0;
+  }
+  .insight-card:hover::before{ transform:scale(1.08); }
+  .insight-card::after{
     content:''; position:absolute; inset:0;
     background:linear-gradient(160deg, rgba(42,47,58,.55) 0%, rgba(17,24,39,.92) 75%);
     z-index:0;
@@ -687,6 +720,14 @@
     </div>
   </section>
 
+  <div class="trust-ticker">
+    <div class="container"><p class="trust-label">Trusted alongside</p></div>
+    <div class="trust-track" aria-hidden="true">
+      <span>Amitabha Foundation</span><span>Putuo Village</span><span>Gentle Hill</span><span>Yellow Bin</span>
+      <span>Amitabha Foundation</span><span>Putuo Village</span><span>Gentle Hill</span><span>Yellow Bin</span>
+    </div>
+  </div>
+
   <section class="services" id="services">
     <div class="container">
       <div class="section-head">
@@ -898,7 +939,7 @@
       </div>
 
       <div class="choose-row">
-        <div class="choose-visual" style="background-image:url('https://images.pexels.com/photos/36733315/pexels-photo-36733315.jpeg?auto=compress&cs=tinysrgb&w=1000');">
+        <div class="choose-visual" style="--photo:url('https://images.pexels.com/photos/36733315/pexels-photo-36733315.jpeg?auto=compress&cs=tinysrgb&w=1000');">
           <div class="tint" style="background:var(--c-management-tint);" aria-hidden="true"></div>
         </div>
         <div class="choose-copy">
@@ -909,7 +950,7 @@
       </div>
 
       <div class="choose-row reverse">
-        <div class="choose-visual" style="background-image:url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=1000');">
+        <div class="choose-visual" style="--photo:url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=1000');">
           <div class="tint" style="background:var(--c-financial-tint);" aria-hidden="true"></div>
         </div>
         <div class="choose-copy">
@@ -920,7 +961,7 @@
       </div>
 
       <div class="choose-row">
-        <div class="choose-visual" style="background-image:url('https://images.pexels.com/photos/29267512/pexels-photo-29267512.jpeg?auto=compress&cs=tinysrgb&w=1000');">
+        <div class="choose-visual" style="--photo:url('https://images.pexels.com/photos/29267512/pexels-photo-29267512.jpeg?auto=compress&cs=tinysrgb&w=1000');">
           <div class="tint" style="background:var(--c-digital-tint);" aria-hidden="true"></div>
         </div>
         <div class="choose-copy">
@@ -1015,17 +1056,17 @@
         <h2>From the Gamut Pro desk.</h2>
       </div>
       <div class="insights-grid">
-        <div class="insight-card featured" style="background-image:url('https://images.pexels.com/photos/4342498/pexels-photo-4342498.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+        <div class="insight-card featured" style="--photo:url('https://images.pexels.com/photos/4342498/pexels-photo-4342498.jpeg?auto=compress&cs=tinysrgb&w=1200');">
           <span class="insight-tag">Coming soon</span>
           <h3>Long-form insight on Malaysian business growth — coming soon</h3>
           <p>This space is reserved for a featured article once your first piece is ready.</p>
         </div>
-        <div class="insight-card" style="background-image:url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=800');">
+        <div class="insight-card" style="--photo:url('https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=800');">
           <span class="insight-tag">Coming soon</span>
           <h3>Second article slot</h3>
           <p>Reserved for an upcoming piece.</p>
         </div>
-        <div class="insight-card" style="background-image:url('https://images.pexels.com/photos/29267512/pexels-photo-29267512.jpeg?auto=compress&cs=tinysrgb&w=800');">
+        <div class="insight-card" style="--photo:url('https://images.pexels.com/photos/29267512/pexels-photo-29267512.jpeg?auto=compress&cs=tinysrgb&w=800');">
           <span class="insight-tag">Coming soon</span>
           <h3>Third article slot</h3>
           <p>Reserved for an upcoming piece.</p>
