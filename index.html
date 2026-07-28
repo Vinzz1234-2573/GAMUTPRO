@@ -219,18 +219,16 @@
   .hero .btn-secondary{ border-color:rgba(255,255,255,.45); color:#fff; }
   .hero .btn-secondary:hover{ border-color:#fff; background:rgba(255,255,255,.1); color:#fff; }
 
-  .hero-stats-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .hero-stats-grid{ display:flex; flex-direction:column; gap:14px; }
   .hero-stat-card{
-    padding:26px 22px; border-radius:var(--radius); text-align:left;
+    display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;
+    padding:20px 28px; border-radius:var(--radius); text-align:left;
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .hero-stat-card:hover{ transform:translateY(-5px); }
-  .hero-stat-card:nth-child(2){ margin-top:32px; }
-  .hero-stat-card:nth-child(3){ margin-top:-10px; }
-  .hero-stat-card:nth-child(4){ margin-top:22px; grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  .hero-stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); }
-  .hero-stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:24px; font-weight:600; color:var(--ink); margin-top:6px; display:block; }
-  .hero-stat-card:nth-child(4) .hero-stat-value{ display:flex; align-items:center; gap:8px; font-size:16px; }
+  .hero-stat-card:hover{ transform:translateX(-6px); }
+  .hero-stat-label{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--grey); flex-shrink:0; }
+  .hero-stat-value{ font-family:'Poppins',system-ui,sans-serif; font-size:20px; font-weight:600; color:var(--ink); text-align:right; }
+  .hero-stat-card:nth-child(4) .hero-stat-value{ display:flex; align-items:center; gap:8px; font-size:15.5px; }
 
   /* ---------- trust ticker ---------- */
   .trust-ticker{ padding:32px 0; background:var(--white); border-bottom:1px solid var(--border); overflow:hidden; }
