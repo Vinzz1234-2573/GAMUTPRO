@@ -70,10 +70,15 @@ section{ scroll-margin-top:84px; }
 }
 
 .glass{
+  position:relative;
   background:rgba(255,255,255,.7);
   backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
   border:1px solid rgba(255,255,255,.5);
   box-shadow:var(--shadow-premium);
+}
+.glass::before{
+  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(155deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 40%);
 }
 
 .btn{
@@ -107,14 +112,14 @@ section{ scroll-margin-top:84px; }
 }
 .nav.is-scrolled{ box-shadow:var(--shadow-md); background:rgba(255,255,255,.94); }
 .nav-inner{
-  max-width:1440px; margin:0 auto; padding:20px 32px;
+  max-width:1440px; margin:0 auto; padding:8px 32px;
   display:flex; align-items:center; gap:20px;
   transition:padding .25s ease;
 }
-.nav.is-scrolled .nav-inner{ padding:12px 32px; }
+.nav.is-scrolled .nav-inner{ padding:6px 32px; }
 .nav-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto; }
-.nav-logo{ height:72px; width:auto; transition:height .25s ease; }
-.nav.is-scrolled .nav-logo{ height:48px; }
+.nav-logo{ height:72px; width:auto; transition:height .25s ease; -webkit-box-reflect:below 6px linear-gradient(rgba(255,255,255,.35), transparent 70%); }
+.nav.is-scrolled .nav-logo{ height:44px; }
 .nav-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:24px; color:var(--ink); }
 .nav-brand-fallback .accent{ color:var(--blue); }
 .nav-links{ display:flex; align-items:center; gap:26px; }
@@ -143,8 +148,11 @@ section{ scroll-margin-top:84px; }
 }
 .nav-spectrum{
   height:4px; width:100%;
-  background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F);
+  background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#4C5FD5);
+  background-size:200% 100%;
+  animation:spectrum-shift 16s linear infinite;
 }
+@keyframes spectrum-shift{ from{ background-position:0% 0; } to{ background-position:-100% 0; } }
 .nav-toggle{
   display:none; flex-direction:column; justify-content:center; gap:4px;
   width:34px; height:34px; background:none; border:1px solid var(--border); border-radius:8px; cursor:pointer;
@@ -169,7 +177,7 @@ section{ scroll-margin-top:84px; }
 @media (max-width:420px){
   .live-pill-text{ display:none; }
   .live-pill{ padding:6px 9px; }
-  .nav-logo{ height:48px; }
+  .nav-logo{ height:56px; }
 }
 
 /* ---------- footer ---------- */
@@ -178,7 +186,7 @@ section{ scroll-margin-top:84px; }
 @media (min-width:700px){ .footer-grid{ grid-template-columns:1.4fr 1fr 1fr 1fr; } }
 .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
 .footer-logo-chip{ display:inline-flex; align-items:center; background:var(--white); padding:10px 14px; border-radius:12px; line-height:0; }
-.footer-logo{ height:48px; width:auto; }
+.footer-logo{ height:44px; width:auto; }
 .footer-brand-fallback{ font-family:'Poppins',system-ui,sans-serif; font-weight:600; font-size:26px; color:var(--white); }
 .footer p{ font-size:13.5px; line-height:1.7; }
 .footer h4{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#666D7A; margin-bottom:14px; }
