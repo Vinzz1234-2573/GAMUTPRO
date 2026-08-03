@@ -313,9 +313,10 @@
 
   /* ---------- bento grid ---------- */
   .bento{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
-  .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media (max-width:860px){ .bento-grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:560px){ .bento-grid{grid-template-columns:1fr} }
+  .bento-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .bento-grid .bento-stat{grid-column:span 2}
+  @media (max-width:860px){ .bento-grid{grid-template-columns:1fr 1fr} .bento-grid .bento-stat{grid-column:1/-1} }
+  @media (max-width:560px){ .bento-grid{grid-template-columns:1fr} .bento-grid .bento-stat{grid-column:auto} }
   .bento-stat{
     position:relative;overflow:hidden;color:#fff;border-radius:var(--radius);padding:40px;
     background:linear-gradient(160deg,var(--slate) 0%,var(--navy) 100%);
