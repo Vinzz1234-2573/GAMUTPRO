@@ -6,20 +6,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gamut Pro Sdn Bhd — Business Consultancy in Johor Bahru</title>
 <meta name="description" content="Gamut Pro Sdn Bhd is a Johor Bahru business consultancy covering marketing, financial advisory, HR management, management consultancy, and digital transformation.">
-<meta name="theme-color" content="#516FB4">
+<meta name="theme-color" content="#132238">
 <meta name="color-scheme" content="light">
+<link rel="canonical" href="https://gamutpro.my/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gamut Pro Sdn Bhd">
+<meta property="og:title" content="Gamut Pro Sdn Bhd — Business Consultancy in Johor Bahru">
+<meta property="og:description" content="Marketing, financial advisory, HR management, management consultancy, and digital transformation — one accountable team in Johor Bahru.">
+<meta property="og:url" content="https://gamutpro.my/">
+<meta property="og:image" content="https://gamutpro.my/Photos/gamutpro-office-1.webp">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gamut Pro Sdn Bhd — Business Consultancy in Johor Bahru">
+<meta name="twitter:description" content="Marketing, financial advisory, HR management, management consultancy, and digital transformation — one accountable team in Johor Bahru.">
+<meta name="twitter:image" content="https://gamutpro.my/Photos/gamutpro-office-1.webp">
 <link rel="icon" href="Photos/GP%20horizontal.png">
 <link rel="apple-touch-icon" href="Photos/GP%20horizontal.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Gamut Pro Sdn Bhd",
+  "image": "https://gamutpro.my/Photos/gamutpro-office-1.webp",
+  "url": "https://gamutpro.my/",
+  "telephone": "+60192662291",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit M-02, 15, Jalan Dato Abdullah Tahir, Taman Abad",
+    "addressLocality": "Johor Bahru",
+    "postalCode": "80300",
+    "addressCountry": "MY"
+  },
+  "description": "Johor Bahru business consultancy covering marketing, financial advisory, HR management, management consultancy, and digital transformation.",
+  "foundingDate": "2023",
+  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 51, "maxValue": 200 },
+  "sameAs": []
+}
+</script>
 <style>
   :root{
     --white:#FFFFFF;
-    --bg:#FAFBFD;
+    --bg:#F8FAFC;
     --panel:#F5F7FA;
     --ink:#111827;
-    --navy:#16233B;
+    --navy:#132238;
+    --midnight:#0B1423;
     --slate:#2F3E52;
     --body-text:#4B5563;
     --grey:#6B7280;
@@ -29,6 +63,8 @@
     --blue-hover:#3D5EA5;
     --blue-tint:#EEF1F8;
     --blue-deep:#2E4272;
+    --gold:#C7A96B;
+    --gold-tint:#F7F1E4;
 
     --c-marketing:#4C5FD5;   --c-marketing-tint:#EDEFFB;
     --c-financial:#2BB4A6;   --c-financial-tint:#E9F8F5;
@@ -39,126 +75,173 @@
     --shadow-sm:0 2px 8px rgba(14,27,51,.08);
     --shadow-md:0 20px 44px rgba(14,27,51,.10);
     --shadow-lg:0 24px 60px rgba(14,27,51,.18);
-    --radius:20px;
+    --shadow-premium:0 2px 4px rgba(14,27,51,.05),0 30px 80px rgba(14,27,51,.12);
+    --radius:24px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--body-text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--body-text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::after{
+    content:'';position:fixed;inset:0;z-index:2147483647;pointer-events:none;
+    opacity:.035;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
   img{max-width:100%;height:auto;display:block}
   a{color:var(--blue);text-decoration:none}
   a:hover{color:var(--blue-hover)}
-  h1,h2,h3{margin:0;font-family:'Outfit',system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+  h1,h2,h3{margin:0;font-family:'Poppins',system-ui,sans-serif;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
   p{margin:0}
   section{scroll-margin-top:88px}
-  .container{max-width:1200px;margin:0 auto;padding:0 32px}
-  .eyebrow{font:600 12px/1 'Manrope',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin:0 0 12px;display:inline-block}
+  .container{max-width:1440px;margin:0 auto;padding:0 32px}
+  .eyebrow{font:600 12px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 12px;display:inline-block}
+  .divider-gold{display:block;height:2px;width:56px;background:var(--gold);border-radius:2px;margin-bottom:18px}
   .footnote{margin-top:20px;font-size:12.5px;color:var(--grey);font-style:italic;text-align:center}
 
   :focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;font:600 15px/1 'Manrope',sans-serif;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;font:600 15px/1 'Inter',sans-serif;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
   .btn:hover{transform:translateY(-2px)}
   .btn-primary{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-hover) 100%);color:#fff}
   .btn-primary:hover{box-shadow:0 20px 50px rgba(81,111,180,.35);color:#fff}
-  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark{background:var(--navy);color:#fff}
   .btn-dark:hover{background:var(--blue);color:#fff}
   .btn-outline-light{border-color:rgba(255,255,255,.32);color:#fff}
   .btn-outline-light:hover{background:rgba(255,255,255,.1);color:#fff}
   .btn-sm{padding:11px 20px;font-size:13.5px}
 
+  /* ---------- loading screen ---------- */
+  .loader{position:fixed;inset:0;z-index:9999;background:var(--midnight);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;transition:opacity .5s ease,visibility .5s ease}
+  .loader img{height:40px;filter:brightness(0) invert(1)}
+  .loader-track{width:180px;height:2px;border-radius:2px;background:rgba(255,255,255,.14);overflow:hidden}
+  .loader-bar{width:0%;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));animation:loaderFill 1.1s ease forwards}
+  @keyframes loaderFill{from{width:0%}to{width:100%}}
+  .loader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+  .no-js .loader{display:none}
+
   /* ---------- nav ---------- */
   .nav{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,22,26,.08);transition:box-shadow .25s ease}
   .nav.is-scrolled{box-shadow:var(--shadow-sm)}
-  .nav-inner{max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:28px;transition:padding .25s ease}
+  .nav-inner{max-width:1440px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:28px;transition:padding .25s ease}
   .nav.is-scrolled .nav-inner{padding:10px 32px}
   .nav-brand{display:flex;align-items:center;margin-right:auto}
   .nav-logo{height:52px;width:auto;transition:height .25s ease;filter:drop-shadow(0 2px 6px rgba(14,27,51,.10))}
   .nav.is-scrolled .nav-logo{height:40px}
   .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a{position:relative;color:var(--ink);font:500 15px/1 'Manrope',sans-serif;padding:6px 2px}
+  .nav-links a{position:relative;color:var(--ink);font:500 15px/1 'Inter',sans-serif;padding:6px 2px}
   .nav-links a::after{content:'';position:absolute;left:2px;right:2px;bottom:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
   .nav-links a:hover{color:var(--blue)}
   .nav-links a:hover::after{transform:scaleX(1)}
   .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:4px;width:36px;height:36px;background:none;border:1px solid var(--border);border-radius:8px;cursor:pointer;flex-shrink:0}
   .nav-toggle span{display:block;height:2px;background:var(--ink);border-radius:2px;margin:0 8px}
-  .mobile-menu{display:none;flex-direction:column;gap:2px;padding:10px 32px 18px;border-top:1px solid var(--border);background:var(--bg)}
-  .mobile-menu:not([hidden]){display:flex}
-  .mobile-menu a{padding:12px 4px;color:var(--ink);font:500 15px/1 'Manrope',sans-serif;border-bottom:1px solid var(--border)}
-  .mobile-menu .btn{margin-top:12px}
   @media (max-width:920px){ .nav-links{display:none} .nav-toggle{display:flex} }
 
-  /* ---------- hero ---------- */
-  .hero{position:relative;min-height:640px;display:flex;align-items:center;background:var(--navy);overflow:hidden;color:#fff}
-  .hero-parallax{position:absolute;inset:-12% 0 -12% 0;z-index:0;will-change:transform}
-  .hero-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(55%) contrast(1.08) brightness(.85);animation:kenBurns 26s ease-in-out infinite alternate}
-  @keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.07)}}
-  .hero-overlay{
-    position:absolute;inset:0;z-index:1;
-    background:linear-gradient(135deg,rgba(22,35,59,.96) 0%,rgba(35,57,93,.88) 35%,rgba(81,111,180,.62) 100%);
-    background-size:180% 180%;animation:heroGradientShift 14s ease-in-out infinite alternate;
+  /* ---------- full-screen mobile menu ---------- */
+  .mobile-menu{
+    position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;
+    padding:32px 40px;background:var(--midnight);
+    opacity:0;visibility:hidden;transform:translateY(-14px);pointer-events:none;
+    transition:opacity .3s ease,transform .3s ease,visibility .3s;
   }
-  @keyframes heroGradientShift{0%{background-position:0% 30%}100%{background-position:100% 70%}}
-  .hero .container{position:relative;z-index:2;padding-top:clamp(64px,12vw,120px);padding-bottom:clamp(96px,17vw,170px)}
-  .hero-inner{max-width:620px;display:flex;flex-direction:column;gap:24px}
+  .mobile-menu.is-open{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .mobile-menu a{padding:14px 4px;color:rgba(255,255,255,.85);font:600 clamp(22px,6vw,30px)/1.2 'Poppins',sans-serif;border-bottom:1px solid rgba(255,255,255,.1);width:100%}
+  .mobile-menu a:hover{color:#fff}
+  .mobile-menu .btn{margin-top:16px}
+  .mobile-menu-close{position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:20px;line-height:1;cursor:pointer}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:660px;display:flex;align-items:center;background:var(--midnight);overflow:hidden;color:#fff}
+  .hero-parallax{position:absolute;inset:-12% 0 -12% 0;z-index:0;will-change:transform}
+  .hero-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(55%) contrast(1.08) brightness(.8);animation:kenBurns 26s ease-in-out infinite alternate}
+  @keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.07)}}
+  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(11,20,35,.96) 0%,rgba(19,34,56,.9) 35%,rgba(81,111,180,.55) 100%)}
+  .hero-aurora{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:.65}
+  .hero-aurora span{position:absolute;border-radius:50%;filter:blur(70px);animation:auroraDrift 16s ease-in-out infinite alternate}
+  .hero-aurora .a1{width:420px;height:420px;background:#516FB4;top:-140px;left:8%;animation-delay:0s}
+  .hero-aurora .a2{width:360px;height:360px;background:#2BB4A6;top:20%;right:4%;animation-delay:-5s}
+  .hero-aurora .a3{width:320px;height:320px;background:var(--gold);bottom:-120px;left:32%;opacity:.5;animation-delay:-10s}
+  @keyframes auroraDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.12)}100%{transform:translate(-30px,20px) scale(.96)}}
+  .hero .container{position:relative;z-index:2;padding-top:clamp(64px,12vw,120px);padding-bottom:clamp(110px,18vw,190px)}
+  .hero-inner{max-width:640px;display:flex;flex-direction:column;gap:24px}
   .hero-tag{display:flex;align-items:center;gap:12px}
-  .hero-tag .line{width:34px;height:2px;background:var(--blue)}
-  .hero-tag span{font:600 12px/1 'Manrope',sans-serif;letter-spacing:.18em;color:#A9BCE4}
-  .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.05;color:#fff}
-  .hero p.lead{font:400 18px/1.62 'Manrope',sans-serif;color:rgba(255,255,255,.78);max-width:500px}
+  .hero-tag .line{width:34px;height:2px;background:var(--gold)}
+  .hero-tag span{font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#C9D6EE}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4.1rem);line-height:1.06;color:#fff}
+  .hero p.lead{font:400 18px/1.62 'Inter',sans-serif;color:rgba(255,255,255,.78);max-width:500px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
 
-  /* stat overlap band */
-  .stat-overlap{max-width:1200px;margin:-84px auto 0;padding:0 32px;position:relative;z-index:5}
-  .stat-overlap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media (max-width:820px){ .stat-overlap-grid{grid-template-columns:1fr} }
-  .stat-overlap-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-md);transition:transform .25s ease}
-  .stat-overlap-card:hover{transform:translateY(-4px)}
-  .stat-overlap-card .eyebrow{margin-bottom:0}
-  .stat-overlap-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(30px,4.2vw,40px);line-height:1;letter-spacing:-.02em}
-  .stat-overlap-card p{font:400 15px/1.5 'Manrope',sans-serif;color:var(--grey)}
+  /* floating glass hero stats */
+  .hero-stats{max-width:1440px;margin:-88px auto 0;padding:0 32px;position:relative;z-index:5}
+  .hero-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media (max-width:980px){ .hero-stats-grid{grid-template-columns:repeat(2,1fr)} }
+  .hero-stat-card{
+    position:relative;background:rgba(255,255,255,.68);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:8px;
+    box-shadow:var(--shadow-premium);transition:transform .25s ease,box-shadow .25s ease;will-change:transform;
+  }
+  .hero-stat-card:hover{transform:translateY(-4px)}
+  .hero-stat-card .eyebrow{margin-bottom:0}
+  .hero-stat-value{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,34px);line-height:1;letter-spacing:-.01em}
+  .hero-stat-card p{font:400 13.5px/1.5 'Inter',sans-serif;color:var(--grey)}
 
   /* ---------- services ---------- */
-  .services{max-width:1200px;width:100%;margin:0 auto;padding:clamp(64px,10vw,120px) 32px clamp(56px,7vw,90px)}
+  .services{max-width:1440px;width:100%;margin:0 auto;padding:clamp(64px,10vw,120px) 32px clamp(56px,7vw,90px)}
   .section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:48px}
   .section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.08}
-  .section-head p{font:400 17px/1.6 'Manrope',sans-serif;color:var(--grey);max-width:380px}
-  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  @media (max-width:760px){ .services-grid{grid-template-columns:1fr} }
-  .service-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease}
-  .service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-  .service-head{display:flex;align-items:center;gap:16px}
-  .service-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s ease}
-  .service-icon svg{width:21px;height:21px}
-  .service-card:hover .service-icon{transform:scale(1.08) rotate(-4deg)}
-  .service-num{font:700 11.5px/1 'Manrope',sans-serif;letter-spacing:.08em;display:block;margin-bottom:4px}
-  .service-card h3{font-size:clamp(20px,2.4vw,24px);line-height:1.15}
-  .service-card p{font:400 16px/1.6 'Manrope',sans-serif;color:var(--grey)}
-  .service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-  .service-tag{padding:7px 13px;border-radius:999px;font:500 13px/1 'Manrope',sans-serif}
+  .section-head p{font:400 17px/1.6 'Inter',sans-serif;color:var(--grey);max-width:380px}
+
+  .service-picker{display:grid;grid-template-columns:340px 1fr;gap:32px;align-items:start}
+  @media (max-width:860px){ .service-picker{grid-template-columns:1fr} }
+  .service-pills{display:flex;flex-direction:column;gap:10px}
+  .service-pill{
+    display:flex;align-items:center;gap:14px;text-align:left;background:#fff;border:1.5px solid var(--border);
+    border-radius:16px;padding:16px 18px;cursor:pointer;font:inherit;color:var(--ink);
+    transition:border-color .2s ease,background .2s ease,transform .2s ease;
+  }
+  .service-pill:hover{transform:translateX(4px)}
+  .service-pill .service-pill-num{font:600 12px/1 'IBM Plex Mono',monospace;color:var(--grey)}
+  .service-pill h3{font-size:16px}
+  .service-pill.is-active{border-color:var(--pill-color,var(--blue));background:var(--pill-tint,var(--blue-tint))}
+  .service-pill.is-active .service-pill-num{color:var(--pill-color,var(--blue))}
+
+  .service-panel{
+    position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:40px;
+    display:none;flex-direction:column;gap:18px;box-shadow:var(--shadow-md);min-height:320px;
+  }
+  .service-panel.is-active{display:flex}
+  .service-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .service-icon svg{width:24px;height:24px}
+  .service-panel h3{font-size:clamp(22px,2.6vw,28px)}
+  .service-panel p.desc{font:400 16.5px/1.65 'Inter',sans-serif;color:var(--grey);max-width:56ch}
+  .service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+  .service-tag{padding:7px 13px;border-radius:999px;font:500 13px/1 'Inter',sans-serif;color:var(--blue-deep)}
+  .no-js .service-panel{display:flex}
+  .no-js .service-pill{display:none}
 
   /* ---------- partners ---------- */
   .partners{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .partners-inner{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .partners-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
   .partners-intro{max-width:820px;margin:0 auto 56px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
   .partners-intro h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12}
-  .partners-intro p{font:400 17px/1.65 'Manrope',sans-serif;color:var(--grey)}
+  .partners-intro p{font:400 17px/1.65 'Inter',sans-serif;color:var(--grey)}
 
   .partner-kpi-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:56px}
   @media (min-width:760px){ .partner-kpi-strip{grid-template-columns:repeat(4,1fr)} }
   .partner-kpi{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:24px 20px;text-align:center;transition:transform .25s ease,box-shadow .25s ease}
   .partner-kpi:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
-  .partner-kpi-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(22px,2.8vw,27px);color:var(--ink);letter-spacing:-.01em}
-  .partner-kpi-label{font:500 12.5px/1.35 'Manrope',sans-serif;color:var(--grey);margin-top:6px}
+  .partner-kpi-value{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(22px,2.8vw,27px);color:var(--ink);letter-spacing:-.01em}
+  .partner-kpi-label{font:500 12.5px/1.35 'Inter',sans-serif;color:var(--grey);margin-top:6px}
 
-  .partner-grid{display:grid;grid-template-columns:1fr;gap:32px}
-  @media (min-width:860px){ .partner-grid{grid-template-columns:repeat(2,1fr)} }
-
+  .partner-carousel-wrap{position:relative}
+  .partner-grid{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .partner-grid::-webkit-scrollbar{display:none}
   .partner-card{
+    scroll-snap-align:start;flex:0 0 min(420px,88vw);
     display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);
     border-radius:30px;overflow:hidden;box-shadow:var(--shadow-md);
     transition:transform .35s ease,box-shadow .35s ease;
   }
   .partner-card:hover{transform:translateY(-9px);box-shadow:0 26px 54px rgba(81,111,180,.24),0 8px 20px rgba(14,27,51,.08)}
+  @media (min-width:1220px){ .partner-grid{display:grid;grid-template-columns:repeat(2,1fr);overflow:visible} .partner-card{flex:none} }
 
   .partner-logo-stage{background:#fff;padding:30px 40px;height:220px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)}
   .partner-logo-stage img{max-height:170px;width:auto;max-width:85%;object-fit:contain;transition:transform .35s ease}
@@ -166,15 +249,15 @@
 
   .partner-body{padding:32px 36px 36px;display:flex;flex-direction:column;gap:20px;flex:1}
   .partner-meta-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  .partner-industry-badge{font:600 11px/1 'Manrope',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border-radius:999px;background:var(--blue-tint);color:var(--blue-deep);white-space:nowrap}
+  .partner-industry-badge{font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;border-radius:999px;background:var(--blue-tint);color:var(--blue-deep);white-space:nowrap}
   .partner-card h3{font-size:clamp(19px,2.3vw,23px)}
 
-  .partner-section-label{font:700 11px/1 'Manrope',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--grey);margin-bottom:8px;display:block}
-  .partner-about p{font:400 15px/1.65 'Manrope',sans-serif;color:var(--body-text)}
+  .partner-section-label{font:700 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:8px;display:block}
+  .partner-about p{font:400 15px/1.65 'Inter',sans-serif;color:var(--body-text)}
 
   .partner-support-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
   .partner-support-badge{
-    display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 'Manrope',sans-serif;
+    display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 'Inter',sans-serif;
     padding:8px 13px;border-radius:999px;background:var(--panel);color:var(--ink);border:1px solid var(--border);
     transition:transform .3s ease,opacity .3s ease;
   }
@@ -184,123 +267,126 @@
   .partner-support-badge:nth-child(2){transition-delay:.05s}
   .partner-support-badge:nth-child(3){transition-delay:.1s}
   .partner-support-badge:nth-child(4){transition-delay:.15s}
-  .partner-support-note{font:400 13.5px/1.6 'Manrope',sans-serif;color:var(--grey)}
+  .partner-support-note{font:400 13.5px/1.6 'Inter',sans-serif;color:var(--grey)}
 
-  .partner-visit{display:inline-flex;align-items:center;gap:8px;font:700 14.5px/1 'Manrope',sans-serif;color:var(--blue);margin-top:auto;padding-top:10px}
+  .partner-visit{display:inline-flex;align-items:center;gap:8px;font:700 14.5px/1 'Inter',sans-serif;color:var(--blue);margin-top:auto;padding-top:10px}
   .partner-visit .arrow{display:inline-block;transition:transform .25s ease}
   .partner-card:hover .partner-visit .arrow{transform:translateX(6px)}
 
+  .partner-carousel-nav{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+  @media (min-width:1220px){ .partner-carousel-nav{display:none} }
+  .partner-carousel-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);background:#fff;color:var(--ink);cursor:pointer;font-size:18px;transition:border-color .2s ease,background .2s ease}
+  .partner-carousel-btn:hover{border-color:var(--blue);color:var(--blue)}
+
   /* ---------- industries ---------- */
-  .industries{
-    background-color:var(--panel);
-    background-image:radial-gradient(circle,rgba(81,111,180,.14) 1px,transparent 1px);
-    background-size:22px 22px;
-  }
-  .industries-inner{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .industries{background-color:var(--panel);background-image:radial-gradient(circle,rgba(81,111,180,.14) 1px,transparent 1px);background-size:22px 22px}
+  .industries-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
   .industries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media (max-width:860px){ .industries-grid{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:560px){ .industries-grid{grid-template-columns:1fr} }
-  .industry-card{
-    background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;
-    display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
-    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
-  }
+  .industry-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
   .industry-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--blue)}
   .industry-icon{width:56px;height:56px;border-radius:50%;background:var(--blue-tint);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .industry-icon svg{width:26px;height:26px}
   .industry-card h3{font-size:16.5px}
-  .industry-card p{font:400 13.5px/1.5 'Manrope',sans-serif;color:var(--grey)}
+  .industry-card p{font:400 13.5px/1.5 'Inter',sans-serif;color:var(--grey)}
 
   /* ---------- results band ---------- */
-  .results{background:var(--navy)}
-  .results-inner{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:flex;flex-direction:column;gap:52px}
+  .results{background:var(--navy);position:relative}
+  .results-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:flex;flex-direction:column;gap:52px}
   .results-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px}
   .results-head h2{color:#fff;font-size:clamp(1.9rem,3.4vw,2.6rem);max-width:520px}
-  .results-head p{font:400 17px/1.6 'Manrope',sans-serif;color:rgba(255,255,255,.62);max-width:360px}
+  .results-head p{font:400 17px/1.6 'Inter',sans-serif;color:rgba(255,255,255,.62);max-width:360px}
   .results-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
   @media (max-width:900px){ .results-grid{grid-template-columns:repeat(3,1fr)} }
   @media (max-width:560px){ .results-grid{grid-template-columns:repeat(2,1fr)} }
   .results-cell{padding:32px 24px;display:flex;flex-direction:column;gap:8px;border-right:1px solid rgba(255,255,255,.12)}
   .results-cell:last-child{border-right:none}
   .results-cell.placeholder .results-value{color:rgba(255,255,255,.4)}
-  .results-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(30px,4.8vw,44px);line-height:1;color:#fff;letter-spacing:-.02em}
-  .results-cell p{font:500 14.5px/1.4 'Manrope',sans-serif;color:rgba(255,255,255,.6)}
+  .results-value{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(30px,4.8vw,44px);line-height:1;color:#fff;letter-spacing:-.01em}
+  .results-cell p{font:500 14.5px/1.4 'IBM Plex Mono',monospace;color:rgba(255,255,255,.6)}
+  .curve-divider{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;line-height:0}
+  .curve-divider svg{width:100%;height:100%;display:block}
 
   /* ---------- bento grid ---------- */
-  .bento{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .bento{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
   .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media (max-width:860px){ .bento-grid{grid-template-columns:1fr 1fr} }
   @media (max-width:560px){ .bento-grid{grid-template-columns:1fr} }
   .bento-stat{
     position:relative;overflow:hidden;color:#fff;border-radius:var(--radius);padding:40px;
     background:linear-gradient(160deg,var(--slate) 0%,var(--navy) 100%);
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 20px 44px rgba(14,27,51,.28);
+    border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 44px rgba(14,27,51,.28);
     display:flex;flex-direction:column;justify-content:center;gap:10px;
     transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;
   }
-  .bento-stat::before{
-    content:'';position:absolute;top:-60%;right:-30%;width:70%;height:140%;border-radius:50%;
-    background:radial-gradient(circle,rgba(81,111,180,.4) 0%,rgba(81,111,180,0) 70%);pointer-events:none;
-  }
+  .bento-stat::before{content:'';position:absolute;top:-60%;right:-30%;width:70%;height:140%;border-radius:50%;background:radial-gradient(circle,rgba(81,111,180,.4) 0%,rgba(81,111,180,0) 70%);pointer-events:none}
   .bento-stat:hover,.bento-cell:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 28px 56px rgba(14,27,51,.16)}
-  .bento-eyebrow{
-    position:relative;font:700 11.5px/1 'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--blue);margin-bottom:2px;
-  }
-  .bento-stat .bento-eyebrow{color:#A9BCE4}
-  .bento-stat .bento-value{position:relative;font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(48px,6vw,68px);line-height:1;letter-spacing:-.02em;color:#fff;background:linear-gradient(135deg,#fff 0%,#C9D6EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .bento-stat p{position:relative;font:500 15px/1.5 'Manrope',sans-serif;color:rgba(255,255,255,.68);margin-top:2px;max-width:32ch}
-  .bento-cell{
-    position:relative;background:linear-gradient(160deg,#fff 0%,var(--panel) 130%);border:1px solid var(--border);
-    border-radius:var(--radius);padding:34px;overflow:hidden;
-    box-shadow:0 14px 34px rgba(17,24,39,.06);
-    display:flex;flex-direction:column;justify-content:center;gap:10px;
-    transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .4s ease;
-  }
+  .bento-eyebrow{position:relative;font:700 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+  .bento-stat .bento-eyebrow{color:#C9D6EE}
+  .bento-stat .bento-value{position:relative;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(48px,6vw,68px);line-height:1;letter-spacing:-.01em;color:#fff;background:linear-gradient(135deg,#fff 0%,#C9D6EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .bento-stat p{position:relative;font:500 15px/1.5 'Inter',sans-serif;color:rgba(255,255,255,.68);margin-top:2px;max-width:32ch}
+  .bento-cell{position:relative;background:linear-gradient(160deg,#fff 0%,var(--panel) 130%);border:1px solid var(--border);border-radius:var(--radius);padding:34px;overflow:hidden;box-shadow:0 14px 34px rgba(17,24,39,.06);display:flex;flex-direction:column;justify-content:center;gap:10px;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .4s ease}
   .bento-cell:hover{border-color:rgba(81,111,180,.35)}
-  .bento-cell .bento-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(40px,5vw,54px);line-height:1;color:var(--ink);letter-spacing:-.02em}
-  .bento-cell p{font:500 14.5px/1.5 'Manrope',sans-serif;color:var(--grey);max-width:28ch}
+  .bento-cell .bento-value{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(40px,5vw,54px);line-height:1;color:var(--ink);letter-spacing:-.01em}
+  .bento-cell p{font:500 14.5px/1.5 'Inter',sans-serif;color:var(--grey);max-width:28ch}
   .bento-wide{
     grid-column:1/-1;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:#fff;
     border-radius:var(--radius);padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-    box-shadow:0 24px 50px rgba(14,27,51,.22);
+    box-shadow:0 24px 50px rgba(14,27,51,.22);border-top:2px solid var(--gold);
     transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;
   }
   .bento-wide::before{content:'';position:absolute;top:-50%;left:10%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 70%);pointer-events:none}
   .bento-wide:hover{transform:translateY(-5px);box-shadow:0 30px 60px rgba(14,27,51,.3)}
   .bento-wide>div,.bento-wide>.btn{position:relative}
   .bento-wide h3{color:#fff;font-size:clamp(20px,2.6vw,26px)}
-  .bento-wide p{font:400 14.5px/1.5 'Manrope',sans-serif;color:rgba(255,255,255,.75);max-width:46ch;margin-top:6px}
+  .bento-wide p{font:400 14.5px/1.5 'Inter',sans-serif;color:rgba(255,255,255,.75);max-width:46ch;margin-top:6px}
 
-  /* ---------- approach ---------- */
-  .approach{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,10vw,110px) 32px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  /* ---------- approach / SVG timeline ---------- */
+  .approach{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,10vw,110px) 32px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
   @media (max-width:900px){ .approach{grid-template-columns:1fr} }
   .approach-copy{display:flex;flex-direction:column;gap:20px}
   .approach-copy h2{font-size:clamp(1.9rem,3.4vw,2.5rem)}
-  .approach-copy p{font:400 17px/1.65 'Manrope',sans-serif;color:var(--grey)}
+  .approach-copy p{font:400 17px/1.65 'Inter',sans-serif;color:var(--grey)}
   .approach-stages{position:relative;display:flex;flex-direction:column}
-  .approach-stages::after{content:'';position:absolute;left:13px;top:14px;bottom:14px;width:2px;background:var(--divider);z-index:0}
+  .approach-track{position:absolute;left:0;top:0;width:28px;height:100%;overflow:visible;pointer-events:none}
+  .approach-track line{stroke:var(--gold);stroke-width:2px}
   .approach-stage{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px;padding:16px 0 16px 44px;border-bottom:1px solid var(--border)}
   .approach-stage:last-child{border-bottom:none}
   .approach-stage::before{content:'';position:absolute;left:8px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--blue-tint)}
-  .approach-num{font:700 11px/1 'Manrope',sans-serif;letter-spacing:.1em;color:var(--blue);text-transform:uppercase;margin-bottom:4px}
+  .approach-num{font:700 11px/1 'IBM Plex Mono',monospace;letter-spacing:.09em;color:var(--blue);text-transform:uppercase;margin-bottom:4px}
   .approach-stage h3{font-size:18px;margin-bottom:4px}
-  .approach-stage p{font:400 14px/1.5 'Manrope',sans-serif;color:var(--grey)}
+  .approach-stage p{font:400 14px/1.5 'Inter',sans-serif;color:var(--grey)}
 
   /* ---------- about ---------- */
   .about{background:var(--panel)}
-  .about-inner{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
   @media (max-width:860px){ .about-inner{grid-template-columns:1fr} }
   .about-photo{position:relative;border-radius:var(--radius);overflow:hidden;height:420px;background:var(--border);transform-style:preserve-3d;transition:transform .3s ease;will-change:transform}
   .about-photo::before{content:'';position:absolute;inset:-4%;background-image:var(--photo);background-size:cover;background-position:center;filter:grayscale(60%) contrast(1.08)}
   .about-copy{display:flex;flex-direction:column;gap:22px}
   .about-copy h2{font-size:clamp(1.8rem,3.2vw,2.3rem)}
-  .about-copy>p{font:400 17px/1.7 'Manrope',sans-serif;color:var(--body-text)}
+  .about-copy>p{font:400 17px/1.7 'Inter',sans-serif;color:var(--body-text)}
   .about-list{display:flex;flex-direction:column;gap:14px;padding-top:6px}
   .about-list-item{display:flex;align-items:center;gap:12px}
-  .about-check{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 'Manrope',sans-serif;flex:none}
-  .about-list-item span{font:500 16px/1.4 'Manrope',sans-serif;color:var(--ink)}
+  .about-check{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 'Inter',sans-serif;flex:none}
+  .about-list-item span{font:500 16px/1.4 'Inter',sans-serif;color:var(--ink)}
+
+  /* ---------- insights (magazine) ---------- */
+  .insights{background:#fff}
+  .insights-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .insights-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  @media (max-width:860px){ .insights-grid{grid-template-columns:1fr} }
+  .insight-card{position:relative;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--panel);display:flex;flex-direction:column;gap:14px;padding:34px;transition:transform .3s ease,box-shadow .3s ease}
+  .insight-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .insight-card.is-lead{justify-content:flex-end;min-height:320px;background:linear-gradient(160deg,var(--navy) 0%,var(--midnight) 100%);color:#fff}
+  .insight-tag{align-self:flex-start;font:600 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(199,169,107,.12);border:1px solid rgba(199,169,107,.35);padding:6px 12px;border-radius:999px}
+  .insight-card.is-lead .insight-tag{color:var(--gold);background:rgba(199,169,107,.16);border-color:rgba(199,169,107,.4)}
+  .insight-card h3{font-size:clamp(19px,2.2vw,24px)}
+  .insight-card.is-lead h3{color:#fff}
+  .insight-card p{font:400 14.5px/1.55 'Inter',sans-serif;color:var(--grey)}
+  .insight-card.is-lead p{color:rgba(255,255,255,.7)}
+  .insight-stack{display:flex;flex-direction:column;gap:24px}
 
   /* ---------- testimonials ---------- */
   .testimonials{position:relative;overflow:hidden;background:#FBF8F2}
@@ -308,7 +394,7 @@
   .testimonials-blobs span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.16}
   .testimonials-blobs .b1{width:360px;height:360px;background:var(--blue);top:-120px;left:-80px}
   .testimonials-blobs .b2{width:320px;height:320px;background:#7C6FE0;bottom:-140px;right:-60px}
-  .testimonials-inner{position:relative;max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .testimonials-inner{position:relative;max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
   .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media (max-width:860px){ .testimonial-grid{grid-template-columns:1fr} }
   .testimonial-card{
@@ -318,16 +404,13 @@
     transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
   }
   .testimonial-card:hover{transform:translateY(-6px);box-shadow:0 28px 56px rgba(47,62,82,.14)}
-  .testimonial-card::before{
-    content:'\201C';position:absolute;top:-18px;left:18px;font-family:'Outfit',serif;font-size:110px;line-height:1;
-    color:var(--blue);opacity:.1;pointer-events:none;
-  }
-  .testimonial-tag{position:relative;align-self:flex-start;font:600 10.5px/1 'Manrope',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);background:var(--panel);border:1px solid var(--border);padding:4px 10px;border-radius:999px}
-  .testimonial-card p.quote{position:relative;font:400 16.5px/1.55 'Manrope',sans-serif;color:var(--ink);font-style:italic}
+  .testimonial-card::before{content:'\201C';position:absolute;top:-18px;left:18px;font-family:'Poppins',serif;font-size:110px;line-height:1;color:var(--gold);opacity:.16;pointer-events:none}
+  .testimonial-tag{position:relative;align-self:flex-start;font:600 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);background:var(--panel);border:1px solid var(--border);padding:4px 10px;border-radius:999px}
+  .testimonial-card p.quote{position:relative;font:400 16.5px/1.55 'Inter',sans-serif;color:var(--ink);font-style:italic}
   .testimonial-person{position:relative;display:flex;align-items:center;gap:12px;margin-top:auto}
-  .testimonial-avatar{width:42px;height:42px;border-radius:50%;background:var(--blue-tint);color:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;flex-shrink:0}
-  .testimonial-name{font:600 14.5px/1.2 'Manrope',sans-serif;color:var(--ink)}
-  .testimonial-role{font:400 13px/1.2 'Manrope',sans-serif;color:var(--grey)}
+  .testimonial-avatar{width:42px;height:42px;border-radius:50%;background:var(--blue-tint);color:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;flex-shrink:0}
+  .testimonial-name{font:600 14.5px/1.2 'Inter',sans-serif;color:var(--ink)}
+  .testimonial-role{font:400 13px/1.2 'Inter',sans-serif;color:var(--grey)}
 
   /* ---------- contact ---------- */
   .contact{background:var(--blue);position:relative;overflow:hidden}
@@ -335,17 +418,17 @@
   .contact-glow span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;background:#fff}
   .contact-glow .g1{width:340px;height:340px;top:-140px;right:8%}
   .contact-glow .g2{width:300px;height:300px;bottom:-160px;left:-60px}
-  .contact-inner{position:relative;z-index:1;max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,8vw,90px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .contact-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,8vw,90px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   @media (max-width:900px){ .contact-inner{grid-template-columns:1fr} }
   .contact-copy h2{color:#fff;font-size:clamp(2rem,3.6vw,2.8rem);line-height:1.08}
-  .contact-copy p{margin-top:16px;font:400 17px/1.6 'Manrope',sans-serif;color:rgba(255,255,255,.84);max-width:420px}
+  .contact-copy p{margin-top:16px;font:400 17px/1.6 'Inter',sans-serif;color:rgba(255,255,255,.84);max-width:420px}
   .contact-links{display:flex;flex-direction:column;gap:8px;padding-top:18px}
-  .contact-links a{font:600 17px/1.4 'Manrope',sans-serif;color:#fff}
+  .contact-links a{font:600 17px/1.4 'Inter',sans-serif;color:#fff}
   .contact-form{background:#fff;border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-lg)}
   .contact-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media (max-width:480px){ .contact-form-row{grid-template-columns:1fr} }
   .contact-field{display:flex;flex-direction:column;gap:6px}
-  .contact-field label{font:600 12.5px/1 'Manrope',sans-serif;color:rgba(20,22,26,.7)}
+  .contact-field label{font:600 12.5px/1 'Inter',sans-serif;color:rgba(20,22,26,.7)}
   .contact-field input,.contact-field textarea{font:inherit;font-size:14.5px;border:1.5px solid var(--border);border-radius:10px;padding:11px 13px;color:var(--ink);background:#fff}
   .contact-field textarea{resize:vertical;min-height:80px}
   .contact-field input:focus,.contact-field textarea:focus{border-color:var(--blue)}
@@ -354,34 +437,32 @@
   @media (max-width:600px){ .contact-map-wrap iframe{height:240px} }
 
   /* ---------- footer ---------- */
-  .footer{position:relative;background:var(--navy);overflow:hidden}
+  .footer{position:relative;background:var(--midnight);overflow:hidden}
   .footer-spectrum,.nav-spectrum{height:3px;width:100%;background:linear-gradient(90deg,#516FB4,#7C6FE0,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#516FB4);background-size:200% 100%;animation:spectrum-shift 18s linear infinite;position:relative;z-index:2;opacity:.75}
   @keyframes spectrum-shift{from{background-position:0% 0}to{background-position:-100% 0}}
-  .footer-photo{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:grayscale(20%) contrast(1.05) brightness(.68) saturate(1.1);opacity:.55;transition:transform 8s ease-out}
+  .footer-photo{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:grayscale(20%) contrast(1.05) brightness(.6) saturate(1.1);opacity:.42;transition:transform 8s ease-out}
   .footer:hover .footer-photo{transform:scale(1.06)}
-  .footer-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,51,.75) 0%,rgba(14,27,51,.96) 60%)}
-  .footer-inner{position:relative;z-index:1;max-width:1200px;width:100%;margin:0 auto;padding:clamp(40px,7vw,64px) 32px 34px;display:flex;flex-direction:column;gap:44px}
-  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
-  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:480px){ .footer-grid{grid-template-columns:1fr} }
-  .footer-brand{display:flex;flex-direction:column;gap:18px}
+  .footer-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,20,35,.8) 0%,rgba(11,20,35,.97) 60%)}
+  .footer-worldmap{position:absolute;inset:0;z-index:0;opacity:.1;pointer-events:none}
+  .footer-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(40px,7vw,64px) 32px 34px;display:flex;flex-direction:column;gap:44px}
+  .footer-brand-row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:28px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .footer-brand{display:flex;flex-direction:column;gap:18px;max-width:340px}
   .footer-logo-chip{display:inline-flex;align-items:center;background:#fff;padding:12px 18px;border-radius:14px;width:fit-content;box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .3s ease}
   .footer-logo-chip:hover{transform:translateY(-3px) scale(1.03)}
   .footer-logo{height:36px;width:auto}
-  .footer-brand p{font:400 15px/1.65 'Manrope',sans-serif;color:rgba(255,255,255,.55);max-width:300px}
-  .footer h4{font:600 12px/1 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;display:block}
+  .footer-brand p{font:400 15px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.55)}
+  .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:480px){ .footer-grid{grid-template-columns:1fr} }
+  .footer h4{font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;display:block}
   .footer-links{display:flex;flex-direction:column;gap:12px}
-  .footer-links a{position:relative;width:fit-content;font:400 15px/1.3 'Manrope',sans-serif;color:rgba(255,255,255,.78)}
+  .footer-links a{position:relative;width:fit-content;font:400 15px/1.3 'Inter',sans-serif;color:rgba(255,255,255,.78)}
   .footer-links a::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:1px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
   .footer-links a:hover{color:#fff}
   .footer-links a:hover::after{transform:scaleX(1)}
   .footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
-  .footer-bottom span{font:400 13px/1.4 'Manrope',sans-serif;color:rgba(255,255,255,.45)}
-  .footer-top-btn{
-    display:inline-flex;align-items:center;gap:8px;font:600 13px/1 'Manrope',sans-serif;color:rgba(255,255,255,.7);
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);padding:9px 16px;border-radius:999px;
-    cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease;
-  }
+  .footer-bottom span{font:400 13px/1.4 'IBM Plex Mono',monospace;color:rgba(255,255,255,.45)}
+  .footer-top-btn{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 'Inter',sans-serif;color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);padding:9px 16px;border-radius:999px;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease}
   .footer-top-btn:hover{background:rgba(255,255,255,.14);color:#fff;transform:translateY(-2px)}
   .footer-top-btn .arrow-up{display:inline-block;animation:bob 2s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
@@ -389,28 +470,25 @@
   /* ---------- scroll reveal ---------- */
   @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .hero-inner{animation:riseIn .7s ease both}
-  .js .stat-overlap-card,.js .service-card,.js .partner-card,.js .approach-stage,.js .about-photo,.js .about-copy,.js .testimonial-card,.js .contact-inner,.js .industry-card,.js .bento-stat,.js .bento-cell,.js .bento-wide{
+  .js .hero-stat-card,.js .service-picker,.js .partner-card,.js .approach-stage,.js .about-photo,.js .about-copy,.js .testimonial-card,.js .contact-inner,.js .industry-card,.js .bento-stat,.js .bento-cell,.js .bento-wide,.js .insight-card{
     opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease
   }
   .is-visible,
-  .is-visible.stat-overlap-card,
-  .stat-overlap-grid.is-visible .stat-overlap-card,
-  .services-grid.is-visible .service-card,
+  .is-visible.hero-stat-card,
+  .hero-stats-grid.is-visible .hero-stat-card,
   .partner-grid.is-visible .partner-card,
   .approach-stages.is-visible .approach-stage,
   .testimonial-grid.is-visible .testimonial-card,
   .industries-grid.is-visible .industry-card,
   .bento-grid.is-visible .bento-stat,
   .bento-grid.is-visible .bento-cell,
-  .bento-grid.is-visible .bento-wide{
+  .bento-grid.is-visible .bento-wide,
+  .insights-grid.is-visible .insight-card{
     opacity:1!important;transform:none!important
   }
-  .stat-overlap-grid.is-visible .stat-overlap-card:nth-child(2){transition-delay:.08s}
-  .stat-overlap-grid.is-visible .stat-overlap-card:nth-child(3){transition-delay:.16s}
-  .services-grid.is-visible .service-card:nth-child(2){transition-delay:.06s}
-  .services-grid.is-visible .service-card:nth-child(3){transition-delay:.12s}
-  .services-grid.is-visible .service-card:nth-child(4){transition-delay:.18s}
-  .services-grid.is-visible .service-card:nth-child(5){transition-delay:.24s}
+  .hero-stats-grid.is-visible .hero-stat-card:nth-child(2){transition-delay:.08s}
+  .hero-stats-grid.is-visible .hero-stat-card:nth-child(3){transition-delay:.16s}
+  .hero-stats-grid.is-visible .hero-stat-card:nth-child(4){transition-delay:.24s}
   .partner-grid.is-visible .partner-card:nth-child(2){transition-delay:.08s}
   .partner-grid.is-visible .partner-card:nth-child(3){transition-delay:.16s}
   .partner-grid.is-visible .partner-card:nth-child(4){transition-delay:.24s}
@@ -429,14 +507,21 @@
   .bento-grid.is-visible .bento-wide{transition-delay:.26s}
   .testimonial-grid.is-visible .testimonial-card:nth-child(2){transition-delay:.08s}
   .testimonial-grid.is-visible .testimonial-card:nth-child(3){transition-delay:.16s}
+  .insights-grid.is-visible .insight-card:nth-child(2){transition-delay:.1s}
 
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
     html{scroll-behavior:auto}
+    .loader{transition:none}
   }
 </style>
 </head>
 <body>
+
+<div class="loader" id="pageLoader" role="status" aria-label="Loading">
+  <img src="Photos/GP%20horizontal.png" alt="" aria-hidden="true">
+  <span class="loader-track"><span class="loader-bar"></span></span>
+</div>
 
 <header class="nav">
   <div class="nav-inner">
@@ -456,15 +541,17 @@
     </button>
   </div>
   <div class="nav-spectrum" aria-hidden="true"></div>
-  <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="#services">Services</a>
-    <a href="#why">Approach</a>
-    <a href="#partners">Partners</a>
-    <a href="#about">About</a>
-    <a href="careers.html">Careers</a>
-    <a class="btn btn-primary" href="#contact">Get in Touch</a>
-  </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
+  <a href="#services">Services</a>
+  <a href="#why">Approach</a>
+  <a href="#partners">Partners</a>
+  <a href="#about">About</a>
+  <a href="careers.html">Careers</a>
+  <a class="btn btn-primary" href="#contact">Get in Touch</a>
+</div>
 
 <main>
 
@@ -473,35 +560,41 @@
       <div class="hero-photo" style="background-image:url('Photos/gamutpro-office-1.webp');"></div>
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-aurora" id="heroAurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
     <div class="container">
       <div class="hero-inner">
         <div class="hero-tag"><span class="line" aria-hidden="true"></span><span>GROW BRAND · GROW BUSINESS</span></div>
         <h1>Consultancy built to move the numbers you report on</h1>
         <p class="lead">Gamut Pro is a Johor Bahru business consultancy — marketing, financial advisory, HR management, management consultancy, and digital transformation, built around your goals, not a template.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Book a Discovery Call</a>
-          <a class="btn btn-outline-light" href="#services" style="border:1.5px solid rgba(255,255,255,.32);">See our services</a>
+          <a class="btn btn-primary" href="#contact">Start Your Journey</a>
+          <a class="btn btn-outline-light" href="#services" style="border:1.5px solid rgba(255,255,255,.32);">View Our Services</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="stat-overlap">
-    <div class="stat-overlap-grid">
-      <div class="stat-overlap-card">
+  <div class="hero-stats" id="heroStats">
+    <div class="hero-stats-grid">
+      <div class="hero-stat-card">
         <span class="eyebrow">FOUNDED</span>
-        <div class="stat-overlap-value" data-count-to="2023">0</div>
-        <p>A young, focused consultancy built for the way businesses grow today.</p>
+        <div class="hero-stat-value" data-count-to="2023">0</div>
+        <p>A young, focused consultancy built for how businesses grow today.</p>
       </div>
-      <div class="stat-overlap-card">
+      <div class="hero-stat-card">
         <span class="eyebrow">TEAM</span>
-        <div class="stat-overlap-value">51–200</div>
+        <div class="hero-stat-value">51–200</div>
         <p>Consultants and specialists across every discipline we offer.</p>
       </div>
-      <div class="stat-overlap-card">
+      <div class="hero-stat-card">
         <span class="eyebrow">DISCIPLINES</span>
-        <div class="stat-overlap-value" data-count-to="5">0</div>
-        <p>Marketing, financial, HR, management and digital — one accountable partner.</p>
+        <div class="hero-stat-value" data-count-to="5">0</div>
+        <p>Marketing, financial, HR, management and digital — one team.</p>
+      </div>
+      <div class="hero-stat-card">
+        <span class="eyebrow">HEADQUARTERED</span>
+        <div class="hero-stat-value">Johor Bahru</div>
+        <p>Rooted in JB, working with partners across the region.</p>
       </div>
     </div>
   </div>
@@ -509,65 +602,77 @@
   <section class="services" id="services">
     <div class="section-head">
       <div>
+        <span class="divider-gold" aria-hidden="true"></span>
         <span class="eyebrow">WHAT WE DO</span>
         <h2>Five disciplines, one growth plan</h2>
       </div>
       <p>Engage one service or the full gamut. Either way, the work is built around your business, not a template.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-head">
+
+    <div class="service-picker" id="servicePicker">
+      <div class="service-pills" role="tablist" aria-label="Our services">
+        <button type="button" class="service-pill is-active" data-service="0" role="tab" aria-selected="true" style="--pill-color:var(--c-marketing);--pill-tint:var(--c-marketing-tint)">
+          <span class="service-pill-num">01</span><h3>Marketing Consultancy</h3>
+        </button>
+        <button type="button" class="service-pill" data-service="1" role="tab" aria-selected="false" style="--pill-color:var(--c-financial);--pill-tint:var(--c-financial-tint)">
+          <span class="service-pill-num">02</span><h3>Financial Advisory</h3>
+        </button>
+        <button type="button" class="service-pill" data-service="2" role="tab" aria-selected="false" style="--pill-color:var(--c-hr);--pill-tint:var(--c-hr-tint)">
+          <span class="service-pill-num">03</span><h3>HR Management</h3>
+        </button>
+        <button type="button" class="service-pill" data-service="3" role="tab" aria-selected="false" style="--pill-color:var(--c-management);--pill-tint:var(--c-management-tint)">
+          <span class="service-pill-num">04</span><h3>Management Consultancy</h3>
+        </button>
+        <button type="button" class="service-pill" data-service="4" role="tab" aria-selected="false" style="--pill-color:var(--c-digital);--pill-tint:var(--c-digital-tint)">
+          <span class="service-pill-num">05</span><h3>Digital Transformation</h3>
+        </button>
+      </div>
+
+      <div class="service-panels">
+        <div class="service-panel is-active" data-panel="0" role="tabpanel">
           <span class="service-icon" style="background:var(--c-marketing-tint);color:var(--c-marketing)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-          <div><span class="service-num" style="color:var(--c-marketing)">01</span><h3>Marketing Consultancy</h3></div>
+          <h3>Marketing Consultancy</h3>
+          <p class="desc">Sharpen your positioning and messaging, and build campaigns that turn attention into growth.</p>
+          <div class="service-tags">
+            <span class="service-tag" style="background:var(--c-marketing-tint)">Positioning &amp; Messaging</span>
+            <span class="service-tag" style="background:var(--c-marketing-tint)">Retainer</span>
+          </div>
         </div>
-        <p>Sharpen your positioning and messaging, and build campaigns that turn attention into growth.</p>
-        <div class="service-tags">
-          <span class="service-tag" style="background:var(--c-marketing-tint);color:var(--blue-deep)">Positioning &amp; Messaging</span>
-          <span class="service-tag" style="background:var(--c-marketing-tint);color:var(--blue-deep)">Retainer</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-head">
+        <div class="service-panel" data-panel="1" role="tabpanel">
           <span class="service-icon" style="background:var(--c-financial-tint);color:var(--c-financial)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span>
-          <div><span class="service-num" style="color:var(--c-financial)">02</span><h3>Financial Advisory</h3></div>
+          <h3>Financial Advisory</h3>
+          <p class="desc">Plan, forecast, and structure your finances for stability today and growth tomorrow.</p>
+          <div class="service-tags">
+            <span class="service-tag" style="background:var(--c-financial-tint)">Forecasting &amp; Structure</span>
+            <span class="service-tag" style="background:var(--c-financial-tint)">Advisory</span>
+          </div>
         </div>
-        <p>Plan, forecast, and structure your finances for stability today and growth tomorrow.</p>
-        <div class="service-tags">
-          <span class="service-tag" style="background:var(--c-financial-tint);color:var(--blue-deep)">Forecasting &amp; Structure</span>
-          <span class="service-tag" style="background:var(--c-financial-tint);color:var(--blue-deep)">Advisory</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-head">
+        <div class="service-panel" data-panel="2" role="tabpanel">
           <span class="service-icon" style="background:var(--c-hr-tint);color:var(--c-hr)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
-          <div><span class="service-num" style="color:var(--c-hr)">03</span><h3>HR Management</h3></div>
+          <h3>HR Management</h3>
+          <p class="desc">Build recruitment, talent, and organizational frameworks that let your people do their best work.</p>
+          <div class="service-tags">
+            <span class="service-tag" style="background:var(--c-hr-tint)">Recruitment &amp; Talent</span>
+            <span class="service-tag" style="background:var(--c-hr-tint)">Project</span>
+          </div>
         </div>
-        <p>Build recruitment, talent, and organizational frameworks that let your people do their best work.</p>
-        <div class="service-tags">
-          <span class="service-tag" style="background:var(--c-hr-tint);color:var(--blue-deep)">Recruitment &amp; Talent</span>
-          <span class="service-tag" style="background:var(--c-hr-tint);color:var(--blue-deep)">Project</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-head">
+        <div class="service-panel" data-panel="3" role="tabpanel">
           <span class="service-icon" style="background:var(--c-management-tint);color:var(--c-management)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
-          <div><span class="service-num" style="color:var(--c-management)">04</span><h3>Management Consultancy</h3></div>
+          <h3>Management Consultancy</h3>
+          <p class="desc">Find where operations slow the business down and fix it, so leadership can make faster, better calls.</p>
+          <div class="service-tags">
+            <span class="service-tag" style="background:var(--c-management-tint)">Operations &amp; Process</span>
+            <span class="service-tag" style="background:var(--c-management-tint)">Advisory</span>
+          </div>
         </div>
-        <p>Find where operations slow the business down and fix it, so leadership can make faster, better calls.</p>
-        <div class="service-tags">
-          <span class="service-tag" style="background:var(--c-management-tint);color:var(--blue-deep)">Operations &amp; Process</span>
-          <span class="service-tag" style="background:var(--c-management-tint);color:var(--blue-deep)">Advisory</span>
-        </div>
-      </div>
-      <div class="service-card" style="grid-column:1/-1">
-        <div class="service-head">
+        <div class="service-panel" data-panel="4" role="tabpanel">
           <span class="service-icon" style="background:var(--c-digital-tint);color:var(--c-digital)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M9 20h6M12 15v5"/></svg></span>
-          <div><span class="service-num" style="color:var(--c-digital)">05</span><h3>Digital Transformation</h3></div>
-        </div>
-        <p>Modernize the systems and workflows behind your customer experience.</p>
-        <div class="service-tags">
-          <span class="service-tag" style="background:var(--c-digital-tint);color:var(--blue-deep)">Systems &amp; Workflow</span>
-          <span class="service-tag" style="background:var(--c-digital-tint);color:var(--blue-deep)">Project</span>
+          <h3>Digital Transformation</h3>
+          <p class="desc">Modernize the systems and workflows behind your customer experience.</p>
+          <div class="service-tags">
+            <span class="service-tag" style="background:var(--c-digital-tint)">Systems &amp; Workflow</span>
+            <span class="service-tag" style="background:var(--c-digital-tint)">Project</span>
+          </div>
         </div>
       </div>
     </div>
@@ -576,7 +681,8 @@
   <section class="partners" id="partners">
     <div class="partners-inner">
       <div class="partners-intro">
-        <span class="eyebrow">CONNECTED PARTNERS</span>
+        <span class="divider-gold" aria-hidden="true"></span>
+        <span class="eyebrow">STRATEGIC PARTNERSHIP PORTFOLIO</span>
         <h2>Trusted by Organizations Creating Meaningful Impact</h2>
         <p>At Gamut Pro, we don't simply provide consulting — we become a long-term strategic partner. From non-profit organizations and hospitality destinations to healthcare providers and sustainability initiatives, we help organizations strengthen operations, improve governance, embrace digital transformation, and achieve sustainable growth.</p>
       </div>
@@ -588,116 +694,122 @@
         <div class="partner-kpi"><div class="partner-kpi-value">JB</div><div class="partner-kpi-label">Johor Bahru Headquartered</div></div>
       </div>
 
-      <div class="partner-grid">
+      <div class="partner-carousel-wrap">
+        <div class="partner-grid" id="partnerGrid">
 
-        <a class="partner-card" href="https://putuovillage.com.my/" target="_blank" rel="noopener noreferrer">
-          <div class="partner-logo-stage">
-            <img src="Photos/Putuo%20Village%20Logo_Horizontal_cvp.png" alt="Putuo Village" style="max-height:215px;max-width:100%;">
-          </div>
-          <div class="partner-body">
-            <div class="partner-meta-row">
-              <h3>Putuo Village</h3>
-              <span class="partner-industry-badge">Hospitality</span>
+          <a class="partner-card" href="https://putuovillage.com.my/" target="_blank" rel="noopener noreferrer">
+            <div class="partner-logo-stage">
+              <img src="Photos/Putuo%20Village%20Logo_Horizontal_cvp.png" alt="Putuo Village" style="max-height:215px;max-width:100%;" loading="lazy" decoding="async">
             </div>
-            <div class="partner-about">
-              <span class="partner-section-label">About</span>
-              <p>A unique hospitality and cultural destination in Johor, offering wellness experiences, cultural attractions, accommodation, and visitor engagement in a peaceful natural environment.</p>
-            </div>
-            <div>
-              <span class="partner-section-label">How Gamut Pro Supports</span>
-              <div class="partner-support-badges">
-                <span class="partner-support-badge" style="background:var(--c-marketing-tint);"><span class="tick">✓</span>Marketing Consultancy</span>
-                <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
-                <span class="partner-support-badge"><span class="tick">✓</span>Business Strategy</span>
-                <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+            <div class="partner-body">
+              <div class="partner-meta-row">
+                <h3>Putuo Village</h3>
+                <span class="partner-industry-badge">Hospitality</span>
               </div>
-              <p class="partner-support-note">Supporting brand growth, business planning, financial management, operational excellence, and digital initiatives to enhance visitor experience and sustainable growth.</p>
-            </div>
-            <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
-          </div>
-        </a>
-
-        <a class="partner-card" href="https://gentlehill.my/" target="_blank" rel="noopener noreferrer">
-          <div class="partner-logo-stage">
-            <img src="Photos/Gentle%20Hill%20Logo_FA_Landscape_cvp.png" alt="Gentle Hill Elder Care Centre" style="max-height:225px;max-width:100%;">
-          </div>
-          <div class="partner-body">
-            <div class="partner-meta-row">
-              <h3>Gentle Hill Elder Care Centre</h3>
-              <span class="partner-industry-badge">Nursing Homes &amp; Residential Care</span>
-            </div>
-            <div class="partner-about">
-              <span class="partner-section-label">About</span>
-              <p>A premium elder care centre in Kulai providing professional nursing care, holistic wellness programmes, rehabilitation, and compassionate residential care for seniors.</p>
-            </div>
-            <div>
-              <span class="partner-section-label">How Gamut Pro Supports</span>
-              <div class="partner-support-badges">
-                <span class="partner-support-badge" style="background:var(--c-management-tint);"><span class="tick">✓</span>Management Consultancy</span>
-                <span class="partner-support-badge" style="background:var(--c-hr-tint);"><span class="tick">✓</span>HR Management</span>
-                <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
-                <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+              <div class="partner-about">
+                <span class="partner-section-label">About</span>
+                <p>A unique hospitality and cultural destination in Johor, offering wellness experiences, cultural attractions, accommodation, and visitor engagement in a peaceful natural environment.</p>
               </div>
-              <p class="partner-support-note">Helping improve governance, operational efficiency, workforce planning, financial sustainability, and organisational growth.</p>
-            </div>
-            <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
-          </div>
-        </a>
-
-        <a class="partner-card" href="https://amitabhafoundation.my/" target="_blank" rel="noopener noreferrer">
-          <div class="partner-logo-stage">
-            <img src="Photos/Amitabha%20Foundation_Official%20Logo_Horizontal_crop.jpg" alt="Amitabha Foundation">
-          </div>
-          <div class="partner-body">
-            <div class="partner-meta-row">
-              <h3>Amitabha Foundation</h3>
-              <span class="partner-industry-badge">Non-profit Organization</span>
-            </div>
-            <div class="partner-about">
-              <span class="partner-section-label">About</span>
-              <p>A charitable organisation committed to community development, humanitarian initiatives, education, environmental sustainability, and social impact programmes.</p>
-            </div>
-            <div>
-              <span class="partner-section-label">How Gamut Pro Supports</span>
-              <div class="partner-support-badges">
-                <span class="partner-support-badge"><span class="tick">✓</span>Governance &amp; Strategy</span>
-                <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
-                <span class="partner-support-badge" style="background:var(--c-hr-tint);"><span class="tick">✓</span>HR Management</span>
-                <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+              <div>
+                <span class="partner-section-label">How Gamut Pro Supports</span>
+                <div class="partner-support-badges">
+                  <span class="partner-support-badge" style="background:var(--c-marketing-tint);"><span class="tick">✓</span>Marketing Consultancy</span>
+                  <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
+                  <span class="partner-support-badge"><span class="tick">✓</span>Business Strategy</span>
+                  <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+                </div>
+                <p class="partner-support-note">Supporting brand growth, business planning, financial management, operational excellence, and digital initiatives to enhance visitor experience and sustainable growth.</p>
               </div>
-              <p class="partner-support-note">Supporting organisational governance, financial planning, operational management, and digital transformation to strengthen community impact.</p>
+              <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
             </div>
-            <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
-          </div>
-        </a>
+          </a>
 
-        <a class="partner-card" href="https://yellowbin.com.my/" target="_blank" rel="noopener noreferrer">
-          <div class="partner-logo-stage">
-            <img src="Photos/Yellow%20Bin_logo_WO_Horizontal.cvp%20copy.png" alt="Yellow Bin">
-          </div>
-          <div class="partner-body">
-            <div class="partner-meta-row">
-              <h3>Yellow Bin</h3>
-              <span class="partner-industry-badge">Environmental Sustainability &amp; Recycling</span>
+          <a class="partner-card" href="https://gentlehill.my/" target="_blank" rel="noopener noreferrer">
+            <div class="partner-logo-stage">
+              <img src="Photos/Gentle%20Hill%20Logo_FA_Landscape_cvp.png" alt="Gentle Hill Elder Care Centre" style="max-height:225px;max-width:100%;" loading="lazy" decoding="async">
             </div>
-            <div class="partner-about">
-              <span class="partner-section-label">About</span>
-              <p>An environmental organisation promoting recycling, waste management, and circular economy initiatives for businesses and local communities.</p>
-            </div>
-            <div>
-              <span class="partner-section-label">How Gamut Pro Supports</span>
-              <div class="partner-support-badges">
-                <span class="partner-support-badge" style="background:var(--c-marketing-tint);"><span class="tick">✓</span>Marketing Consultancy</span>
-                <span class="partner-support-badge"><span class="tick">✓</span>Business Consultancy</span>
-                <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
-                <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
+            <div class="partner-body">
+              <div class="partner-meta-row">
+                <h3>Gentle Hill Elder Care Centre</h3>
+                <span class="partner-industry-badge">Nursing Homes &amp; Residential Care</span>
               </div>
-              <p class="partner-support-note">Helping build sustainable business operations, strengthen brand positioning, improve operational efficiency, and accelerate digital initiatives.</p>
+              <div class="partner-about">
+                <span class="partner-section-label">About</span>
+                <p>A premium elder care centre in Kulai providing professional nursing care, holistic wellness programmes, rehabilitation, and compassionate residential care for seniors.</p>
+              </div>
+              <div>
+                <span class="partner-section-label">How Gamut Pro Supports</span>
+                <div class="partner-support-badges">
+                  <span class="partner-support-badge" style="background:var(--c-management-tint);"><span class="tick">✓</span>Management Consultancy</span>
+                  <span class="partner-support-badge" style="background:var(--c-hr-tint);"><span class="tick">✓</span>HR Management</span>
+                  <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
+                  <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+                </div>
+                <p class="partner-support-note">Helping improve governance, operational efficiency, workforce planning, financial sustainability, and organisational growth.</p>
+              </div>
+              <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
             </div>
-            <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
-          </div>
-        </a>
+          </a>
 
+          <a class="partner-card" href="https://amitabhafoundation.my/" target="_blank" rel="noopener noreferrer">
+            <div class="partner-logo-stage">
+              <img src="Photos/Amitabha%20Foundation_Official%20Logo_Horizontal_crop.jpg" alt="Amitabha Foundation" loading="lazy" decoding="async">
+            </div>
+            <div class="partner-body">
+              <div class="partner-meta-row">
+                <h3>Amitabha Foundation</h3>
+                <span class="partner-industry-badge">Non-profit Organization</span>
+              </div>
+              <div class="partner-about">
+                <span class="partner-section-label">About</span>
+                <p>A charitable organisation committed to community development, humanitarian initiatives, education, environmental sustainability, and social impact programmes.</p>
+              </div>
+              <div>
+                <span class="partner-section-label">How Gamut Pro Supports</span>
+                <div class="partner-support-badges">
+                  <span class="partner-support-badge"><span class="tick">✓</span>Governance &amp; Strategy</span>
+                  <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
+                  <span class="partner-support-badge" style="background:var(--c-hr-tint);"><span class="tick">✓</span>HR Management</span>
+                  <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+                </div>
+                <p class="partner-support-note">Supporting organisational governance, financial planning, operational management, and digital transformation to strengthen community impact.</p>
+              </div>
+              <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="partner-card" href="https://yellowbin.com.my/" target="_blank" rel="noopener noreferrer">
+            <div class="partner-logo-stage">
+              <img src="Photos/Yellow%20Bin_logo_WO_Horizontal.cvp%20copy.png" alt="Yellow Bin" loading="lazy" decoding="async">
+            </div>
+            <div class="partner-body">
+              <div class="partner-meta-row">
+                <h3>Yellow Bin</h3>
+                <span class="partner-industry-badge">Environmental Sustainability &amp; Recycling</span>
+              </div>
+              <div class="partner-about">
+                <span class="partner-section-label">About</span>
+                <p>An environmental organisation promoting recycling, waste management, and circular economy initiatives for businesses and local communities.</p>
+              </div>
+              <div>
+                <span class="partner-section-label">How Gamut Pro Supports</span>
+                <div class="partner-support-badges">
+                  <span class="partner-support-badge" style="background:var(--c-marketing-tint);"><span class="tick">✓</span>Marketing Consultancy</span>
+                  <span class="partner-support-badge"><span class="tick">✓</span>Business Consultancy</span>
+                  <span class="partner-support-badge" style="background:var(--c-digital-tint);"><span class="tick">✓</span>Digital Transformation</span>
+                  <span class="partner-support-badge" style="background:var(--c-financial-tint);"><span class="tick">✓</span>Financial Advisory</span>
+                </div>
+                <p class="partner-support-note">Helping build sustainable business operations, strengthen brand positioning, improve operational efficiency, and accelerate digital initiatives.</p>
+              </div>
+              <span class="partner-visit">Visit Website <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+        </div>
+        <div class="partner-carousel-nav">
+          <button type="button" class="partner-carousel-btn" id="partnerPrev" aria-label="Previous partner">‹</button>
+          <button type="button" class="partner-carousel-btn" id="partnerNext" aria-label="Next partner">›</button>
+        </div>
       </div>
     </div>
   </section>
@@ -706,6 +818,7 @@
     <div class="industries-inner">
       <div class="section-head">
         <div>
+          <span class="divider-gold" aria-hidden="true"></span>
           <span class="eyebrow">WHERE WE WORK</span>
           <h2>Industry expertise</h2>
         </div>
@@ -761,6 +874,9 @@
       </div>
       <p class="footnote" style="color:rgba(255,255,255,.5)">Projects and client satisfaction are placeholders — swap in verified figures when available.</p>
     </div>
+    <div class="curve-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,0 1440,60 Z" fill="#F8FAFC"></path></svg>
+    </div>
   </section>
 
   <section class="bento">
@@ -794,12 +910,14 @@
   <section id="why">
     <div class="approach">
       <div class="approach-copy">
+        <span class="divider-gold" aria-hidden="true"></span>
         <span class="eyebrow">HOW WE WORK</span>
         <h2>From discovery to growth</h2>
         <p>No templates, no shortcuts — every engagement follows a clear, five-stage path from your first conversation with us to measurable results. That consultative approach is what a 51–200-strong team backed by trusted partnerships makes possible.</p>
         <a class="btn btn-dark" href="#contact" style="align-self:flex-start;">Start with a conversation</a>
       </div>
-      <div class="approach-stages">
+      <div class="approach-stages" id="approachStages">
+        <svg class="approach-track" aria-hidden="true"><line x1="14" y1="14" x2="14" y2="14"></line></svg>
         <div class="approach-stage"><span class="approach-num">Step 01</span><h3>Discovery</h3><p>Understand your business, goals, and constraints.</p></div>
         <div class="approach-stage"><span class="approach-num">Step 02</span><h3>Analysis</h3><p>Assess what's working and what's holding growth back.</p></div>
         <div class="approach-stage"><span class="approach-num">Step 03</span><h3>Planning</h3><p>Build a tailored strategy across the disciplines you need.</p></div>
@@ -820,6 +938,38 @@
           <div class="about-list-item"><span class="about-check">✓</span><span>Tailored solutions — no templates, no shortcuts</span></div>
           <div class="about-list-item"><span class="about-check">✓</span><span>Cross-industry expertise across five disciplines</span></div>
           <div class="about-list-item"><span class="about-check">✓</span><span>Backed by trusted partnerships across Johor</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insights" id="insights">
+    <div class="insights-inner">
+      <div class="section-head">
+        <div>
+          <span class="divider-gold" aria-hidden="true"></span>
+          <span class="eyebrow">INSIGHTS</span>
+          <h2>Perspectives on growth</h2>
+        </div>
+        <p>Our editorial desk is being built out — real articles will publish here.</p>
+      </div>
+      <div class="insights-grid">
+        <div class="insight-card is-lead">
+          <span class="insight-tag">Coming soon</span>
+          <h3>Field notes from five consulting disciplines</h3>
+          <p>A running series on what we're seeing across marketing, finance, HR, management, and digital engagements in Johor Bahru — first piece publishes once it's ready.</p>
+        </div>
+        <div class="insight-stack">
+          <div class="insight-card">
+            <span class="insight-tag">Coming soon</span>
+            <h3>Reserved for our next article</h3>
+            <p>This slot is a placeholder — swap in a real headline and summary whenever the piece is ready.</p>
+          </div>
+          <div class="insight-card">
+            <span class="insight-tag">Coming soon</span>
+            <h3>Reserved for our next article</h3>
+            <p>Another placeholder slot for future insights content.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -885,6 +1035,9 @@
           allowfullscreen></iframe>
       </div>
     </div>
+    <div class="curve-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,0 1440,60 Z" fill="#0B1423"></path></svg>
+    </div>
   </section>
 
 </main>
@@ -892,13 +1045,40 @@
 <footer class="footer">
   <div class="footer-spectrum" aria-hidden="true"></div>
   <div class="footer-photo" aria-hidden="true" style="background-image:url('Photos/gamutpro-office-3.webp');"></div>
+  <svg class="footer-worldmap" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#ffffff" stroke-width="1">
+      <ellipse cx="720" cy="200" rx="680" ry="170"></ellipse>
+      <ellipse cx="720" cy="200" rx="680" ry="90"></ellipse>
+      <ellipse cx="720" cy="200" rx="460" ry="170"></ellipse>
+      <ellipse cx="720" cy="200" rx="230" ry="170"></ellipse>
+      <line x1="40" y1="200" x2="1400" y2="200"></line>
+      <line x1="720" y1="30" x2="720" y2="370"></line>
+    </g>
+    <g fill="#C7A96B">
+      <circle cx="300" cy="150" r="4"></circle>
+      <circle cx="620" cy="230" r="4"></circle>
+      <circle cx="980" cy="170" r="4"></circle>
+      <circle cx="1180" cy="260" r="4"></circle>
+    </g>
+  </svg>
   <div class="footer-inner">
-    <div class="footer-grid">
+    <div class="footer-brand-row">
       <div class="footer-brand">
         <span class="footer-logo-chip">
           <img class="footer-logo" src="Photos/GP-Logo-crop.png" alt="Gamut Pro" decoding="async">
         </span>
         <p>A Johor Bahru consultancy for marketing, financial, HR, management, and digital transformation strategy.</p>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="#why">Approach</a>
+          <a href="#partners">Partners</a>
+          <a href="#about">About</a>
+          <a href="careers.html">Careers</a>
+        </div>
       </div>
       <div>
         <h4>Services</h4>
@@ -911,52 +1091,58 @@
         </div>
       </div>
       <div>
-        <h4>Company</h4>
+        <h4>Resources</h4>
         <div class="footer-links">
-          <a href="#why">Approach</a>
-          <a href="#partners">Partners</a>
-          <a href="#about">About</a>
-          <a href="careers.html">Careers</a>
-        </div>
-      </div>
-      <div>
-        <h4>Connect</h4>
-        <div class="footer-links">
-          <a href="tel:0192662291">019-266 2291</a>
-          <a href="https://wa.me/60192662291" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
-          <a href="#contact">Unit M-02, 15, Jalan Dato Abdullah Tahir, Johor Bahru</a>
+          <a href="#insights">Insights</a>
+          <a href="careers.html">Open Roles</a>
+          <a href="#partners">Partnership Portfolio</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Gamut Pro Sdn Bhd · Johor Bahru, Malaysia</span>
-      <button type="button" class="footer-top-btn" id="backToTop">Back to top <span class="arrow-up" aria-hidden="true">↑</span></button>
+      <span style="display:flex;gap:14px;align-items:center;">
+        <a href="tel:0192662291" style="color:rgba(255,255,255,.6)">019-266 2291</a>
+        <button type="button" class="footer-top-btn" id="backToTop">Back to top <span class="arrow-up" aria-hidden="true">↑</span></button>
+      </span>
     </div>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script>
 (function(){
   "use strict";
 
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---- loading screen ---- */
+  var loader = document.getElementById('pageLoader');
+  function hideLoader(){ if(loader){ loader.classList.add('is-done'); } }
+  if(reduceMotion){ hideLoader(); }
+  else{ window.addEventListener('load', function(){ setTimeout(hideLoader, 500); }); setTimeout(hideLoader, 3000); }
+
+  /* ---- full-screen mobile menu ---- */
   var navToggle = document.getElementById('navToggle');
   var mobileMenu = document.getElementById('mobileMenu');
-  function closeMenu(){ mobileMenu.hidden = true; navToggle.setAttribute('aria-expanded','false'); }
-  function openMenu(){ mobileMenu.hidden = false; navToggle.setAttribute('aria-expanded','true'); }
+  var mobileMenuClose = document.getElementById('mobileMenuClose');
+  function closeMenu(){ mobileMenu.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); }
+  function openMenu(){ mobileMenu.classList.add('is-open'); navToggle.setAttribute('aria-expanded','true'); }
   navToggle.addEventListener('click', function(){
     (navToggle.getAttribute('aria-expanded') === 'true') ? closeMenu() : openMenu();
   });
+  mobileMenuClose.addEventListener('click', closeMenu);
   mobileMenu.addEventListener('click', function(e){ if(e.target.tagName === 'A'){ closeMenu(); } });
-  document.addEventListener('click', function(e){
-    if(!mobileMenu.hidden && !mobileMenu.contains(e.target) && !navToggle.contains(e.target)){ closeMenu(); }
-  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeMenu(); } });
 
   var navEl = document.querySelector('.nav');
   function onNavScroll(){ navEl.classList.toggle('is-scrolled', window.scrollY > 30); }
   window.addEventListener('scroll', onNavScroll, { passive:true });
   onNavScroll();
 
-  var revealEls = document.querySelectorAll('.stat-overlap-grid, .services-grid, .partner-grid, .industries-grid, .bento-grid, .approach-stages, .about-photo, .about-copy, .testimonial-grid, .contact-inner');
+  /* ---- scroll reveal (IntersectionObserver drives; GSAP animates when available) ---- */
+  var revealEls = document.querySelectorAll('.hero-stats-grid, .service-picker, .partner-grid, .industries-grid, .bento-grid, .approach-stages, .about-photo, .about-copy, .testimonial-grid, .contact-inner, .insights-grid');
   if('IntersectionObserver' in window){
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -968,8 +1154,29 @@
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
 
-  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* ---- SVG-drawn process timeline ---- */
+  var approachStages = document.getElementById('approachStages');
+  var approachTrack = approachStages ? approachStages.querySelector('.approach-track') : null;
+  var approachLine = approachTrack ? approachTrack.querySelector('line') : null;
+  if(approachStages && approachLine && 'IntersectionObserver' in window){
+    var timelineObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var h = approachStages.getBoundingClientRect().height;
+          approachLine.setAttribute('y2', String(h - 14));
+          var len = h - 28;
+          approachLine.style.strokeDasharray = String(len);
+          approachLine.style.strokeDashoffset = String(len);
+          approachLine.style.transition = 'stroke-dashoffset 1.4s ease';
+          requestAnimationFrame(function(){ approachLine.style.strokeDashoffset = '0'; });
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.2 });
+    timelineObserver.observe(approachStages);
+  }
+
+  /* ---- 3D tilt ---- */
   if(canHover && !reduceMotion){
     function addTilt(el, maxDeg){
       el.addEventListener('mousemove', function(e){
@@ -981,22 +1188,36 @@
       el.addEventListener('mouseleave', function(){ el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)'; });
     }
     document.querySelectorAll('.about-photo').forEach(function(el){ addTilt(el, 6); });
-    document.querySelectorAll('.service-card').forEach(function(el){ el.style.transformStyle = 'preserve-3d'; addTilt(el, 4); });
   }
 
-  /* ---- hero 3D scroll parallax ---- */
+  /* ---- hero scroll parallax + mouse parallax on floating cards ---- */
   var heroParallax = document.getElementById('heroParallax');
   if(heroParallax && !reduceMotion){
     var ticking = false;
     function updateParallax(){
-      var y = window.scrollY;
-      heroParallax.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+      heroParallax.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
       ticking = false;
     }
     window.addEventListener('scroll', function(){
       if(!ticking){ window.requestAnimationFrame(updateParallax); ticking = true; }
     }, { passive:true });
     updateParallax();
+  }
+  var heroSection = document.querySelector('.hero');
+  var heroAurora = document.getElementById('heroAurora');
+  var heroStatCards = document.querySelectorAll('.hero-stat-card');
+  if(heroSection && canHover && !reduceMotion){
+    heroSection.addEventListener('mousemove', function(e){
+      var r = heroSection.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      if(heroAurora){ heroAurora.style.transform = 'translate(' + (px * 24) + 'px,' + (py * 24) + 'px)'; }
+      heroStatCards.forEach(function(card){ card.style.transform = 'translate(' + (px * 6) + 'px,' + (py * 6) + 'px)'; });
+    });
+    heroSection.addEventListener('mouseleave', function(){
+      if(heroAurora){ heroAurora.style.transform = 'translate(0,0)'; }
+      heroStatCards.forEach(function(card){ card.style.transform = ''; });
+    });
   }
 
   /* ---- animated stat counters ---- */
@@ -1024,6 +1245,67 @@
     countEls.forEach(function(el){ el.textContent = el.getAttribute('data-count-to'); });
   }
 
+  /* ---- service pill selector ---- */
+  var servicePicker = document.getElementById('servicePicker');
+  if(servicePicker){
+    var pills = servicePicker.querySelectorAll('.service-pill');
+    var panels = servicePicker.querySelectorAll('.service-panel');
+    pills.forEach(function(pill){
+      pill.addEventListener('click', function(){
+        var idx = pill.getAttribute('data-service');
+        pills.forEach(function(p){ p.classList.remove('is-active'); p.setAttribute('aria-selected','false'); });
+        panels.forEach(function(p){ p.classList.remove('is-active'); });
+        pill.classList.add('is-active'); pill.setAttribute('aria-selected','true');
+        var nextPanel = servicePicker.querySelector('.service-panel[data-panel="' + idx + '"]');
+        if(nextPanel){
+          nextPanel.classList.add('is-active');
+          if(window.gsap && !reduceMotion){
+            gsap.fromTo(nextPanel, { opacity:0, y:10 }, { opacity:1, y:0, duration:.35, ease:'power2.out' });
+          }
+        }
+      });
+    });
+  }
+
+  /* ---- partner carousel arrows ---- */
+  var partnerGrid = document.getElementById('partnerGrid');
+  var partnerPrev = document.getElementById('partnerPrev');
+  var partnerNext = document.getElementById('partnerNext');
+  if(partnerGrid && partnerPrev && partnerNext){
+    function scrollByCard(dir){
+      var card = partnerGrid.querySelector('.partner-card');
+      var amount = card ? card.getBoundingClientRect().width + 28 : 340;
+      partnerGrid.scrollBy({ left: dir * amount, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    partnerPrev.addEventListener('click', function(){ scrollByCard(-1); });
+    partnerNext.addEventListener('click', function(){ scrollByCard(1); });
+  }
+
+  /* ---- GSAP hero entrance (progressive enhancement) ---- */
+  if(window.gsap && !reduceMotion){
+    gsap.from('.hero-tag', { opacity:0, y:14, duration:.6, delay:.1 });
+    gsap.from('.hero h1', { opacity:0, y:18, duration:.7, delay:.2 });
+    gsap.from('.hero p.lead', { opacity:0, y:18, duration:.7, delay:.32 });
+    gsap.from('.hero-actions', { opacity:0, y:18, duration:.7, delay:.42 });
+  }
+
+  /* ---- GSAP-assisted page transition for internal navigation ---- */
+  if(window.gsap && !reduceMotion){
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:9998;background:#0B1423;opacity:0;pointer-events:none;';
+    document.body.appendChild(overlay);
+    document.querySelectorAll('a[href="careers.html"]').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(e.metaKey || e.ctrlKey) return;
+        e.preventDefault();
+        var href = link.getAttribute('href');
+        overlay.style.pointerEvents = 'auto';
+        gsap.to(overlay, { opacity:1, duration:.35, onComplete: function(){ window.location.href = href; } });
+      });
+    });
+  }
+
+  /* ---- whatsapp enquiry form ---- */
   var enquiryForm = document.getElementById('enquiryForm');
   enquiryForm.addEventListener('submit', function(e){
     e.preventDefault();

@@ -5,8 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Careers — Gamut Pro Sdn Bhd</title>
 <meta name="description" content="Current job openings at Gamut Pro Sdn Bhd, a Johor Bahru business consultancy.">
-<meta name="theme-color" content="#516FB4">
+<meta name="theme-color" content="#132238">
 <meta name="color-scheme" content="light">
+<link rel="canonical" href="https://gamutpro.my/careers.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gamut Pro Sdn Bhd">
+<meta property="og:title" content="Careers — Gamut Pro Sdn Bhd">
+<meta property="og:description" content="Current job openings at Gamut Pro Sdn Bhd, a Johor Bahru business consultancy.">
+<meta property="og:url" content="https://gamutpro.my/careers.html">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="Photos/GP%20horizontal.png">
 <link rel="apple-touch-icon" href="Photos/GP%20horizontal.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +108,8 @@
     </div>
   </div>
   <div class="nav-spectrum" aria-hidden="true"></div>
-  <div class="mobile-menu" id="mobileMenu" hidden>
+  <div class="mobile-menu" id="mobileMenu">
+    <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
     <a href="index.html#services">Services</a>
     <a href="index.html#why">Why us</a>
     <a href="index.html#about">About</a>
@@ -215,6 +223,32 @@
     );
   }
 
+  function injectJobPostingSchema(jobs){
+    var existing = document.getElementById('jobPostingSchema');
+    if(existing){ existing.remove(); }
+    if(!jobs.length) return;
+    var postings = jobs.map(function(job){
+      return {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": job.title,
+        "description": job.summary || job.title,
+        "datePosted": job.created_at,
+        "employmentType": job.job_type ? job.job_type.toUpperCase().replace(/[^A-Z_]/g, '_') : undefined,
+        "hiringOrganization": { "@type": "Organization", "name": "Gamut Pro Sdn Bhd", "sameAs": "https://gamutpro.my/" },
+        "jobLocation": {
+          "@type": "Place",
+          "address": { "@type": "PostalAddress", "addressLocality": job.location || "Johor Bahru", "addressCountry": "MY" }
+        }
+      };
+    });
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'jobPostingSchema';
+    script.textContent = JSON.stringify(postings);
+    document.head.appendChild(script);
+  }
+
   var PAGE_SIZE = 6;
   var allJobs = [];
   var activeType = '';
@@ -320,6 +354,7 @@
       allJobs = result.data || [];
       renderFilters();
       renderJobs();
+      injectJobPostingSchema(allJobs);
     }catch(err){
       listEl.innerHTML = '<p class="jobs-empty">Unable to load openings right now. Please try again later.</p>';
     }
@@ -327,25 +362,23 @@
 
   loadJobs();
 
-  /* ---- mobile menu ---- */
+  /* ---- full-screen mobile menu ---- */
   var navToggle = document.getElementById('navToggle');
   var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuClose = document.getElementById('mobileMenuClose');
 
-  function closeMenu(){ mobileMenu.hidden = true; navToggle.setAttribute('aria-expanded','false'); }
-  function openMenu(){ mobileMenu.hidden = false; navToggle.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ mobileMenu.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); }
+  function openMenu(){ mobileMenu.classList.add('is-open'); navToggle.setAttribute('aria-expanded','true'); }
 
   navToggle.addEventListener('click', function(){
     var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
     isOpen ? closeMenu() : openMenu();
   });
+  if(mobileMenuClose){ mobileMenuClose.addEventListener('click', closeMenu); }
   mobileMenu.addEventListener('click', function(e){
     if(e.target.tagName === 'A'){ closeMenu(); }
   });
-  document.addEventListener('click', function(e){
-    if(!mobileMenu.hidden && !mobileMenu.contains(e.target) && !navToggle.contains(e.target)){
-      closeMenu();
-    }
-  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeMenu(); } });
 
   /* ---- nav shrink on scroll ---- */
   var navEl = document.querySelector('.nav');
