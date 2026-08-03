@@ -221,21 +221,11 @@
 
   /* ---------- bento grid ---------- */
   .bento{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
-  .bento-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:20px;
-    grid-template-areas:"image stat" "clients industries" "wide wide";
-  }
-  @media (max-width:760px){ .bento-grid{grid-template-columns:1fr;grid-template-areas:"image" "stat" "clients" "industries" "wide"} }
-  .bento-image{
-    grid-area:image;position:relative;border-radius:var(--radius);overflow:hidden;min-height:240px;
-    box-shadow:var(--shadow-md);transition:box-shadow .4s ease;
-  }
-  .bento-image::before{content:'';position:absolute;inset:-4%;background-image:var(--photo);background-size:cover;background-position:center;filter:grayscale(50%) contrast(1.06);transition:transform .6s cubic-bezier(.22,1,.36,1)}
-  .bento-image::after{content:'';position:absolute;inset:0;background:linear-gradient(200deg,rgba(22,35,59,0) 45%,rgba(22,35,59,.35) 100%)}
-  .bento-image:hover{box-shadow:var(--shadow-lg)}
-  .bento-image:hover::before{transform:scale(1.07)}
+  .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:860px){ .bento-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:560px){ .bento-grid{grid-template-columns:1fr} }
   .bento-stat{
-    grid-area:stat;position:relative;overflow:hidden;color:#fff;border-radius:var(--radius);padding:40px;
+    position:relative;overflow:hidden;color:#fff;border-radius:var(--radius);padding:40px;
     background:linear-gradient(160deg,var(--slate) 0%,var(--navy) 100%);
     border:1px solid rgba(255,255,255,.08);
     box-shadow:0 20px 44px rgba(14,27,51,.28);
@@ -264,10 +254,8 @@
   .bento-cell:hover{border-color:rgba(81,111,180,.35)}
   .bento-cell .bento-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(40px,5vw,54px);line-height:1;color:var(--ink);letter-spacing:-.02em}
   .bento-cell p{font:500 14.5px/1.5 'Manrope',sans-serif;color:var(--grey);max-width:28ch}
-  .bento-cell:nth-of-type(1){grid-area:clients}
-  .bento-cell:nth-of-type(2){grid-area:industries}
   .bento-wide{
-    grid-area:wide;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:#fff;
+    grid-column:1/-1;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:#fff;
     border-radius:var(--radius);padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
     box-shadow:0 24px 50px rgba(14,27,51,.22);
     transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease;
@@ -379,7 +367,7 @@
   /* ---------- scroll reveal ---------- */
   @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .hero-inner{animation:riseIn .7s ease both}
-  .js .stat-overlap-card,.js .service-card,.js .partner-card,.js .approach-stage,.js .about-photo,.js .about-copy,.js .testimonial-card,.js .contact-inner,.js .industry-card,.js .bento-image,.js .bento-stat,.js .bento-cell,.js .bento-wide{
+  .js .stat-overlap-card,.js .service-card,.js .partner-card,.js .approach-stage,.js .about-photo,.js .about-copy,.js .testimonial-card,.js .contact-inner,.js .industry-card,.js .bento-stat,.js .bento-cell,.js .bento-wide{
     opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease
   }
   .is-visible,
@@ -390,7 +378,6 @@
   .approach-stages.is-visible .approach-stage,
   .testimonial-grid.is-visible .testimonial-card,
   .industries-grid.is-visible .industry-card,
-  .bento-grid.is-visible .bento-image,
   .bento-grid.is-visible .bento-stat,
   .bento-grid.is-visible .bento-cell,
   .bento-grid.is-visible .bento-wide{
@@ -741,7 +728,6 @@
 
   <section class="bento">
     <div class="bento-grid">
-      <div class="bento-image" style="--photo:url('Photos/gamutpro-office-1.webp');"></div>
       <div class="bento-stat">
         <span class="bento-eyebrow">CORE DISCIPLINES</span>
         <span class="bento-value" data-count-to="5">0</span>
