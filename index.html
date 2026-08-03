@@ -16,15 +16,17 @@
 <style>
   :root{
     --white:#FFFFFF;
-    --bg:#F7F6F3;
-    --panel:#EEF1F8;
-    --ink:#14161A;
-    --navy:#0E1B33;
-    --body-text:rgba(20,22,26,.66);
-    --grey:rgba(20,22,26,.55);
-    --border:rgba(20,22,26,.08);
+    --bg:#FAFBFD;
+    --panel:#F5F7FA;
+    --ink:#111827;
+    --navy:#16233B;
+    --slate:#2F3E52;
+    --body-text:#4B5563;
+    --grey:#6B7280;
+    --border:#E6EAF2;
+    --divider:#D7DEE9;
     --blue:#516FB4;
-    --blue-hover:#43609F;
+    --blue-hover:#3D5EA5;
     --blue-tint:#EEF1F8;
     --blue-deep:#2E4272;
 
@@ -56,8 +58,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;font:600 15px/1 'Manrope',sans-serif;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
   .btn:hover{transform:translateY(-2px)}
-  .btn-primary{background:var(--blue);color:#fff}
-  .btn-primary:hover{background:var(--blue-hover);box-shadow:0 14px 32px rgba(81,111,180,.36);color:#fff}
+  .btn-primary{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-hover) 100%);color:#fff}
+  .btn-primary:hover{box-shadow:0 20px 50px rgba(81,111,180,.35);color:#fff}
   .btn-dark{background:var(--ink);color:#fff}
   .btn-dark:hover{background:var(--blue);color:#fff}
   .btn-outline-light{border-color:rgba(255,255,255,.32);color:#fff}
@@ -90,7 +92,12 @@
   .hero-parallax{position:absolute;inset:-12% 0 -12% 0;z-index:0;will-change:transform}
   .hero-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(55%) contrast(1.08) brightness(.85);animation:kenBurns 26s ease-in-out infinite alternate}
   @keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.07)}}
-  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(14,27,51,.95) 0%,rgba(14,27,51,.86) 40%,rgba(14,27,51,.4) 75%,rgba(14,27,51,.18) 100%)}
+  .hero-overlay{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(135deg,rgba(22,35,59,.96) 0%,rgba(35,57,93,.88) 35%,rgba(81,111,180,.62) 100%);
+    background-size:180% 180%;animation:heroGradientShift 14s ease-in-out infinite alternate;
+  }
+  @keyframes heroGradientShift{0%{background-position:0% 30%}100%{background-position:100% 70%}}
   .hero .container{position:relative;z-index:2;padding-top:clamp(64px,12vw,120px);padding-bottom:clamp(96px,17vw,170px)}
   .hero-inner{max-width:620px;display:flex;flex-direction:column;gap:24px}
   .hero-tag{display:flex;align-items:center;gap:12px}
@@ -180,18 +187,71 @@
   .partner-visit .arrow{display:inline-block;transition:transform .25s ease}
   .partner-card:hover .partner-visit .arrow{transform:translateX(6px)}
 
+  /* ---------- industries ---------- */
+  .industries{background:var(--panel)}
+  .industries-inner{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .industries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:860px){ .industries-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:560px){ .industries-grid{grid-template-columns:1fr} }
+  .industry-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+  }
+  .industry-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--blue)}
+  .industry-icon{width:56px;height:56px;border-radius:50%;background:var(--blue-tint);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .industry-icon svg{width:26px;height:26px}
+  .industry-card h3{font-size:16.5px}
+  .industry-card p{font:400 13.5px/1.5 'Manrope',sans-serif;color:var(--grey)}
+
   /* ---------- results band ---------- */
   .results{background:var(--navy)}
   .results-inner{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:flex;flex-direction:column;gap:52px}
   .results-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px}
   .results-head h2{color:#fff;font-size:clamp(1.9rem,3.4vw,2.6rem);max-width:520px}
   .results-head p{font:400 17px/1.6 'Manrope',sans-serif;color:rgba(255,255,255,.62);max-width:360px}
-  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.16)}
-  @media (max-width:760px){ .results-grid{grid-template-columns:repeat(2,1fr)} }
-  .results-cell{padding:32px 24px 0;display:flex;flex-direction:column;gap:8px;border-right:1px solid rgba(255,255,255,.12)}
+  .results-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+  @media (max-width:900px){ .results-grid{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:560px){ .results-grid{grid-template-columns:repeat(2,1fr)} }
+  .results-cell{padding:32px 24px;display:flex;flex-direction:column;gap:8px;border-right:1px solid rgba(255,255,255,.12)}
   .results-cell:last-child{border-right:none}
+  .results-cell.placeholder .results-value{color:rgba(255,255,255,.4)}
   .results-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(30px,4.8vw,44px);line-height:1;color:#fff;letter-spacing:-.02em}
   .results-cell p{font:500 14.5px/1.4 'Manrope',sans-serif;color:rgba(255,255,255,.6)}
+
+  /* ---------- bento grid ---------- */
+  .bento{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,9vw,100px) 32px}
+  .bento-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    grid-template-areas:"image stat" "clients industries" "wide wide";
+  }
+  @media (max-width:760px){ .bento-grid{grid-template-columns:1fr;grid-template-areas:"image" "stat" "clients" "industries" "wide"} }
+  .bento-image{grid-area:image;position:relative;border-radius:var(--radius);overflow:hidden;min-height:240px}
+  .bento-image::before{content:'';position:absolute;inset:-4%;background-image:var(--photo);background-size:cover;background-position:center;filter:grayscale(50%) contrast(1.06);transition:transform .5s ease}
+  .bento-image:hover::before{transform:scale(1.06)}
+  .bento-stat{
+    grid-area:stat;background:var(--navy);color:#fff;border-radius:var(--radius);padding:32px;
+    display:flex;flex-direction:column;justify-content:center;gap:6px;transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .bento-stat:hover,.bento-cell:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .bento-stat .bento-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(32px,4.5vw,46px);letter-spacing:-.02em}
+  .bento-stat p{font:500 14px/1.4 'Manrope',sans-serif;color:rgba(255,255,255,.65);margin-top:4px}
+  .bento-cell{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;
+    display:flex;flex-direction:column;justify-content:center;gap:6px;transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .bento-cell .bento-value{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,34px);color:var(--ink);letter-spacing:-.02em}
+  .bento-cell p{font:500 13.5px/1.4 'Manrope',sans-serif;color:var(--grey)}
+  .bento-cell:nth-of-type(1){grid-area:clients}
+  .bento-cell:nth-of-type(2){grid-area:industries}
+  .bento-wide{
+    grid-area:wide;background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:#fff;
+    border-radius:var(--radius);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    transition:transform .3s ease;
+  }
+  .bento-wide:hover{transform:translateY(-4px)}
+  .bento-wide h3{color:#fff;font-size:clamp(20px,2.6vw,26px)}
+  .bento-wide p{font:400 14.5px/1.5 'Manrope',sans-serif;color:rgba(255,255,255,.75);max-width:46ch;margin-top:6px}
 
   /* ---------- approach ---------- */
   .approach{max-width:1200px;width:100%;margin:0 auto;padding:clamp(56px,10vw,110px) 32px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
@@ -199,11 +259,14 @@
   .approach-copy{display:flex;flex-direction:column;gap:20px}
   .approach-copy h2{font-size:clamp(1.9rem,3.4vw,2.5rem)}
   .approach-copy p{font:400 17px/1.65 'Manrope',sans-serif;color:var(--grey)}
-  .approach-stages{display:flex;flex-direction:column;gap:14px}
-  .approach-stage{display:flex;gap:20px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 26px}
-  .approach-num{font-family:'Outfit',sans-serif;font-weight:600;font-size:20px;color:var(--blue);flex:none;width:36px}
-  .approach-stage h3{font-size:19px;margin-bottom:6px}
-  .approach-stage p{font:400 14.5px/1.55 'Manrope',sans-serif;color:var(--grey)}
+  .approach-stages{position:relative;display:flex;flex-direction:column}
+  .approach-stages::after{content:'';position:absolute;left:13px;top:14px;bottom:14px;width:2px;background:var(--divider);z-index:0}
+  .approach-stage{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px;padding:16px 0 16px 44px;border-bottom:1px solid var(--border)}
+  .approach-stage:last-child{border-bottom:none}
+  .approach-stage::before{content:'';position:absolute;left:8px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--blue-tint)}
+  .approach-num{font:700 11px/1 'Manrope',sans-serif;letter-spacing:.1em;color:var(--blue);text-transform:uppercase;margin-bottom:4px}
+  .approach-stage h3{font-size:18px;margin-bottom:4px}
+  .approach-stage p{font:400 14px/1.5 'Manrope',sans-serif;color:var(--grey)}
 
   /* ---------- about ---------- */
   .about{background:var(--panel)}
@@ -257,7 +320,7 @@
 
   /* ---------- footer ---------- */
   .footer{position:relative;background:var(--navy);overflow:hidden}
-  .footer-spectrum{height:4px;width:100%;background:linear-gradient(90deg,#4C5FD5,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#4C5FD5);background-size:200% 100%;animation:spectrum-shift 16s linear infinite;position:relative;z-index:2}
+  .footer-spectrum,.nav-spectrum{height:3px;width:100%;background:linear-gradient(90deg,#516FB4,#7C6FE0,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#516FB4);background-size:200% 100%;animation:spectrum-shift 18s linear infinite;position:relative;z-index:2;opacity:.75}
   @keyframes spectrum-shift{from{background-position:0% 0}to{background-position:-100% 0}}
   .footer-photo{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:grayscale(20%) contrast(1.05) brightness(.68) saturate(1.1);opacity:.55;transition:transform 8s ease-out}
   .footer:hover .footer-photo{transform:scale(1.06)}
@@ -291,7 +354,7 @@
   /* ---------- scroll reveal ---------- */
   @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .hero-inner{animation:riseIn .7s ease both}
-  .js .stat-overlap-card,.js .service-card,.js .partner-card,.js .approach-stage,.js .about-photo,.js .about-copy,.js .testimonial-card,.js .contact-inner{
+  .js .stat-overlap-card,.js .service-card,.js .partner-card,.js .approach-stage,.js .about-photo,.js .about-copy,.js .testimonial-card,.js .contact-inner,.js .industry-card,.js .bento-image,.js .bento-stat,.js .bento-cell,.js .bento-wide{
     opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease
   }
   .is-visible,
@@ -300,7 +363,12 @@
   .services-grid.is-visible .service-card,
   .partner-grid.is-visible .partner-card,
   .approach-stages.is-visible .approach-stage,
-  .testimonial-grid.is-visible .testimonial-card{
+  .testimonial-grid.is-visible .testimonial-card,
+  .industries-grid.is-visible .industry-card,
+  .bento-grid.is-visible .bento-image,
+  .bento-grid.is-visible .bento-stat,
+  .bento-grid.is-visible .bento-cell,
+  .bento-grid.is-visible .bento-wide{
     opacity:1!important;transform:none!important
   }
   .stat-overlap-grid.is-visible .stat-overlap-card:nth-child(2){transition-delay:.08s}
@@ -314,6 +382,17 @@
   .partner-grid.is-visible .partner-card:nth-child(4){transition-delay:.24s}
   .approach-stages.is-visible .approach-stage:nth-child(2){transition-delay:.08s}
   .approach-stages.is-visible .approach-stage:nth-child(3){transition-delay:.16s}
+  .approach-stages.is-visible .approach-stage:nth-child(4){transition-delay:.24s}
+  .approach-stages.is-visible .approach-stage:nth-child(5){transition-delay:.32s}
+  .industries-grid.is-visible .industry-card:nth-child(2){transition-delay:.06s}
+  .industries-grid.is-visible .industry-card:nth-child(3){transition-delay:.12s}
+  .industries-grid.is-visible .industry-card:nth-child(4){transition-delay:.18s}
+  .industries-grid.is-visible .industry-card:nth-child(5){transition-delay:.24s}
+  .industries-grid.is-visible .industry-card:nth-child(6){transition-delay:.3s}
+  .bento-grid.is-visible .bento-stat{transition-delay:.08s}
+  .bento-grid.is-visible .bento-cell:nth-of-type(1){transition-delay:.14s}
+  .bento-grid.is-visible .bento-cell:nth-of-type(2){transition-delay:.2s}
+  .bento-grid.is-visible .bento-wide{transition-delay:.26s}
   .testimonial-grid.is-visible .testimonial-card:nth-child(2){transition-delay:.08s}
   .testimonial-grid.is-visible .testimonial-card:nth-child(3){transition-delay:.16s}
 
@@ -342,6 +421,7 @@
       <span></span><span></span><span></span>
     </button>
   </div>
+  <div class="nav-spectrum" aria-hidden="true"></div>
   <div class="mobile-menu" id="mobileMenu" hidden>
     <a href="#services">Services</a>
     <a href="#why">Approach</a>
@@ -573,6 +653,50 @@
     </div>
   </section>
 
+  <section class="industries" id="industries">
+    <div class="industries-inner">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">WHERE WE WORK</span>
+          <h2>Industry expertise</h2>
+        </div>
+        <p>Versatility across sectors, built on real engagements — not a generic capability list.</p>
+      </div>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <span class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span>
+          <h3>Hospitality &amp; Tourism</h3>
+          <p>Visitor experience, cultural destinations, and accommodation.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg></span>
+          <h3>Healthcare &amp; Elder Care</h3>
+          <p>Residential care, nursing services, and wellness programmes.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M10 20c0-3 3-5 6-5s6 2 6 5"/></svg></span>
+          <h3>Non-Profit Organizations</h3>
+          <p>Governance, community programmes, and social impact.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c0-9 5-16 14-16 0 9-5 16-14 16z"/><path d="M5 21c3-6 6-9 11-12"/></svg></span>
+          <h3>Environmental Sustainability</h3>
+          <p>Recycling, waste management, and circular-economy initiatives.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
+          <h3>SMEs &amp; Corporate Services</h3>
+          <p>Operations, HR, and management consulting for growing businesses.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M9 20h6M12 15v5"/></svg></span>
+          <h3>Digital &amp; Technology</h3>
+          <p>Systems, workflows, and digital transformation initiatives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="results" id="about-numbers">
     <div class="results-inner">
       <div class="results-head">
@@ -581,9 +705,36 @@
       </div>
       <div class="results-grid">
         <div class="results-cell"><div class="results-value" data-count-to="2023">0</div><p>Founded</p></div>
-        <div class="results-cell"><div class="results-value">51–200</div><p>Team members</p></div>
-        <div class="results-cell"><div class="results-value" data-count-to="5">0</div><p>Core disciplines</p></div>
-        <div class="results-cell"><div class="results-value">JB</div><p>Headquartered in Johor Bahru</p></div>
+        <div class="results-cell"><div class="results-value">51–200</div><p>Employees</p></div>
+        <div class="results-cell placeholder"><div class="results-value">—</div><p>Projects</p></div>
+        <div class="results-cell"><div class="results-value" data-count-to="5">0</div><p>Consulting disciplines</p></div>
+        <div class="results-cell placeholder"><div class="results-value">—</div><p>Client satisfaction</p></div>
+      </div>
+      <p class="footnote" style="color:rgba(255,255,255,.5)">Projects and client satisfaction are placeholders — swap in verified figures when available.</p>
+    </div>
+  </section>
+
+  <section class="bento">
+    <div class="bento-grid">
+      <div class="bento-image" style="--photo:url('Photos/gamutpro-office-1.webp');"></div>
+      <div class="bento-stat">
+        <span class="bento-value" data-count-to="5">0</span>
+        <p>Core consulting disciplines under one accountable team.</p>
+      </div>
+      <div class="bento-cell">
+        <span class="bento-value">4+</span>
+        <p>Partner organizations we support long-term.</p>
+      </div>
+      <div class="bento-cell">
+        <span class="bento-value">100%</span>
+        <p>Long-term partnership focus, not one-off projects.</p>
+      </div>
+      <div class="bento-wide">
+        <div>
+          <h3>Digital Transformation</h3>
+          <p>Modernizing the systems and workflows behind the customer experience — one of our five core disciplines.</p>
+        </div>
+        <a class="btn btn-outline-light" href="#services" style="border:1.5px solid rgba(255,255,255,.32);">Explore services →</a>
       </div>
     </div>
   </section>
@@ -592,14 +743,16 @@
     <div class="approach">
       <div class="approach-copy">
         <span class="eyebrow">HOW WE WORK</span>
-        <h2>Understand. Plan. Execute.</h2>
-        <p>No templates, no shortcuts — every engagement starts with your business, not a playbook. That consultative approach is what a 51–200-strong team backed by trusted partnerships makes possible.</p>
+        <h2>From discovery to growth</h2>
+        <p>No templates, no shortcuts — every engagement follows a clear, five-stage path from your first conversation with us to measurable results. That consultative approach is what a 51–200-strong team backed by trusted partnerships makes possible.</p>
         <a class="btn btn-dark" href="#contact" style="align-self:flex-start;">Start with a conversation</a>
       </div>
       <div class="approach-stages">
-        <div class="approach-stage"><span class="approach-num">01</span><div><h3>Understand</h3><p>We map your goals, constraints, and current operations before proposing a direction.</p></div></div>
-        <div class="approach-stage"><span class="approach-num">02</span><div><h3>Plan</h3><p>A tailored strategy across the disciplines you need — nothing bundled in you don't.</p></div></div>
-        <div class="approach-stage"><span class="approach-num">03</span><div><h3>Execute</h3><p>Our consultants embed with your team to see the plan through to results.</p></div></div>
+        <div class="approach-stage"><span class="approach-num">Step 01</span><h3>Discovery</h3><p>Understand your business, goals, and constraints.</p></div>
+        <div class="approach-stage"><span class="approach-num">Step 02</span><h3>Analysis</h3><p>Assess what's working and what's holding growth back.</p></div>
+        <div class="approach-stage"><span class="approach-num">Step 03</span><h3>Planning</h3><p>Build a tailored strategy across the disciplines you need.</p></div>
+        <div class="approach-stage"><span class="approach-num">Step 04</span><h3>Execution</h3><p>Our consultants execute alongside your team.</p></div>
+        <div class="approach-stage"><span class="approach-num">Step 05</span><h3>Growth</h3><p>Track results and refine the plan as your business scales.</p></div>
       </div>
     </div>
   </section>
@@ -748,7 +901,7 @@
   window.addEventListener('scroll', onNavScroll, { passive:true });
   onNavScroll();
 
-  var revealEls = document.querySelectorAll('.stat-overlap-grid, .services-grid, .partner-grid, .approach-stages, .about-photo, .about-copy, .testimonial-grid, .contact-inner');
+  var revealEls = document.querySelectorAll('.stat-overlap-grid, .services-grid, .partner-grid, .industries-grid, .bento-grid, .approach-stages, .about-photo, .about-copy, .testimonial-grid, .contact-inner');
   if('IntersectionObserver' in window){
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
