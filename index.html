@@ -388,15 +388,15 @@
   .footer{position:relative;background:linear-gradient(165deg,var(--navy) 0%,var(--midnight) 55%,#070d17 100%);overflow:hidden}
   .footer-spectrum,.nav-spectrum{height:3px;width:100%;background:linear-gradient(90deg,#516FB4,#7C6FE0,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#516FB4);background-size:200% 100%;animation:spectrum-shift 18s linear infinite;position:relative;z-index:2;opacity:.75}
   @keyframes spectrum-shift{from{background-position:0% 0}to{background-position:-100% 0}}
-  .footer-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(48px,7vw,72px) 32px 34px;display:flex;flex-direction:column;gap:48px}
-  .footer-brand-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
-  .footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:18px;max-width:360px}
-  .footer-logo{height:48px;width:auto;transition:transform .3s ease;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+  .footer-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(48px,7vw,72px) 32px 34px;display:flex;flex-direction:column;gap:44px}
+  .footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  .footer-logo{height:64px;width:auto;transition:transform .3s ease;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
   .footer-logo:hover{transform:translateY(-2px)}
-  .footer-brand p{font:400 15px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.55)}
+  .footer-brand p{font:400 15px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.55);max-width:34ch}
   .footer-brand-cta{margin-top:4px}
-  .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.1fr;gap:40px}
-  @media (max-width:860px){ .footer-grid{grid-template-columns:1fr 1fr} }
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+  @media (max-width:1024px){ .footer-grid{grid-template-columns:1fr 1fr 1fr} .footer-grid>.footer-brand{grid-column:1/-1} }
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr 1fr} }
   @media (max-width:480px){ .footer-grid{grid-template-columns:1fr} }
   .footer h4{font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
   .footer-links{display:flex;flex-direction:column;gap:13px}
@@ -909,14 +909,12 @@
 <footer class="footer">
   <div class="footer-spectrum" aria-hidden="true"></div>
   <div class="footer-inner">
-    <div class="footer-brand-row">
+    <div class="footer-grid">
       <div class="footer-brand">
         <img class="footer-logo" src="Photos/GP-logo-reverse-white-footer.png" alt="Gamut Pro" decoding="async">
         <p>A Johor Bahru consultancy for marketing, financial, HR, management, and digital transformation strategy.</p>
         <a class="btn btn-primary btn-sm footer-brand-cta" href="#contact">Get in Touch →</a>
       </div>
-    </div>
-    <div class="footer-grid">
       <div>
         <h4>Company</h4>
         <div class="footer-links">
