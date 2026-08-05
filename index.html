@@ -386,7 +386,7 @@
 
   /* ---------- footer ---------- */
   .footer{position:relative;background:linear-gradient(165deg,var(--navy) 0%,var(--midnight) 55%,#070d17 100%);overflow:hidden}
-  .footer-spectrum,.nav-spectrum{height:3px;width:100%;background:linear-gradient(90deg,#516FB4,#7C6FE0,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#516FB4);background-size:200% 100%;animation:spectrum-shift 18s linear infinite;position:relative;z-index:2;opacity:.75}
+  .nav-spectrum{height:3px;width:100%;background:linear-gradient(90deg,#516FB4,#7C6FE0,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#516FB4);background-size:200% 100%;animation:spectrum-shift 18s linear infinite;position:relative;z-index:2;opacity:.75}
   @keyframes spectrum-shift{from{background-position:0% 0}to{background-position:-100% 0}}
   .footer-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(48px,7vw,72px) 32px 34px;display:flex;flex-direction:column;gap:44px}
   .footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
@@ -477,7 +477,6 @@
       <a href="#why">Approach</a>
       <a href="#partners">Partners</a>
       <a href="#about">About</a>
-      <a href="careers.html">Careers</a>
     </nav>
     <a class="btn btn-dark btn-sm" href="#contact">Get in Touch</a>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
@@ -493,7 +492,6 @@
   <a href="#why">Approach</a>
   <a href="#partners">Partners</a>
   <a href="#about">About</a>
-  <a href="careers.html">Careers</a>
   <a class="btn btn-primary" href="#contact">Get in Touch</a>
 </div>
 
@@ -907,7 +905,6 @@
 </main>
 
 <footer class="footer">
-  <div class="footer-spectrum" aria-hidden="true"></div>
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -921,7 +918,6 @@
           <a href="#why">Approach</a>
           <a href="#partners">Partners</a>
           <a href="#about">About</a>
-          <a href="careers.html">Careers</a>
         </div>
       </div>
       <div>
@@ -937,7 +933,6 @@
       <div>
         <h4>Resources</h4>
         <div class="footer-links">
-          <a href="careers.html">Open Roles</a>
           <a href="#partners">Partnership Portfolio</a>
           <a href="#why">Our Approach</a>
         </div>
@@ -1183,22 +1178,6 @@
     gsap.from('.hero h1', { opacity:0, y:18, duration:.7, delay:.2 });
     gsap.from('.hero p.lead', { opacity:0, y:18, duration:.7, delay:.32 });
     gsap.from('.hero-actions', { opacity:0, y:18, duration:.7, delay:.42 });
-  }
-
-  /* ---- GSAP-assisted page transition for internal navigation ---- */
-  if(window.gsap && !reduceMotion){
-    var overlay = document.createElement('div');
-    overlay.style.cssText = 'position:fixed;inset:0;z-index:9998;background:#0B1423;opacity:0;pointer-events:none;';
-    document.body.appendChild(overlay);
-    document.querySelectorAll('a[href="careers.html"]').forEach(function(link){
-      link.addEventListener('click', function(e){
-        if(e.metaKey || e.ctrlKey) return;
-        e.preventDefault();
-        var href = link.getAttribute('href');
-        overlay.style.pointerEvents = 'auto';
-        gsap.to(overlay, { opacity:1, duration:.35, onComplete: function(){ window.location.href = href; } });
-      });
-    });
   }
 
   /* ---- whatsapp enquiry form ---- */

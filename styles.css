@@ -1,5 +1,5 @@
 /* Shared chrome for gamutpro.my — tokens, reset, buttons, nav, footer.
-   Used by careers.html and admin.html so both stay visually in sync.
+   Used by 404.html so it stays visually in sync with the rest of the site.
    index.html keeps its own copy of these rules inline. */
 
 :root{
