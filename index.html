@@ -388,12 +388,10 @@
   .footer{position:relative;background:linear-gradient(165deg,var(--navy) 0%,var(--midnight) 55%,#070d17 100%);overflow:hidden}
   .footer-spectrum,.nav-spectrum{height:3px;width:100%;background:linear-gradient(90deg,#516FB4,#7C6FE0,#2BB4A6,#3FA65C,#E8A33D,#E2604F,#516FB4);background-size:200% 100%;animation:spectrum-shift 18s linear infinite;position:relative;z-index:2;opacity:.75}
   @keyframes spectrum-shift{from{background-position:0% 0}to{background-position:-100% 0}}
-  .footer-glow{position:absolute;top:-180px;left:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(81,111,180,.22) 0%,rgba(81,111,180,0) 70%);pointer-events:none;z-index:0}
-  .footer-worldmap{position:absolute;inset:0;z-index:0;opacity:.09;pointer-events:none}
   .footer-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(48px,7vw,72px) 32px 34px;display:flex;flex-direction:column;gap:48px}
   .footer-brand-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
-  .footer-brand{display:flex;flex-direction:column;gap:18px;max-width:360px}
-  .footer-logo{height:60px;width:auto;transition:transform .3s ease;filter:drop-shadow(0 4px 14px rgba(0,0,0,.55))}
+  .footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:18px;max-width:360px}
+  .footer-logo{height:48px;width:auto;transition:transform .3s ease;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
   .footer-logo:hover{transform:translateY(-2px)}
   .footer-brand p{font:400 15px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.55)}
   .footer-brand-cta{margin-top:4px}
@@ -910,23 +908,6 @@
 
 <footer class="footer">
   <div class="footer-spectrum" aria-hidden="true"></div>
-  <div class="footer-glow" aria-hidden="true"></div>
-  <svg class="footer-worldmap" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g fill="none" stroke="#ffffff" stroke-width="1">
-      <ellipse cx="720" cy="200" rx="680" ry="170"></ellipse>
-      <ellipse cx="720" cy="200" rx="680" ry="90"></ellipse>
-      <ellipse cx="720" cy="200" rx="460" ry="170"></ellipse>
-      <ellipse cx="720" cy="200" rx="230" ry="170"></ellipse>
-      <line x1="40" y1="200" x2="1400" y2="200"></line>
-      <line x1="720" y1="30" x2="720" y2="370"></line>
-    </g>
-    <g fill="#C7A96B">
-      <circle cx="300" cy="150" r="4"></circle>
-      <circle cx="620" cy="230" r="4"></circle>
-      <circle cx="980" cy="170" r="4"></circle>
-      <circle cx="1180" cy="260" r="4"></circle>
-    </g>
-  </svg>
   <div class="footer-inner">
     <div class="footer-brand-row">
       <div class="footer-brand">
