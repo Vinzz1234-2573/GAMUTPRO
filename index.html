@@ -325,6 +325,11 @@
   .about-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
   @media (max-width:860px){ .about-inner{grid-template-columns:1fr} }
   .about-photo{position:relative;border-radius:var(--radius);overflow:hidden;height:clamp(240px,60vw,420px);background:var(--border);transform-style:preserve-3d;transition:transform .3s ease;will-change:transform}
+  .about-photo.is-mobile-only{display:none}
+  @media (max-width:860px){
+    .about-photo.is-desktop-only{display:none}
+    .about-photo.is-mobile-only{display:block}
+  }
   .about-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease}
   .about-slide.is-active{opacity:1}
   .about-slider-dots{position:absolute;z-index:2;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
@@ -816,11 +821,23 @@
 
   <section class="about" id="about">
     <div class="about-inner">
-      <div class="about-photo" id="aboutSlider">
+      <div class="about-photo is-desktop-only" id="aboutSlider">
         <img class="about-slide is-active" src="Photos/slider%201.jpg" alt="The Gamut Pro team" loading="lazy" decoding="async">
         <img class="about-slide" src="Photos/slider%202.jpeg" alt="Gamut Pro office lounge" loading="lazy" decoding="async">
         <img class="about-slide" src="Photos/slider%203.jpg" alt="Gamut Pro team member at the office" loading="lazy" decoding="async">
         <img class="about-slide" src="Photos/slider%204.jpg" alt="Gamut Pro team at a company event" loading="lazy" decoding="async">
+        <div class="about-slider-dots" role="tablist" aria-label="Office photos">
+          <button type="button" class="about-dot is-active" data-slide="0" aria-label="Show photo 1"></button>
+          <button type="button" class="about-dot" data-slide="1" aria-label="Show photo 2"></button>
+          <button type="button" class="about-dot" data-slide="2" aria-label="Show photo 3"></button>
+          <button type="button" class="about-dot" data-slide="3" aria-label="Show photo 4"></button>
+        </div>
+      </div>
+      <div class="about-photo is-mobile-only" id="aboutSliderMobile">
+        <img class="about-slide is-active" src="Photos/PHONE%20PHOTO%201.jpg" alt="The Gamut Pro team" loading="lazy" decoding="async">
+        <img class="about-slide" src="Photos/PHOTO%202.jpg" alt="Gamut Pro office lounge" loading="lazy" decoding="async">
+        <img class="about-slide" src="Photos/PHOTO%203.jpg" alt="Gamut Pro team member at the office" loading="lazy" decoding="async">
+        <img class="about-slide" src="Photos/PHOTO%204.jpg" alt="Gamut Pro team at a company event" loading="lazy" decoding="async">
         <div class="about-slider-dots" role="tablist" aria-label="Office photos">
           <button type="button" class="about-dot is-active" data-slide="0" aria-label="Show photo 1"></button>
           <button type="button" class="about-dot" data-slide="1" aria-label="Show photo 2"></button>
@@ -1056,10 +1073,10 @@
   }
 
   /* ---- about section photo slider ---- */
-  var aboutSlider = document.getElementById('aboutSlider');
-  if(aboutSlider){
+  document.querySelectorAll('.about-photo').forEach(function(aboutSlider){
     var aboutSlides = aboutSlider.querySelectorAll('.about-slide');
     var aboutDots = aboutSlider.querySelectorAll('.about-dot');
+    if(!aboutSlides.length) return;
     var aboutCurrent = 0;
     var aboutTimer = null;
     function showAboutSlide(idx){
@@ -1079,7 +1096,7 @@
       });
     });
     startAboutAutoplay();
-  }
+  });
 
   /* ---- hero scroll parallax + mouse parallax on floating cards ---- */
   var heroParallax = document.getElementById('heroParallax');
