@@ -191,6 +191,7 @@
   .hero-stats{max-width:1440px;margin:-88px auto 0;padding:0 32px;position:relative;z-index:5}
   .hero-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   @media (max-width:980px){ .hero-stats-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){ .hero-stats-grid{grid-template-columns:1fr} }
   .hero-stat-card{
     position:relative;background:rgba(255,255,255,.68);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:8px;
@@ -837,7 +838,7 @@
         <img class="about-slide is-active" src="Photos/PHONE%20PHOTO%201.jpg" alt="The Gamut Pro team" loading="lazy" decoding="async">
         <img class="about-slide" src="Photos/PHOTO%202.jpg" alt="Gamut Pro office lounge" loading="lazy" decoding="async">
         <img class="about-slide" src="Photos/PHOTO%203.jpg" alt="Gamut Pro team member at the office" loading="lazy" decoding="async">
-        <img class="about-slide" src="Photos/PHOTO%204.jpg" alt="Gamut Pro team at a company event" loading="lazy" decoding="async">
+        <img class="about-slide" src="Photos/PHOTO%204.jpg" alt="Gamut Pro team at a company event" loading="lazy" decoding="async" style="object-position:top">
         <div class="about-slider-dots" role="tablist" aria-label="Office photos">
           <button type="button" class="about-dot is-active" data-slide="0" aria-label="Show photo 1"></button>
           <button type="button" class="about-dot" data-slide="1" aria-label="Show photo 2"></button>
