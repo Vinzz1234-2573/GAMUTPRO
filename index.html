@@ -180,9 +180,19 @@
   @keyframes auroraDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.12)}100%{transform:translate(-30px,20px) scale(.96)}}
   .hero .container{position:relative;z-index:2;padding-top:clamp(64px,12vw,120px);padding-bottom:clamp(110px,18vw,190px)}
   .hero-inner{max-width:640px;display:flex;flex-direction:column;gap:24px}
-  .hero-tag{display:flex;align-items:center;gap:12px}
-  .hero-tag .line{width:34px;height:2px;background:var(--gold)}
-  .hero-tag span{font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#C9D6EE}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:10px;width:fit-content;
+    padding:9px 20px 9px 16px;border-radius:999px;
+    background:rgba(255,255,255,.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(199,169,107,.4);box-shadow:0 4px 20px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .hero-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;box-shadow:0 0 0 0 rgba(199,169,107,.55);animation:tagPulse 2.4s ease-out infinite}
+  @keyframes tagPulse{0%{box-shadow:0 0 0 0 rgba(199,169,107,.5)}70%{box-shadow:0 0 0 7px rgba(199,169,107,0)}100%{box-shadow:0 0 0 0 rgba(199,169,107,0)}}
+  .hero-tag span{
+    font:700 12px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;
+    background:linear-gradient(90deg,#F4E4C4 0%,var(--gold) 55%,#F4E4C4 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold);
+  }
   .hero h1{font-size:clamp(2.4rem,5.2vw,4.1rem);line-height:1.06;color:#fff}
   .hero p.lead{font:400 18px/1.62 'Inter',sans-serif;color:rgba(255,255,255,.78);max-width:520px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
@@ -517,7 +527,7 @@
     <div class="hero-aurora" id="heroAurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
     <div class="container">
       <div class="hero-inner">
-        <div class="hero-tag"><span class="line" aria-hidden="true"></span><span>GROW BRAND · GROW BUSINESS</span></div>
+        <div class="hero-tag"><span class="dot" aria-hidden="true"></span><span>GROW BRAND · GROW BUSINESS</span></div>
         <h1>AI-Enabled Business Consultancy for Sustainable Growth</h1>
         <p class="lead">We help businesses strengthen their brand, accelerate growth, and embrace digital transformation through AI-powered consulting, business strategy, technology solutions, and operational excellence.</p>
         <div class="hero-actions">
