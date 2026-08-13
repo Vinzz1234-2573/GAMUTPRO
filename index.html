@@ -42,7 +42,7 @@
   },
   "description": "Johor Bahru business consultancy covering marketing, financial advisory, HR management, management consultancy, and digital transformation.",
   "foundingDate": "2023",
-  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 51, "maxValue": 200 },
+  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 50 },
   "sameAs": []
 }
 </script>
@@ -180,8 +180,10 @@
   @keyframes auroraDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.12)}100%{transform:translate(-30px,20px) scale(.96)}}
   .hero .container{position:relative;z-index:2;padding-top:clamp(64px,12vw,120px);padding-bottom:clamp(110px,18vw,190px)}
   .hero-inner{max-width:640px;display:flex;flex-direction:column;gap:24px}
+  .hero-tag{display:flex;align-items:center;gap:12px}
+  .hero-tag .line{width:34px;height:2px;background:var(--gold)}
+  .hero-tag span{font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#C9D6EE}
   .hero h1{font-size:clamp(2.4rem,5.2vw,4.1rem);line-height:1.06;color:#fff}
-  .hero-subhead{font:500 clamp(1.15rem,2.2vw,1.5rem)/1.4 'Poppins',sans-serif;color:#C9D6EE;margin-top:-8px}
   .hero p.lead{font:400 18px/1.62 'Inter',sans-serif;color:rgba(255,255,255,.78);max-width:520px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
 
@@ -509,8 +511,8 @@
     <div class="hero-aurora" id="heroAurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
     <div class="container">
       <div class="hero-inner">
-        <h1>GROW BRAND · GROW BUSINESS</h1>
-        <p class="hero-subhead">AI-Enabled Business Consultancy for Sustainable Growth</p>
+        <div class="hero-tag"><span class="line" aria-hidden="true"></span><span>GROW BRAND · GROW BUSINESS</span></div>
+        <h1>AI-Enabled Business Consultancy for Sustainable Growth</h1>
         <p class="lead">We help businesses strengthen their brand, accelerate growth, and embrace digital transformation through AI-powered consulting, business strategy, technology solutions, and operational excellence.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Get Started</a>
@@ -529,7 +531,7 @@
       </div>
       <div class="hero-stat-card">
         <span class="eyebrow">TEAM</span>
-        <div class="hero-stat-value">100+</div>
+        <div class="hero-stat-value">50+</div>
         <p>Consultants and specialists across every discipline we offer.</p>
       </div>
       <div class="hero-stat-card">
@@ -670,6 +672,7 @@
             <div class="partner-body">
               <div class="partner-meta-row">
                 <h3>Gentle Hill Elder Care Centre</h3>
+                
                 <span class="partner-industry-badge">Nursing Homes &amp; Residential Care</span>
               </div>
               <div class="partner-about">
@@ -804,7 +807,7 @@
         <span class="divider-gold" aria-hidden="true"></span>
         <span class="eyebrow">HOW WE WORK</span>
         <h2>From discovery to growth</h2>
-        <p>No templates, no shortcuts — every engagement follows a clear, five-stage path from your first conversation with us to measurable results. That consultative approach is what a 100+-strong team backed by trusted partnerships makes possible.</p>
+        <p>No templates, no shortcuts — every engagement follows a clear, five-stage path from your first conversation with us to measurable results. That consultative approach is what a 50+-strong team backed by trusted partnerships makes possible.</p>
         <a class="btn btn-primary" href="#contact" style="align-self:flex-start;">Start with a conversation</a>
       </div>
 \++----------------------------+---+---------------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-------++------++-++
@@ -834,7 +837,7 @@
       <div class="about-copy">
         <span class="eyebrow">ABOUT GAMUT PRO</span>
         <h2>One team, every discipline you need</h2>
-        <p>Gamut Pro is a Johor Bahru consultancy of 100+ consultants and specialists, spanning marketing, financial, HR, management, and digital disciplines. We spend real time understanding how your business runs before we recommend anything.</p>
+        <p>Gamut Pro is a Johor Bahru consultancy of 50+ consultants and specialists, spanning marketing, financial, HR, management, and digital disciplines. We spend real time understanding how your business runs before we recommend anything.</p>
         <div class="about-list">
           <div class="about-list-item"><span class="about-check">✓</span><span>Tailored solutions — no templates, no shortcuts</span></div>
           <div class="about-list-item"><span class="about-check">✓</span><span>Cross-industry expertise across five disciplines</span></div>
@@ -864,7 +867,7 @@
       </div>
       <div class="testimonial-card">
         <span class="testimonial-tag">Rooted in Johor Bahru</span>
-        <p class="quote">A 100+-strong team based right here in JB, spending real time understanding how your business runs before recommending anything.</p>
+        <p class="quote">A 50+-strong team based right here in JB, spending real time understanding how your business runs before recommending anything.</p>
       </div>
     </div>
     </div>
@@ -1177,8 +1180,8 @@
 
   /* ---- GSAP hero entrance (progressive enhancement) ---- */
   if(window.gsap && !reduceMotion){
-    gsap.from('.hero h1', { opacity:0, y:14, duration:.6, delay:.1 });
-    gsap.from('.hero-subhead', { opacity:0, y:18, duration:.7, delay:.2 });
+    gsap.from('.hero-tag', { opacity:0, y:14, duration:.6, delay:.1 });
+    gsap.from('.hero h1', { opacity:0, y:18, duration:.7, delay:.2 });
     gsap.from('.hero p.lead', { opacity:0, y:18, duration:.7, delay:.32 });
     gsap.from('.hero-actions', { opacity:0, y:18, duration:.7, delay:.42 });
   }
