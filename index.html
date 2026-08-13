@@ -373,19 +373,24 @@
   .contact-glow .g2{width:300px;height:300px;bottom:-160px;left:-60px}
   .contact-inner{position:relative;z-index:1;max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,8vw,90px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   @media (max-width:900px){ .contact-inner{grid-template-columns:1fr} }
+  .contact-copy .eyebrow{color:var(--gold)}
   .contact-copy h2{color:#fff;font-size:clamp(2rem,3.6vw,2.8rem);line-height:1.08}
   .contact-copy p{margin-top:16px;font:400 17px/1.6 'Inter',sans-serif;color:rgba(255,255,255,.84);max-width:420px}
   .contact-links{display:flex;flex-direction:column;gap:8px;padding-top:18px}
-  .contact-links a{font:600 17px/1.4 'Inter',sans-serif;color:#fff}
-  .contact-form{background:#fff;border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-lg)}
+  .contact-links a{position:relative;display:inline-flex;width:fit-content;font:600 17px/1.4 'Inter',sans-serif;color:#fff}
+  .contact-links a::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .contact-links a:hover::after{transform:scaleX(1)}
+  .contact-form{position:relative;background:#fff;border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-lg);transform-style:preserve-3d;transition:transform .3s ease,box-shadow .3s ease;will-change:transform}
+  .contact-form:hover{box-shadow:0 34px 70px rgba(11,20,35,.35)}
   .contact-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media (max-width:480px){ .contact-form-row{grid-template-columns:1fr} }
   .contact-field{display:flex;flex-direction:column;gap:6px}
   .contact-field label{font:600 12.5px/1 'Inter',sans-serif;color:rgba(20,22,26,.7)}
-  .contact-field input,.contact-field textarea{font:inherit;font-size:14.5px;border:1.5px solid var(--border);border-radius:10px;padding:11px 13px;color:var(--ink);background:#fff}
+  .contact-field input,.contact-field textarea{font:inherit;font-size:14.5px;border:1.5px solid var(--border);border-radius:10px;padding:11px 13px;color:var(--ink);background:#fff;transition:border-color .2s ease,box-shadow .2s ease}
   .contact-field textarea{resize:vertical;min-height:80px}
-  .contact-field input:focus,.contact-field textarea:focus{border-color:var(--blue)}
-  .contact-map-wrap{margin-top:56px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.16);position:relative;z-index:1}
+  .contact-field input:focus,.contact-field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-tint)}
+  .contact-map-wrap{margin-top:56px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.16);position:relative;z-index:1;transition:transform .4s ease,box-shadow .4s ease}
+  .contact-map-wrap:hover{transform:translateY(-6px);box-shadow:0 34px 70px rgba(11,20,35,.4)}
   .contact-map-wrap iframe{width:100%;height:340px;border:0;display:block;filter:grayscale(20%) contrast(1.05)}
   @media (max-width:600px){ .contact-map-wrap iframe{height:240px} }
   .curve-divider{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;line-height:0}
@@ -878,6 +883,8 @@
     <div class="contact-glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span></div>
     <div class="contact-inner">
       <div class="contact-copy">
+        <span class="divider-gold" aria-hidden="true"></span>
+        <span class="eyebrow">GET IN TOUCH</span>
         <h2>Grow brand. Grow business.</h2>
         <p>Tell us what you're trying to grow. We'll come back with a view on whether — and how — we can help.</p>
         <div class="contact-links">
@@ -1060,6 +1067,7 @@
       el.addEventListener('mouseleave', function(){ el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)'; });
     }
     document.querySelectorAll('.about-photo').forEach(function(el){ addTilt(el, 6); });
+    document.querySelectorAll('.contact-form').forEach(function(el){ addTilt(el, 2.5); });
   }
 
   /* ---- about section photo slider ---- */
