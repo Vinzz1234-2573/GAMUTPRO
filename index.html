@@ -323,9 +323,10 @@
 
   /* ---------- about ---------- */
   .about{background:var(--panel)}
-  .about-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  @media (max-width:860px){ .about-inner{grid-template-columns:1fr} }
+  .about-inner{max-width:1440px;width:100%;margin:0 auto;padding:clamp(56px,9vw,96px) 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch}
+  @media (max-width:860px){ .about-inner{grid-template-columns:1fr;align-items:start} }
   .about-photo{position:relative;border-radius:var(--radius);overflow:hidden;height:clamp(240px,60vw,420px);background:var(--border);transform-style:preserve-3d;transition:transform .3s ease;will-change:transform}
+  @media (min-width:861px){ .about-photo{height:100%;min-height:420px} }
   .about-photo.is-mobile-only{display:none}
   @media (max-width:860px){
     .about-photo.is-desktop-only{display:none}
