@@ -28,9 +28,9 @@
     background-image:radial-gradient(rgba(199,169,107,.08) 1px,transparent 1px);background-size:34px 34px;
   }
   .m-glow{position:absolute;left:-8%;top:15%;width:min(620px,75vw);height:min(520px,65vh);border-radius:50%;background:radial-gradient(ellipse at 40% 40%,rgba(81,111,180,.32) 0%,rgba(199,169,107,.08) 45%,transparent 72%);pointer-events:none}
-  .m-inner{position:relative;z-index:2;max-width:600px;padding:32px}
-  .m-logo{height:34px;margin-bottom:44px;opacity:.92}
-  .m-eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .m-inner{position:relative;z-index:2;max-width:600px;width:100%;padding:32px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .m-logo{display:block;height:34px;margin:0 auto 44px;opacity:.92}
+  .m-eyebrow{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
   .m-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 1.6s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .m-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(26px,4.2vw,42px);line-height:1.15;color:#fff;margin:0 0 20px}
