@@ -350,9 +350,10 @@
   .about-copy{display:flex;flex-direction:column;gap:22px}
   .about-copy h2{font-size:clamp(1.8rem,3.2vw,2.3rem)}
   .about-copy>p{font:400 17px/1.7 'Inter',sans-serif;color:var(--body-text)}
-  .about-list{display:flex;flex-direction:column;gap:14px;padding-top:6px}
-  .about-list-item{display:flex;align-items:center;gap:12px}
-  .about-check{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 'Inter',sans-serif;flex:none}
+  .about-list{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+  .about-list-item{display:flex;align-items:center;gap:14px;padding:12px 16px;margin:0 -16px;border-radius:14px;border:1px solid transparent;transition:background .3s ease,border-color .3s ease,transform .3s ease}
+  .about-list-item:hover{background:var(--gold-tint);border-color:rgba(199,169,107,.35);transform:translateX(4px)}
+  .about-check{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,#B8934F 100%);color:#fff;display:flex;align-items:center;justify-content:center;font:700 13px/1 'Inter',sans-serif;flex:none;box-shadow:0 4px 12px rgba(199,169,107,.35)}
   .about-list-item span{font:500 16px/1.4 'Inter',sans-serif;color:var(--ink)}
 
   /* ---------- testimonials ---------- */
@@ -856,6 +857,7 @@
         </div>
       </div>
       <div class="about-copy">
+        <span class="divider-gold" aria-hidden="true"></span>
         <span class="eyebrow">ABOUT GAMUT PRO</span>
         <h2>One team, every discipline you need</h2>
         <p>Gamut Pro is a Johor Bahru consultancy of 50+ consultants and specialists, spanning marketing, financial, HR, management, and digital disciplines. We spend real time understanding how your business runs before we recommend anything.</p>
