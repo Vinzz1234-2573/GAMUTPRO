@@ -1,0 +1,8 @@
+# Use the site's custom 404 page for any real 404 (safe to leave permanently)
+ErrorDocument 404 /404.html
+
+# --- MAINTENANCE MODE: force homepage to serve 404 instead of index.html ---
+# Uncomment the block below to make "/" return a real 404 status (shows 404.html).
+# To revert, just comment out (or delete) these two lines again.
+RewriteEngine On
+RewriteRule ^$ - [R=404,L]
