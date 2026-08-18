@@ -5,6 +5,6 @@ ErrorDocument 404 /404.html
 # Active now. Uses a 503 status (not 404) so search engines know this is temporary
 # and don't drop the site from their index while it's down.
 # To revert: comment out (or delete) these three lines, then re-upload.
-RewriteEngine On
-ErrorDocument 503 /maintenance.html
-RewriteRule ^$ - [R=503,L]
+# RewriteEngine On
+# ErrorDocument 503 /maintenance.html
+# RewriteRule ^$ - [R=503,L]
