@@ -5,7 +5,7 @@
 <script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Column Explanation — monday.com User Guide — Gamut Pro Sdn Bhd</title>
-<meta name="description" content="Every column on our monday.com boards explained in 31 steps, each with a worked sample.">
+<meta name="description" content="Every column on our monday.com boards explained in 32 steps, each with a worked sample.">
 <!-- Internal guide: delete the next line if you want search engines to index these pages -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#132238">
@@ -504,7 +504,7 @@
   .board-scroll{position:relative}
   .mk-board{min-width:0;width:max-content;padding:18px 24px 26px}
   .mk-board-grid{width:max-content;border-left:0;border-radius:0;
-    grid-template-columns:60px 285px 240px repeat(9,minmax(120px,max-content)) 230px repeat(18,minmax(118px,max-content))}
+    grid-template-columns:60px 285px 240px repeat(10,minmax(120px,max-content)) 230px repeat(18,minmax(118px,max-content))}
   .mk-board-grid>.g{border-left:6px solid var(--mk-green)}
   .mk-board-grid>.g-top{border-top-left-radius:6px}
   .mk-board-grid>.g-bottom{border-bottom-left-radius:6px}
@@ -916,6 +916,20 @@
 
   .board-hint-text{font:500 13px/1.3 'Inter',sans-serif;color:var(--grey)}
   @media (max-width:640px){ .board-tools.is-simple{display:none} }
+
+  /* Evidence: file source menu (interactive) */
+  .mk-files{list-style:none;margin:10px 0 0;padding:8px;max-width:300px;border:1px solid var(--mk-line);border-radius:10px;background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.12);font-size:13.5px;color:var(--mk-ink)}
+  .mk-files[hidden]{display:none}
+  .mk-files li{padding:0;border-radius:6px}
+  .mk-files .ev-opt{display:flex;align-items:center;gap:12px;width:100%;padding:9px 10px;border:0;border-radius:6px;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
+  .mk-files .ev-opt .ic{width:18px;height:18px;color:var(--mk-muted)}
+  .mk-files li.is-hl .ev-opt,.mk-files .ev-opt:hover,.mk-files .ev-opt:focus-visible{background:var(--mk-blue);color:#fff}
+  .mk-files li.is-hl .ev-opt .ic,.mk-files .ev-opt:hover .ic,.mk-files .ev-opt:focus-visible .ic{color:#fff}
+  .mk-files li.sep{height:1px;margin:6px 0;border-radius:0;background:var(--mk-line)}
+  button.ev-cell{width:100%;border:0;background:none;font:inherit;color:inherit;cursor:pointer}
+  .ev-file{display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:6px;background:#E8F7EF;color:#13734A;font-size:13px;font-weight:500}
+  .ev-file .ic{width:16px;height:16px}
+  .ev-reset{margin-left:10px;padding:0;border:0;background:none;font:600 13px/1.4 'Inter',sans-serif;color:var(--blue);cursor:pointer}
 </style>
 </head>
 <body>
@@ -970,6 +984,13 @@
   <symbol id="i-crown-o" viewBox="0 0 24 24"><path d="M3.5 8l4.5 4 4-6.5 4 6.5 4.5-4-1.5 10h-14z"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M9 7l1.5-2.5h3L15 7"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-drive" viewBox="0 0 24 24"><path d="M8 4h8l6 10-4 6H6l-4-6z"/><path d="M8 4l6 10M16 4l-6 10M6 20l4-6h12"/></symbol>
+  <symbol id="i-dropbox" viewBox="0 0 24 24"><path d="M7 4l5 3.3L7 10.6 2 7.3zM17 4l5 3.3-5 3.3-5-3.3zM7 11.5l5 3.3L7 18.1l-5-3.3zM17 11.5l5 3.3-5 3.3-5-3.3z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M8 4v15"/><circle cx="13" cy="15" r="4"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.9A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 8.5z"/></symbol>
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
 </svg>
 
@@ -1010,7 +1031,7 @@
         </nav>
         <div class="hero-tag"><span class="dot" aria-hidden="true"></span><span>USER GUIDE · COLUMN EXPLANATION</span></div>
         <h1>Managing tasks on <span class="h1-sub">monday.com</span></h1>
-        <p class="lead">Every column on our boards, explained. 31 steps in four parts, each with a worked sample and a preview of what you’ll see on screen.</p>
+        <p class="lead">Every column on our boards, explained. 32 steps in four parts, each with a worked sample and a preview of what you’ll see on screen.</p>
         <div class="hero-actions">
           <div class="row">
             <a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
@@ -1018,7 +1039,7 @@
           <div class="row">
             <a class="btn btn-outline-light" href="Gamut-Pro-monday-User-Guide.pdf" download><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Download PDF</a>
             <!-- GO TO MONDAY: replace the link below with your final monday.com link whenever you are ready -->
-            <a class="btn btn-outline-light" href="https://amitabhafoundation.monday.com/auth/login_monday/email_password" target="_blank" rel="noopener noreferrer">Go To Monday<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a class="btn btn-outline-light" href="https://amitabhafoundation.monday.com/boards/5031991577" target="_blank" rel="noopener noreferrer">Go To Monday<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a>
           </div>
         </div>
       </div>
@@ -1035,10 +1056,10 @@
       </div>
       <div class="board-tools">
         <div class="board-parts" role="group" aria-label="Show columns for">
-          <button type="button" class="board-part is-active" data-band="0" aria-pressed="true"><b>1–9</b>Set up the task</button>
-          <button type="button" class="board-part" data-band="1" aria-pressed="false"><b>10–14</b>Budget and people</button>
-          <button type="button" class="board-part" data-band="2" aria-pressed="false"><b>15–17</b>Verify and evaluate</button>
-          <button type="button" class="board-part" data-band="3" aria-pressed="false"><b>18–31</b>Automatic tracking</button>
+          <button type="button" class="board-part is-active" data-band="0" aria-pressed="true"><b>1–10</b>Set up the task</button>
+          <button type="button" class="board-part" data-band="1" aria-pressed="false"><b>11–15</b>Budget and people</button>
+          <button type="button" class="board-part" data-band="2" aria-pressed="false"><b>16–18</b>Verify and evaluate</button>
+          <button type="button" class="board-part" data-band="3" aria-pressed="false"><b>19–32</b>Automatic tracking</button>
         </div>
         <div class="board-arrows">
           <button type="button" class="board-arrow" id="boardPrev" aria-label="Scroll the board left">‹</button>
@@ -1049,10 +1070,10 @@
         <div class="mk mk-board">
           <div class="mk-board-grid" role="presentation">
             <!-- part bands -->
-            <div class="band" style="grid-column:1 / 7"><span><b>Part 1</b>Set up the task</span></div>
-            <div class="band" style="grid-column:7 / 12"><span><b>Part 2</b>Budget and people</span></div>
-            <div class="band" style="grid-column:12 / 15"><span><b>Part 3</b>Verify and evaluate</span></div>
-            <div class="band" style="grid-column:15 / 32"><span><b>Part 4</b>Automatic tracking and scores</span></div>
+            <div class="band" style="grid-column:1 / 8"><span><b>Part 1</b>Set up the task</span></div>
+            <div class="band" style="grid-column:8 / 13"><span><b>Part 2</b>Budget and people</span></div>
+            <div class="band" style="grid-column:13 / 16"><span><b>Part 3</b>Verify and evaluate</span></div>
+            <div class="band" style="grid-column:16 / 33"><span><b>Part 4</b>Automatic tracking and scores</span></div>
 
             <!-- header row -->
             <div class="bh c g g-top"><span class="pinned"><span class="mk-cb"></span><a class="pin" href="#step-1" aria-label="Step 1: Select tasks">1</a></span></div>
@@ -1064,31 +1085,32 @@
             <div class="bh c"><span class="pinned"><span class="mk-sq"></span>Task Schedule<a class="pin" href="#step-7" aria-label="Step 7: Task schedule">7</a></span></div>
             <div class="bh c"><span class="pinned"><span class="mk-sq"></span>Effort<a class="pin" href="#step-8" aria-label="Step 8: Effort level">8</a></span></div>
             <div class="bh c"><span class="pinned"><span class="mk-sq"></span>Work Status<a class="pin" href="#step-9" aria-label="Step 9: Work status">9</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Budget?<a class="pin" href="#step-10" aria-label="Step 10: Budget needed">10</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Budget<a class="pin" href="#step-11" aria-label="Step 11: Budget amount">11</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Tasker<a class="pin" href="#step-12" aria-label="Step 12: Tasker">12</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>PIC<a class="pin" href="#step-13" aria-label="Step 13: PIC for shared email">13</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Taskee<a class="pin" href="#step-14" aria-label="Step 14: Taskee">14</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Verification<a class="pin" href="#step-15" aria-label="Step 15: Verification">15</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Comment / Feedback<a class="pin" href="#step-16" aria-label="Step 16: Comment or feedback">16</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq orange"></span>Performance Score /3<a class="pin" href="#step-17" aria-label="Step 17: Performance score">17</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Health<a class="pin" href="#step-18" aria-label="Step 18: Health">18</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq orange"></span>External Budget<a class="pin" href="#step-19" aria-label="Step 19: External budget">19</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Start Date<a class="pin" href="#step-20" aria-label="Step 20: Start date">20</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Due Date<a class="pin" href="#step-21" aria-label="Step 21: Due date">21</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Original Due Date<a class="pin" href="#step-22" aria-label="Step 22: Original due date">22</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Schedule Revision Count<a class="pin" href="#step-22" aria-label="Step 22: Schedule revision count">22</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Submission Date<a class="pin" href="#step-23" aria-label="Step 23: Submission date">23</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>RAG<a class="pin" href="#step-24" aria-label="Step 24: RAG status">24</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Trigger<a class="pin" href="#step-25" aria-label="Step 25: Trigger">25</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>HOD Action<a class="pin" href="#step-26" aria-label="Step 26: HOD action">26</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Revision Count<a class="pin" href="#step-27" aria-label="Step 27: Revision count">27</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Completion Date<a class="pin" href="#step-28" aria-label="Step 28: Completion date">28</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Delivery Score /3<a class="pin" href="#step-29" aria-label="Step 29: Delivery score">29</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Budget Performance<a class="pin" href="#step-29" aria-label="Step 29: Budget performance">29</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Budget Score /3<a class="pin" href="#step-29" aria-label="Step 29: Budget score">29</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Performance Value<a class="pin" href="#step-30" aria-label="Step 30: Performance value">30</a></span></div>
-            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Total Score /9<a class="pin" href="#step-31" aria-label="Step 31: Total score">31</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq"></span>Evidence<a class="pin" href="#step-10" aria-label="Step 10: Evidence">10</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Budget?<a class="pin" href="#step-11" aria-label="Step 11: Budget needed">11</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Budget<a class="pin" href="#step-12" aria-label="Step 12: Budget amount">12</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Tasker<a class="pin" href="#step-13" aria-label="Step 13: Tasker">13</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>PIC<a class="pin" href="#step-14" aria-label="Step 14: PIC for shared email">14</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Taskee<a class="pin" href="#step-15" aria-label="Step 15: Taskee">15</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Verification<a class="pin" href="#step-16" aria-label="Step 16: Verification">16</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq blue"></span>Comment / Feedback<a class="pin" href="#step-17" aria-label="Step 17: Comment or feedback">17</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq orange"></span>Performance Score /3<a class="pin" href="#step-18" aria-label="Step 18: Performance score">18</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Health<a class="pin" href="#step-19" aria-label="Step 19: Health">19</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq orange"></span>External Budget<a class="pin" href="#step-20" aria-label="Step 20: External budget">20</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Start Date<a class="pin" href="#step-21" aria-label="Step 21: Start date">21</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Due Date<a class="pin" href="#step-22" aria-label="Step 22: Due date">22</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Original Due Date<a class="pin" href="#step-23" aria-label="Step 23: Original due date">23</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Schedule Revision Count<a class="pin" href="#step-23" aria-label="Step 23: Schedule revision count">23</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Submission Date<a class="pin" href="#step-24" aria-label="Step 24: Submission date">24</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>RAG<a class="pin" href="#step-25" aria-label="Step 25: RAG status">25</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Trigger<a class="pin" href="#step-26" aria-label="Step 26: Trigger">26</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>HOD Action<a class="pin" href="#step-27" aria-label="Step 27: HOD action">27</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Revision Count<a class="pin" href="#step-28" aria-label="Step 28: Revision count">28</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Completion Date<a class="pin" href="#step-29" aria-label="Step 29: Completion date">29</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Delivery Score /3<a class="pin" href="#step-30" aria-label="Step 30: Delivery score">30</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Budget Performance<a class="pin" href="#step-30" aria-label="Step 30: Budget performance">30</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Budget Score /3<a class="pin" href="#step-30" aria-label="Step 30: Budget score">30</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Performance Value<a class="pin" href="#step-31" aria-label="Step 31: Performance value">31</a></span></div>
+            <div class="bh c"><span class="pinned"><span class="mk-sq auto"></span>Total Score /9<a class="pin" href="#step-32" aria-label="Step 32: Total score">32</a></span></div>
 
             <!-- task row -->
             <div class="bc c g"><span class="mk-cb"></span></div>
@@ -1100,6 +1122,7 @@
             <div class="bc c"><span class="mk-timeline">Jul 8 - 18</span></div>
             <div class="bc fill"><span class="mk-status" style="--s:#FDAB3D">Medium</span></div>
             <div class="bc fill"><span class="mk-status" style="--s:#579BFC">Assigned</span></div>
+            <div class="bc c"><svg class="ic" style="width:16px;height:16px;color:#C3C6D4" aria-hidden="true"><use href="#i-clip"/></svg></div>
             <div class="bc fill"><span class="mk-status" style="--s:#00C875">Yes</span></div>
             <div class="bc c">RM500.00</div>
             <div class="bc c"><span class="mk-av" title="HOD">HOD</span></div>
@@ -1163,35 +1186,36 @@
             <li><a href="#step-7" data-step="7"><span class="n">7</span>Task schedule</a></li>
             <li><a href="#step-8" data-step="8"><span class="n">8</span>Effort level</a></li>
             <li><a href="#step-9" data-step="9"><span class="n">9</span>Work status</a></li>
+            <li><a href="#step-10" data-step="10"><span class="n">10</span>Evidence</a></li>
             <li class="toc-part"><span>Part 2</span>Budget and people</li>
-            <li><a href="#step-10" data-step="10"><span class="n">10</span>Budget needed?</a></li>
-            <li><a href="#step-11" data-step="11"><span class="n">11</span>Budget amount</a></li>
-            <li><a href="#step-12" data-step="12"><span class="n">12</span>Tasker</a></li>
-            <li><a href="#step-13" data-step="13"><span class="n">13</span>PIC for shared email</a></li>
-            <li><a href="#step-14" data-step="14"><span class="n">14</span>Taskee</a></li>
+            <li><a href="#step-11" data-step="11"><span class="n">11</span>Budget needed?</a></li>
+            <li><a href="#step-12" data-step="12"><span class="n">12</span>Budget amount</a></li>
+            <li><a href="#step-13" data-step="13"><span class="n">13</span>Tasker</a></li>
+            <li><a href="#step-14" data-step="14"><span class="n">14</span>PIC for shared email</a></li>
+            <li><a href="#step-15" data-step="15"><span class="n">15</span>Taskee</a></li>
             <li class="toc-part"><span>Part 3</span>Verify and evaluate</li>
-            <li><a href="#step-15" data-step="15"><span class="n">15</span>Verification</a></li>
-            <li><a href="#step-16" data-step="16"><span class="n">16</span>Comment / feedback</a></li>
-            <li><a href="#step-17" data-step="17"><span class="n">17</span>Performance score</a></li>
+            <li><a href="#step-16" data-step="16"><span class="n">16</span>Verification</a></li>
+            <li><a href="#step-17" data-step="17"><span class="n">17</span>Comment / feedback</a></li>
+            <li><a href="#step-18" data-step="18"><span class="n">18</span>Performance score</a></li>
             <li class="toc-part"><span>Part 4</span>Automatic tracking</li>
-            <li><a href="#step-18" data-step="18"><span class="n">18</span>Health</a></li>
-            <li><a href="#step-19" data-step="19"><span class="n">19</span>External budget</a></li>
-            <li><a href="#step-20" data-step="20"><span class="n">20</span>Start date</a></li>
-            <li><a href="#step-21" data-step="21"><span class="n">21</span>Due date</a></li>
-            <li><a href="#step-22" data-step="22"><span class="n">22</span>Original due date</a></li>
-            <li><a href="#step-23" data-step="23"><span class="n">23</span>Submission date</a></li>
-            <li><a href="#step-24" data-step="24"><span class="n">24</span>RAG status</a></li>
-            <li><a href="#step-25" data-step="25"><span class="n">25</span>Trigger</a></li>
-            <li><a href="#step-26" data-step="26"><span class="n">26</span>HOD action</a></li>
-            <li><a href="#step-27" data-step="27"><span class="n">27</span>Revision count</a></li>
-            <li><a href="#step-28" data-step="28"><span class="n">28</span>Completion date</a></li>
-            <li><a href="#step-29" data-step="29"><span class="n">29</span>Delivery &amp; budget scores</a></li>
-            <li><a href="#step-30" data-step="30"><span class="n">30</span>Performance value</a></li>
-            <li><a href="#step-31" data-step="31"><span class="n">31</span>Total score</a></li>
+            <li><a href="#step-19" data-step="19"><span class="n">19</span>Health</a></li>
+            <li><a href="#step-20" data-step="20"><span class="n">20</span>External budget</a></li>
+            <li><a href="#step-21" data-step="21"><span class="n">21</span>Start date</a></li>
+            <li><a href="#step-22" data-step="22"><span class="n">22</span>Due date</a></li>
+            <li><a href="#step-23" data-step="23"><span class="n">23</span>Original due date</a></li>
+            <li><a href="#step-24" data-step="24"><span class="n">24</span>Submission date</a></li>
+            <li><a href="#step-25" data-step="25"><span class="n">25</span>RAG status</a></li>
+            <li><a href="#step-26" data-step="26"><span class="n">26</span>Trigger</a></li>
+            <li><a href="#step-27" data-step="27"><span class="n">27</span>HOD action</a></li>
+            <li><a href="#step-28" data-step="28"><span class="n">28</span>Revision count</a></li>
+            <li><a href="#step-29" data-step="29"><span class="n">29</span>Completion date</a></li>
+            <li><a href="#step-30" data-step="30"><span class="n">30</span>Delivery &amp; budget scores</a></li>
+            <li><a href="#step-31" data-step="31"><span class="n">31</span>Performance value</a></li>
+            <li><a href="#step-32" data-step="32"><span class="n">32</span>Total score</a></li>
           </ol>
           <div class="sop-toc-progress">
             <div class="sop-toc-track"><span id="tocBar"></span></div>
-            <span class="sop-toc-label" id="tocLabel">Step 1 of 31</span>
+            <span class="sop-toc-label" id="tocLabel">Step 1 of 32</span>
           </div>
         </aside>
 
@@ -1199,7 +1223,7 @@
 
           <!-- ================= PART 1 ================= -->
           <div class="sop-part" id="part-1">
-            <div class="sop-part-tag"><span>Part 1</span>Steps 1–9</div>
+            <div class="sop-part-tag"><span>Part 1</span>Steps 1–10</div>
             <h3>Set up the task</h3>
             <p>Create the task, name and describe it, then set its schedule, effort and work status.</p>
           </div>
@@ -1561,9 +1585,43 @@
             </div>
           </article>
 
+          <!-- STEP 10 -->
+          <article class="sop-step" id="step-10" data-step="10">
+            <header class="sop-step-head">
+              <span class="sop-step-num">10</span>
+              <div><span class="sop-step-cat">Column: Evidence</span><h3>Attach evidence</h3></div>
+            </header>
+            <div class="sop-step-content">
+              <div class="sop-copy">
+                <div class="sop-field">
+                  <span class="sop-label">Instruction</span>
+                  <p>Attach evidence for the task by adding a file to this column. Select the cell, then choose where the file comes from.</p>
+                </div>
+                <div class="sop-field sop-sample">
+                  <span class="sop-label">Sample</span>
+                  <p>From Computer</p>
+                </div>
+                <div class="sop-note"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> You can add a file from your computer, webcam, a doc, a link, Google Drive, Dropbox, Box, or OneDrive &amp; SharePoint.</p></div>
+              </div>
+              <figure class="sop-screen">
+                <div class="frame-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>On screen</div>
+                <div class="sop-screen-body">
+                  <div class="mk">
+                    <div class="mk-table" style="max-width:300px">
+                      <div class="mk-th c"><span class="mk-sq"></span>Evidence <svg class="ic mk-info" aria-hidden="true"><use href="#i-info"/></svg></div>
+                      <button type="button" class="mk-td c is-editing ev-cell" id="evCell" aria-expanded="true" aria-controls="evMenu" aria-label="Evidence cell: open the file menu"><span class="mk-state" id="evState">Select the cell</span></button>
+                    </div>
+                    <ul class="mk-files" id="evMenu" role="menu" aria-label="Where the file comes from"><li class=is-hl><button type="button" class="ev-opt" role="menuitem" data-opt="From Computer"><svg class="ic" aria-hidden="true"><use href="#i-clip"/></svg>From Computer</button></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="From Webcam"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>From Webcam</button></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="Doc"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Doc</button></li><li class="sep" role="separator"></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="From Link"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>From Link</button></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="From Google Drive"><svg class="ic" aria-hidden="true"><use href="#i-drive"/></svg>From Google Drive</button></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="From Dropbox"><svg class="ic" aria-hidden="true"><use href="#i-dropbox"/></svg>From Dropbox</button></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="From Box"><svg class="ic" aria-hidden="true"><use href="#i-box"/></svg>From Box</button></li><li><button type="button" class="ev-opt" role="menuitem" data-opt="From OneDrive &amp; SharePoint"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>From OneDrive &amp; SharePoint</button></li></ul>
+                  </div>
+                  <p class="mk-hint" aria-live="polite"><span id="evMsg">Try it: choose where the file comes from.</span><button type="button" class="ev-reset" id="evReset" hidden>Start again</button></p>
+                </div>
+              </figure>
+            </div>
+          </article>
+
           <!-- ================= PART 2 ================= -->
           <div class="sop-part" id="part-2">
-            <div class="sop-part-tag"><span>Part 2</span>Steps 10–14</div>
+            <div class="sop-part-tag"><span>Part 2</span>Steps 11–15</div>
             <h3>Budget and people</h3>
             <p>Record whether the task needs money and how much, then choose who assigns the task and who carries it out.</p>
             <div class="roles">
@@ -1573,10 +1631,10 @@
             </div>
           </div>
 
-          <!-- STEP 10 -->
-          <article class="sop-step" id="step-10" data-step="10">
+          <!-- STEP 11 -->
+          <article class="sop-step" id="step-11" data-step="11">
             <header class="sop-step-head">
-              <span class="sop-step-num">10</span>
+              <span class="sop-step-num">11</span>
               <div><span class="sop-step-cat">Column: Budget?</span><h3>Say whether a budget is needed</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1613,10 +1671,10 @@
             </div>
           </article>
 
-          <!-- STEP 11 -->
-          <article class="sop-step" id="step-11" data-step="11">
+          <!-- STEP 12 -->
+          <article class="sop-step" id="step-12" data-step="12">
             <header class="sop-step-head">
-              <span class="sop-step-num">11</span>
+              <span class="sop-step-num">12</span>
               <div><span class="sop-step-cat">Column: Budget</span><h3>Enter the budget amount</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1644,10 +1702,10 @@
             </div>
           </article>
 
-          <!-- STEP 12 -->
-          <article class="sop-step" id="step-12" data-step="12">
+          <!-- STEP 13 -->
+          <article class="sop-step" id="step-13" data-step="13">
             <header class="sop-step-head">
-              <span class="sop-step-num">12</span>
+              <span class="sop-step-num">13</span>
               <div><span class="sop-step-cat">Column: Tasker</span><h3>Select the Tasker</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1671,17 +1729,17 @@
                     <div class="h c"><span class="mk-sq blue"></span>Taskee</div>
                     <div class="d">Renewal License (Sample)</div>
                     <div class="d c is-focus"><span class="mk-person"><span class="mk-av">HOD</span>HOD</span></div>
-                    <div class="d c is-later"><a href="#step-14">Set in step 14</a></div>
+                    <div class="d c is-later"><a href="#step-15">Set in step 15</a></div>
                   </div>
                 </div>
               </figure>
             </div>
           </article>
 
-          <!-- STEP 13 -->
-          <article class="sop-step" id="step-13" data-step="13">
+          <!-- STEP 14 -->
+          <article class="sop-step" id="step-14" data-step="14">
             <header class="sop-step-head">
-              <span class="sop-step-num">13</span>
+              <span class="sop-step-num">14</span>
               <div><span class="sop-step-cat">Columns: PIC and Taskee <span class="sop-badge opt">Shared email only</span></span><h3>Add a PIC for shared email accounts</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1711,10 +1769,10 @@
             </div>
           </article>
 
-          <!-- STEP 14 -->
-          <article class="sop-step" id="step-14" data-step="14">
+          <!-- STEP 15 -->
+          <article class="sop-step" id="step-15" data-step="15">
             <header class="sop-step-head">
-              <span class="sop-step-num">14</span>
+              <span class="sop-step-num">15</span>
               <div><span class="sop-step-cat">Column: Taskee</span><h3>Select the Taskee</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1756,15 +1814,15 @@
 
           <!-- ================= PART 3 ================= -->
           <div class="sop-part" id="part-3">
-            <div class="sop-part-tag"><span>Part 3</span>Steps 15–17</div>
+            <div class="sop-part-tag"><span>Part 3</span>Steps 16–18</div>
             <h3>Verify and evaluate</h3>
             <p>For the Tasker/HOD: confirm the task’s progress, give feedback and score the Taskee’s work.</p>
           </div>
 
-          <!-- STEP 15 -->
-          <article class="sop-step is-wide" id="step-15" data-step="15">
+          <!-- STEP 16 -->
+          <article class="sop-step is-wide" id="step-16" data-step="16">
             <header class="sop-step-head">
-              <span class="sop-step-num">15</span>
+              <span class="sop-step-num">16</span>
               <div><span class="sop-step-cat">Column: Verification <span class="sop-badge hod"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>Tasker / HOD</span></span><h3>Verify the work</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1809,10 +1867,10 @@
             </div>
           </article>
 
-          <!-- STEP 16 -->
-          <article class="sop-step" id="step-16" data-step="16">
+          <!-- STEP 17 -->
+          <article class="sop-step" id="step-17" data-step="17">
             <header class="sop-step-head">
-              <span class="sop-step-num">16</span>
+              <span class="sop-step-num">17</span>
               <div><span class="sop-step-cat">Column: Comment / Feedback <span class="sop-badge hod"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>Tasker / HOD</span></span><h3>Leave a comment or feedback</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1839,10 +1897,10 @@
             </div>
           </article>
 
-          <!-- STEP 17 -->
-          <article class="sop-step is-wide" id="step-17" data-step="17">
+          <!-- STEP 18 -->
+          <article class="sop-step is-wide" id="step-18" data-step="18">
             <header class="sop-step-head">
-              <span class="sop-step-num">17</span>
+              <span class="sop-step-num">18</span>
               <div><span class="sop-step-cat">Column: Performance Score /3 <span class="sop-badge hod"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>Tasker / HOD</span></span><h3>Score the Taskee’s performance</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1883,15 +1941,15 @@
 
           <!-- ================= PART 4 ================= -->
           <div class="sop-part" id="part-4">
-            <div class="sop-part-tag"><span>Part 4</span>Steps 18–31</div>
+            <div class="sop-part-tag"><span>Part 4</span>Steps 19–32</div>
             <h3>Automatic tracking and scores</h3>
-            <p>monday.com fills these columns in for you, so there’s nothing to enter except External Budget (step 19) when an outside party is involved. Automatic columns carry an outlined icon <span class="mk-sq auto inline-sq" aria-hidden="true"></span> on the board.</p>
+            <p>monday.com fills these columns in for you, so there’s nothing to enter except External Budget (step 20) when an outside party is involved. Automatic columns carry an outlined icon <span class="mk-sq auto inline-sq" aria-hidden="true"></span> on the board.</p>
           </div>
 
-          <!-- STEP 18 -->
-          <article class="sop-step" id="step-18" data-step="18">
+          <!-- STEP 19 -->
+          <article class="sop-step" id="step-19" data-step="19">
             <header class="sop-step-head">
-              <span class="sop-step-num">18</span>
+              <span class="sop-step-num">19</span>
               <div><span class="sop-step-cat">Column: Health <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Task health</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1918,10 +1976,10 @@
             </div>
           </article>
 
-          <!-- STEP 19 -->
-          <article class="sop-step" id="step-19" data-step="19">
+          <!-- STEP 20 -->
+          <article class="sop-step" id="step-20" data-step="20">
             <header class="sop-step-head">
-              <span class="sop-step-num">19</span>
+              <span class="sop-step-num">20</span>
               <div><span class="sop-step-cat">Column: External Budget <span class="sop-badge opt">If applicable</span></span><h3>Enter the external budget</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1948,10 +2006,10 @@
             </div>
           </article>
 
-          <!-- STEP 20 -->
-          <article class="sop-step" id="step-20" data-step="20">
+          <!-- STEP 21 -->
+          <article class="sop-step" id="step-21" data-step="21">
             <header class="sop-step-head">
-              <span class="sop-step-num">20</span>
+              <span class="sop-step-num">21</span>
               <div><span class="sop-step-cat">Column: Start Date <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Start date</h3></div>
             </header>
             <div class="sop-step-content">
@@ -1985,10 +2043,10 @@
             </div>
           </article>
 
-          <!-- STEP 21 -->
-          <article class="sop-step" id="step-21" data-step="21">
+          <!-- STEP 22 -->
+          <article class="sop-step" id="step-22" data-step="22">
             <header class="sop-step-head">
-              <span class="sop-step-num">21</span>
+              <span class="sop-step-num">22</span>
               <div><span class="sop-step-cat">Column: Due Date <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Due date</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2022,10 +2080,10 @@
             </div>
           </article>
 
-          <!-- STEP 22 -->
-          <article class="sop-step" id="step-22" data-step="22">
+          <!-- STEP 23 -->
+          <article class="sop-step" id="step-23" data-step="23">
             <header class="sop-step-head">
-              <span class="sop-step-num">22</span>
+              <span class="sop-step-num">23</span>
               <div><span class="sop-step-cat">Columns: Original Due Date, Schedule Revision Count <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Original due date and schedule revisions</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2054,10 +2112,10 @@
             </div>
           </article>
 
-          <!-- STEP 23 -->
-          <article class="sop-step" id="step-23" data-step="23">
+          <!-- STEP 24 -->
+          <article class="sop-step" id="step-24" data-step="24">
             <header class="sop-step-head">
-              <span class="sop-step-num">23</span>
+              <span class="sop-step-num">24</span>
               <div><span class="sop-step-cat">Column: Submission Date <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Submission date</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2088,10 +2146,10 @@
             </div>
           </article>
 
-          <!-- STEP 24 -->
-          <article class="sop-step is-wide" id="step-24" data-step="24">
+          <!-- STEP 25 -->
+          <article class="sop-step is-wide" id="step-25" data-step="25">
             <header class="sop-step-head">
-              <span class="sop-step-num">24</span>
+              <span class="sop-step-num">25</span>
               <div><span class="sop-step-cat">Column: RAG <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>RAG status</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2118,10 +2176,10 @@
             </div>
           </article>
 
-          <!-- STEP 25 -->
-          <article class="sop-step is-wide" id="step-25" data-step="25">
+          <!-- STEP 26 -->
+          <article class="sop-step is-wide" id="step-26" data-step="26">
             <header class="sop-step-head">
-              <span class="sop-step-num">25</span>
+              <span class="sop-step-num">26</span>
               <div><span class="sop-step-cat">Column: Trigger <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Trigger</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2150,10 +2208,10 @@
             </div>
           </article>
 
-          <!-- STEP 26 -->
-          <article class="sop-step is-wide" id="step-26" data-step="26">
+          <!-- STEP 27 -->
+          <article class="sop-step is-wide" id="step-27" data-step="27">
             <header class="sop-step-head">
-              <span class="sop-step-num">26</span>
+              <span class="sop-step-num">27</span>
               <div><span class="sop-step-cat">Column: HOD Action <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>HOD action</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2181,10 +2239,10 @@
             </div>
           </article>
 
-          <!-- STEP 27 -->
-          <article class="sop-step" id="step-27" data-step="27">
+          <!-- STEP 28 -->
+          <article class="sop-step" id="step-28" data-step="28">
             <header class="sop-step-head">
-              <span class="sop-step-num">27</span>
+              <span class="sop-step-num">28</span>
               <div><span class="sop-step-cat">Column: Revision Count <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Revision count</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2198,7 +2256,7 @@
                   <p>No revision</p>
                 </div>
                 <div class="sop-note"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> System-generated field. No manual input required. Used to track work revisions and evaluate task performance.</p></div>
-                <div class="sop-note important"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Important:</strong> This tracks work revisions, not changes to the Task Schedule. Schedule changes are counted in Schedule Revision Count (<a href="#step-22">step 22</a>).</p></div>
+                <div class="sop-note important"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Important:</strong> This tracks work revisions, not changes to the Task Schedule. Schedule changes are counted in Schedule Revision Count (<a href="#step-23">step 23</a>).</p></div>
               </div>
               <figure class="sop-screen">
                 <div class="frame-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Which count goes up</div>
@@ -2218,10 +2276,10 @@
             </div>
           </article>
 
-          <!-- STEP 28 -->
-          <article class="sop-step" id="step-28" data-step="28">
+          <!-- STEP 29 -->
+          <article class="sop-step" id="step-29" data-step="29">
             <header class="sop-step-head">
-              <span class="sop-step-num">28</span>
+              <span class="sop-step-num">29</span>
               <div><span class="sop-step-cat">Column: Completion Date <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Completion date</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2252,10 +2310,10 @@
             </div>
           </article>
 
-          <!-- STEP 29 -->
-          <article class="sop-step is-wide" id="step-29" data-step="29">
+          <!-- STEP 30 -->
+          <article class="sop-step is-wide" id="step-30" data-step="30">
             <header class="sop-step-head">
-              <span class="sop-step-num">29</span>
+              <span class="sop-step-num">30</span>
               <div><span class="sop-step-cat">Columns: Delivery Score /3, Budget Performance, Budget Score /3 <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Delivery and budget scores</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2275,10 +2333,10 @@
             </div>
           </article>
 
-          <!-- STEP 30 -->
-          <article class="sop-step" id="step-30" data-step="30">
+          <!-- STEP 31 -->
+          <article class="sop-step" id="step-31" data-step="31">
             <header class="sop-step-head">
-              <span class="sop-step-num">30</span>
+              <span class="sop-step-num">31</span>
               <div><span class="sop-step-cat">Column: Performance Value <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Performance value</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2305,10 +2363,10 @@
             </div>
           </article>
 
-          <!-- STEP 31 -->
-          <article class="sop-step" id="step-31" data-step="31">
+          <!-- STEP 32 -->
+          <article class="sop-step" id="step-32" data-step="32">
             <header class="sop-step-head">
-              <span class="sop-step-num">31</span>
+              <span class="sop-step-num">32</span>
               <div><span class="sop-step-cat">Column: Total Score /9 <span class="sop-badge auto"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>Automatic</span></span><h3>Total score</h3></div>
             </header>
             <div class="sop-step-content">
@@ -2327,11 +2385,11 @@
                 <div class="frame-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>The three criteria</div>
                 <div class="sop-screen-body">
                   <div class="mk mk-formula">
-                    <a class="mk-term" href="#step-17"><span class="mk-term-col"><span class="mk-sq orange"></span>Performance Score /3</span><span class="mk-term-what">Work quality, step 17</span></a>
+                    <a class="mk-term" href="#step-18"><span class="mk-term-col"><span class="mk-sq orange"></span>Performance Score /3</span><span class="mk-term-what">Work quality, step 18</span></a>
                     <span class="mk-op" aria-hidden="true">+</span>
-                    <a class="mk-term" href="#step-29"><span class="mk-term-col"><span class="mk-sq auto"></span>Delivery Score /3</span><span class="mk-term-what">Timely delivery, step 29</span></a>
+                    <a class="mk-term" href="#step-30"><span class="mk-term-col"><span class="mk-sq auto"></span>Delivery Score /3</span><span class="mk-term-what">Timely delivery, step 30</span></a>
                     <span class="mk-op" aria-hidden="true">+</span>
-                    <a class="mk-term" href="#step-29"><span class="mk-term-col"><span class="mk-sq auto"></span>Budget Score /3</span><span class="mk-term-what">Budget management, step 29</span></a>
+                    <a class="mk-term" href="#step-30"><span class="mk-term-col"><span class="mk-sq auto"></span>Budget Score /3</span><span class="mk-term-what">Budget management, step 30</span></a>
                     <span class="mk-op" aria-hidden="true">=</span>
                     <div class="mk-total"><b>Total Score /9</b><span>Out of 9</span></div>
                   </div>
@@ -2360,7 +2418,7 @@
           <span class="gn-here">You’re here</span>
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg></span>
           <span class="gn-title">Column Explanation</span>
-          <span class="gn-desc">All 31 steps, column by column, each with a worked sample.</span>
+          <span class="gn-desc">All 32 steps, column by column, each with a worked sample.</span>
           <span class="gn-go">Back to step 1<svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></span>
         </a>
         <a class="gn-card" href="user-guide-create-task.html">
@@ -2661,6 +2719,42 @@
   document.getElementById('backToTop').addEventListener('click', function(){
     window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
+
+  /* ---- step 10: Evidence file menu ---- */
+  var evCell = document.getElementById('evCell');
+  if(evCell){
+    var evMenu = document.getElementById('evMenu'), evState = document.getElementById('evState');
+    var evMsg = document.getElementById('evMsg'), evReset = document.getElementById('evReset');
+    var evHasFile = false;
+    function evOpen(open){
+      evMenu.hidden = !open;
+      evCell.setAttribute('aria-expanded', String(open));
+      evCell.classList.toggle('is-editing', open);
+    }
+    function evClearHl(){ Array.prototype.forEach.call(evMenu.querySelectorAll('li.is-hl'), function(l){ l.classList.remove('is-hl'); }); }
+    evMenu.addEventListener('mouseover', evClearHl);
+    evMenu.addEventListener('focusin', evClearHl);
+    evCell.addEventListener('click', function(){ evOpen(evMenu.hidden); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !evMenu.hidden && evHasFile){ evOpen(false); } });
+    Array.prototype.forEach.call(evMenu.querySelectorAll('.ev-opt'), function(btn){
+      btn.addEventListener('click', function(){
+        var src = btn.getAttribute('data-opt');
+        evState.className = 'ev-file';
+        evState.textContent = '';
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'ic'); svg.setAttribute('aria-hidden', 'true');
+        var use = document.createElementNS('http://www.w3.org/2000/svg', 'use'); use.setAttribute('href', '#i-doc');
+        svg.appendChild(use); evState.appendChild(svg); evState.appendChild(document.createTextNode('evidence-sample.pdf'));
+        evHasFile = true; evOpen(false);
+        evMsg.textContent = 'Sample file added ' + (src === 'Doc' ? 'as a Doc' : src.charAt(0).toLowerCase() + src.slice(1)) + '. Select the cell to replace it.';
+        evReset.hidden = false;
+      });
+    });
+    evReset.addEventListener('click', function(){
+      evHasFile = false; evState.className = 'mk-state'; evState.textContent = 'Select the cell';
+      evOpen(true); evMsg.textContent = 'Try it: choose where the file comes from.'; evReset.hidden = true;
+    });
+  }
 })();
 </script>
 </body>
