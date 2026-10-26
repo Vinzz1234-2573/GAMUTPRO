@@ -930,6 +930,32 @@
   .ev-file{display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:6px;background:#E8F7EF;color:#13734A;font-size:13px;font-weight:500}
   .ev-file .ic{width:16px;height:16px}
   .ev-reset{margin-left:10px;padding:0;border:0;background:none;font:600 13px/1.4 'Inter',sans-serif;color:var(--blue);cursor:pointer}
+
+  /* ==========================================================
+     User Guide — four-page update
+     ========================================================== */
+  /* hero: every guide page, with the current one marked */
+  .hero-actions .row.pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:640px}
+  .hero-actions .row.pages .btn{padding:14px 22px}
+  .btn-here{background:rgba(199,169,107,.14);border-color:rgba(199,169,107,.75);color:#fff}
+  .btn-here:hover{background:rgba(199,169,107,.24);color:#fff}
+  .btn-here-tag{padding:4px 9px;border-radius:999px;background:var(--gold);color:var(--navy);font:700 10.5px/1 'Inter',sans-serif;letter-spacing:.04em}
+  @media (max-width:680px){ .hero-actions .row.pages{grid-template-columns:minmax(0,1fr)} }
+
+  /* guide navigation: four pages */
+  .gn-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media (max-width:1180px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+
+  /* section intro shown in a gold box, like the samples */
+  .section-head p.head-sample{max-width:440px;padding:14px 18px;border-radius:14px;background:var(--gold-tint);border:1px solid rgba(199,169,107,.38);font:500 15.5px/1.6 'Inter',sans-serif;color:var(--ink)}
+
+  /* mandatory badge */
+  .sop-badge.req{background:#FDF0EE;color:#7A2E22}
+  .sop-note.important a{color:inherit}
+
+  /* links inside update posts */
+  .mk-link{color:var(--mk-blue);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -992,6 +1018,7 @@
   <symbol id="i-box" viewBox="0 0 24 24"><path d="M8 4v15"/><circle cx="13" cy="15" r="4"/></symbol>
   <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.9A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 8.5z"/></symbol>
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-assign" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"/></symbol>
 </svg>
 
 <header class="nav">
@@ -1033,13 +1060,13 @@
         <h1>Monitoring tasks on <span class="h1-sub">monday.com</span></h1>
         <p class="lead">Track active tasks, spot pending actions and follow the work flow. Filter by PIC or Work Status to find the right task fast.</p>
         <div class="hero-actions">
-          <div class="row">
-            <a class="btn btn-primary" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Explanation<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
-          </div>
+          <nav class="row pages" aria-label="User Guide pages">
+            <a class="btn btn-primary" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Explanation<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+          </nav>
           <div class="row">
             <a class="btn btn-outline-light" href="Monday New User Guide.pdf" download><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Download PDF</a>
             <!-- GO TO MONDAY: replace the link below with your final monday.com link whenever you are ready -->
-            <a class="btn btn-outline-light" href="https://amitabhafoundation.monday.com/boards/5031991577" target="_blank" rel="noopener noreferrer">Go To Monday<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a class="btn btn-outline-light" href="https://amitabhafoundation.monday.com/auth/login_monday/email_password" target="_blank" rel="noopener noreferrer">Go To Monday<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a>
           </div>
         </div>
       </div>
@@ -1295,6 +1322,12 @@
           <span class="gn-desc">Filter active tasks, group them and follow the work flow.</span>
           <span class="gn-go">Back to the top<svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></span>
         </a>
+        <a class="gn-card" href="user-guide-assignment.html">
+          <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg></span>
+          <span class="gn-title">Assignment</span>
+          <span class="gn-desc">Two HOD tasks to complete on monday.com, then your feedback.</span>
+          <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
@@ -1336,6 +1369,7 @@
           <a href="user-guide.html">Column Explanation</a>
           <a href="user-guide-create-task.html">Create New Task</a>
           <a href="user-guide-progress-monitoring.html">Progress Monitoring</a>
+          <a href="user-guide-assignment.html">Assignment</a>
         </div>
       </div>
       <div>

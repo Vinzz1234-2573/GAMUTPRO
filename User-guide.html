@@ -930,6 +930,32 @@
   .ev-file{display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:6px;background:#E8F7EF;color:#13734A;font-size:13px;font-weight:500}
   .ev-file .ic{width:16px;height:16px}
   .ev-reset{margin-left:10px;padding:0;border:0;background:none;font:600 13px/1.4 'Inter',sans-serif;color:var(--blue);cursor:pointer}
+
+  /* ==========================================================
+     User Guide — four-page update
+     ========================================================== */
+  /* hero: every guide page, with the current one marked */
+  .hero-actions .row.pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:640px}
+  .hero-actions .row.pages .btn{padding:14px 22px}
+  .btn-here{background:rgba(199,169,107,.14);border-color:rgba(199,169,107,.75);color:#fff}
+  .btn-here:hover{background:rgba(199,169,107,.24);color:#fff}
+  .btn-here-tag{padding:4px 9px;border-radius:999px;background:var(--gold);color:var(--navy);font:700 10.5px/1 'Inter',sans-serif;letter-spacing:.04em}
+  @media (max-width:680px){ .hero-actions .row.pages{grid-template-columns:minmax(0,1fr)} }
+
+  /* guide navigation: four pages */
+  .gn-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media (max-width:1180px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+
+  /* section intro shown in a gold box, like the samples */
+  .section-head p.head-sample{max-width:440px;padding:14px 18px;border-radius:14px;background:var(--gold-tint);border:1px solid rgba(199,169,107,.38);font:500 15.5px/1.6 'Inter',sans-serif;color:var(--ink)}
+
+  /* mandatory badge */
+  .sop-badge.req{background:#FDF0EE;color:#7A2E22}
+  .sop-note.important a{color:inherit}
+
+  /* links inside update posts */
+  .mk-link{color:var(--mk-blue);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -992,6 +1018,7 @@
   <symbol id="i-box" viewBox="0 0 24 24"><path d="M8 4v15"/><circle cx="13" cy="15" r="4"/></symbol>
   <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.9A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 8.5z"/></symbol>
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-assign" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"/></symbol>
 </svg>
 
 <header class="nav">
@@ -1033,13 +1060,13 @@
         <h1>Managing tasks on <span class="h1-sub">monday.com</span></h1>
         <p class="lead">Every column on our boards, explained. 32 steps in four parts, each with a worked sample and a preview of what you’ll see on screen.</p>
         <div class="hero-actions">
-          <div class="row">
-            <a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
-          </div>
+          <nav class="row pages" aria-label="User Guide pages">
+            <a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Explanation<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+          </nav>
           <div class="row">
             <a class="btn btn-outline-light" href="Monday New User Guide.pdf" download><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Download PDF</a>
             <!-- GO TO MONDAY: replace the link below with your final monday.com link whenever you are ready -->
-            <a class="btn btn-outline-light" href="https://amitabhafoundation.monday.com/boards/5031991577" target="_blank" rel="noopener noreferrer">Go To Monday<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a class="btn btn-outline-light" href="https://amitabhafoundation.monday.com/auth/login_monday/email_password" target="_blank" rel="noopener noreferrer">Go To Monday<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a>
           </div>
         </div>
       </div>
@@ -1169,7 +1196,7 @@
           <span class="eyebrow">COLUMN BY COLUMN</span>
           <h2>Step-by-step guide</h2>
         </div>
-        <p>Work through parts 1 to 3 when you set up and review a task; part 4 fills itself in. Samples are in the gold boxes.</p>
+        <p class="head-sample">Work through parts 1 to 3 when you set up and review a task; part 4 fills itself in. Samples are in the gold boxes.</p>
       </div>
 
       <div class="sop-layout">
@@ -1356,9 +1383,14 @@
                 <ol class="sop-bullets full">
                   <li><span>Enter your <strong>update, comment, or progress</strong> information.</span></li>
                   <li><span>Use <strong>@mention</strong> to notify colleagues when necessary.</span></li>
-                  <li><span>Attach supporting documents or images using the <svg class="ic inline-ic" aria-label="paperclip" role="img"><use href="#i-clip"/></svg> icon.</span></li>
+                  <li><span>Share supporting documents as a <strong>SharePoint or OneDrive link</strong>: paste the link into the update. Use the <svg class="ic inline-ic" aria-label="paperclip" role="img"><use href="#i-clip"/></svg> icon to attach a file only when a link isn’t possible.</span></li>
                   <li><span>Click <strong>Update</strong> to post your comment.</span></li>
                 </ol>
+                <div class="sop-field sop-sample">
+                  <span class="sop-label">Sample</span>
+                  <p>@Taskee Please review the supplier quotation: (SharePoint link)</p>
+                </div>
+                <div class="sop-note"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg><p><strong>Prioritise links.</strong> A SharePoint or OneDrive link keeps one up-to-date copy in company storage. Before you post, check the link’s sharing settings so the Tasker, Taskee and PIC can open it.</p></div>
               </div>
               <figure class="sop-screen">
                 <div class="frame-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>On screen — Updates panel</div>
@@ -1381,16 +1413,17 @@
                       <div class="mk-editor-bar">
                         <div class="mk-tools">
                           <button type="button" class="mk-tool" id="s4At" aria-label="Insert @mention"><svg class="ic" aria-hidden="true"><use href="#i-at"/></svg></button>
-                          <span class="mk-tool is-highlight" title="Attach files"><svg class="ic" aria-hidden="true"><use href="#i-clip"/></svg></span>
+                          <span class="mk-tool" title="Attach files"><svg class="ic" aria-hidden="true"><use href="#i-clip"/></svg></span>
                           <span class="mk-tool" aria-hidden="true"><svg class="ic"><use href="#i-smile"/></svg></span>
                           <span class="mk-tool" aria-hidden="true"><svg class="ic"><use href="#i-wand"/></svg></span>
                         </div>
                         <button type="button" class="mk-btn-update" id="s4Post" disabled>Update</button>
                       </div>
                     </div>
-                    <div class="mk-feed" id="s4Feed" aria-live="polite"></div>
+                    <div class="mk-feed" id="s4Feed" aria-live="polite"><div class="mk-post"><div class="mk-post-head"><span class="mk-avatar" aria-hidden="true">HOD</span><strong>Tasker (HOD)</strong><span>1h</span></div><p><span class="mk-mention">@Taskee</span> Please review the supplier quotation:
+<span class="mk-link">https://yourcompany.sharepoint.com/…/Quotation.pdf</span></p></div></div>
                   </div>
-                  <p class="mk-hint">Try it: type an update with an @mention, then click Update. Nothing is sent anywhere.</p>
+                  <p class="mk-hint">Try it: type an update with an @mention, paste a SharePoint or OneDrive link, then click Update. Nothing is sent anywhere.</p>
                 </div>
               </figure>
             </div>
@@ -1635,18 +1668,19 @@
           <article class="sop-step" id="step-11" data-step="11">
             <header class="sop-step-head">
               <span class="sop-step-num">11</span>
-              <div><span class="sop-step-cat">Column: Budget?</span><h3>Say whether a budget is needed</h3></div>
+              <div><span class="sop-step-cat">Column: Budget? <span class="sop-badge req"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Mandatory</span></span><h3>Say whether a budget is needed</h3></div>
             </header>
             <div class="sop-step-content">
               <div class="sop-copy">
                 <div class="sop-field">
                   <span class="sop-label">Instruction</span>
-                  <p>Select whether the task requires a budget or involves any expenditure.</p>
+                  <p>Select <strong>Yes</strong> or <strong>No</strong> for every task, based on whether it requires a budget or involves any expenditure.</p>
                 </div>
                 <div class="sop-field sop-sample">
                   <span class="sop-label">Sample</span>
                   <p>Yes (Licence renewal fees are required.)</p>
                 </div>
+                <div class="sop-note important"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Important:</strong> It is important to pick Yes or No for every task. Don’t leave Budget? blank: the Budget Score in <a href="#step-30">step 30</a> depends on this answer.</p></div>
                 <div class="sop-note"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> Select Yes even if the expenditure is small.</p></div>
               </div>
               <figure class="sop-screen">
@@ -1662,7 +1696,7 @@
                     <ul class="mk-labels" data-picker="s10Cell" aria-label="Budget? labels">
                       <li><button type="button" class="mk-status" style="--s:#00C875" data-label="Yes" aria-pressed="true">Yes</button><span>Task requires expenditure or budget allocation.</span></li>
                       <li><button type="button" class="mk-status" style="--s:#6B6E76" data-label="No" aria-pressed="false">No</button><span>Task does not require any expenditure.</span></li>
-                      <li><button type="button" class="mk-status" style="--s:#C4C4C4" data-label="" aria-pressed="false"><span class="sr-only">Blank (not determined)</span></button><span>Budget requirement has not been determined.</span></li>
+                      <li><button type="button" class="mk-status" style="--s:#C4C4C4" data-label="" aria-pressed="false"><span class="sr-only">Blank (not determined)</span></button><span>Budget requirement has not been determined. Avoid this: pick Yes or No.</span></li>
                     </ul>
                   </div>
                   <p class="mk-hint">Select a label to see how it looks on the task.</p>
@@ -2328,7 +2362,6 @@
                   <div><strong><span class="mk-sq auto"></span>Budget Score /3</strong><p>Calculates the budget performance score based on the configured criteria.</p></div>
                 </div>
                 <div class="sop-note"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> System-generated fields. No manual input required for calculated scores. Used to evaluate task delivery and budget performance.</p></div>
-                <div class="sop-note important"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Important:</strong> Budget Performance may require HOD input, depending on the column configuration.</p></div>
               </div>
             </div>
           </article>
@@ -2433,6 +2466,12 @@
           <span class="gn-desc">Filter active tasks, group them and follow the work flow.</span>
           <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
         </a>
+        <a class="gn-card" href="user-guide-assignment.html">
+          <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg></span>
+          <span class="gn-title">Assignment</span>
+          <span class="gn-desc">Two HOD tasks to complete on monday.com, then your feedback.</span>
+          <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
@@ -2474,6 +2513,7 @@
           <a href="user-guide.html">Column Explanation</a>
           <a href="user-guide-create-task.html">Create New Task</a>
           <a href="user-guide-progress-monitoring.html">Progress Monitoring</a>
+          <a href="user-guide-assignment.html">Assignment</a>
         </div>
       </div>
       <div>
@@ -2677,13 +2717,18 @@
     head.className = 'mk-post-head';
     head.innerHTML = '<span class="mk-avatar" aria-hidden="true">YOU</span><strong>You</strong><span>just now</span>';
     var p = document.createElement('p');
-    text.split(/(@[\w.\-]+)/g).forEach(function(part){
+    text.split(/(@[\w.\-]+|https?:\/\/\S+)/g).forEach(function(part){
       if(!part) return;
       if(/^@[\w.\-]+$/.test(part)){
         var m = document.createElement('span');
         m.className = 'mk-mention';
         m.textContent = part;
         p.appendChild(m);
+      } else if(/^https?:\/\//.test(part)){
+        var l = document.createElement('span');
+        l.className = 'mk-link';
+        l.textContent = part;
+        p.appendChild(l);
       } else {
         p.appendChild(document.createTextNode(part));
       }
