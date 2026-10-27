@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Column Explanation — monday.com User Guide — Gamut Pro Sdn Bhd</title>
+<title>Column Description — monday.com User Guide — Gamut Pro Sdn Bhd</title>
 <meta name="description" content="Every column on our monday.com boards explained in 33 steps, each with a worked sample.">
 <!-- Internal guide: delete the next line if you want search engines to index these pages -->
 <meta name="robots" content="noindex, nofollow">
@@ -979,6 +979,31 @@
   @media (max-width:1280px){ .gn-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
   @media (max-width:900px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
   @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+  /* board pins: an arrow points from the number to the item it explains */
+  .pinned .pin{margin-left:9px}
+  .pin::before{content:'';position:absolute;right:calc(100% - 2px);top:50%;transform:translateY(-50%);border-style:solid;border-width:6px 9px 6px 0;border-color:transparent var(--navy) transparent transparent;transition:border-color .2s ease}
+  .pin:hover::before,.pin:focus-visible::before{border-right-color:var(--gold)}
+
+  /* page menu on one line */
+  .hero-actions .row.pages{display:flex;flex-wrap:nowrap;gap:4px;width:max-content;max-width:calc(100vw - 48px);padding:5px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.06);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hero-actions .row.pages::-webkit-scrollbar{display:none}
+  .hero-actions .row.pages .btn{flex:none;gap:0;padding:10px 17px;border:0;border-radius:999px;background:transparent;box-shadow:none;font:600 14px/1 'Inter',sans-serif;color:rgba(255,255,255,.84);transform:none}
+  .hero-actions .row.pages .btn:hover{background:rgba(255,255,255,.12);color:#fff;transform:none}
+  .hero-actions .row.pages .btn .ic,.hero-actions .row.pages .btn-here-tag{display:none}
+  .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:#fff;color:var(--navy)}
+  .hero-actions .row.pages>.btn:last-child:nth-child(odd){grid-column:auto}
+  /* six guide pages */
+  .gn-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+
+  /* page menu: one line of buttons */
+  .hero-actions .row.pages{gap:8px;padding:3px 0;border:0;border-radius:0;background:none}
+  .hero-actions .row.pages .btn{gap:8px;padding:12px 18px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-hover) 100%);color:#fff;font:600 14px/1 'Inter',sans-serif;transition:transform .2s ease,filter .2s ease}
+  .hero-actions .row.pages .btn:hover{transform:translateY(-2px);filter:brightness(1.08);color:#fff}
+  .hero-actions .row.pages .btn .ic{display:inline-block;width:16px;height:16px}
+  .hero-actions .row.pages .btn .ic ~ .ic{display:none}
+  .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:rgba(199,169,107,.16);border-color:rgba(199,169,107,.8);color:#fff;filter:none;transform:none}
 </style>
 </head>
 <body>
@@ -1043,6 +1068,7 @@
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-assign" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v14.5H6.5A1.5 1.5 0 0 0 5 19z"/><path d="M5 19a1.5 1.5 0 0 0 1.5 1.5H19V17.5M9 7.5h6"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3.5" width="8" height="5.5" rx="1.5"/><rect x="13" y="15" width="8" height="5.5" rx="1.5"/><path d="M7 9v3.5a2 2 0 0 0 2 2h4M11.5 12.5l2 2-2 2"/></symbol>
 </svg>
 
 <header class="nav">
@@ -1080,14 +1106,14 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a><span aria-hidden="true">/</span>
           <a href="user-guide.html">User Guide</a><span aria-hidden="true">/</span>
-          <span aria-current="page">Column explanation</span>
+          <span aria-current="page">Column description</span>
         </nav>
-        <div class="hero-tag"><span class="dot" aria-hidden="true"></span><span>USER GUIDE · COLUMN EXPLANATION</span></div>
+        <div class="hero-tag"><span class="dot" aria-hidden="true"></span><span>USER GUIDE · COLUMN DESCRIPTION</span></div>
         <h1>Managing tasks on <span class="h1-sub">monday.com</span></h1>
         <p class="lead">Every column on our boards, explained. 33 steps in four parts, each with a worked sample and a preview of what you’ll see on screen.</p>
         <div class="hero-actions">
           <nav class="row pages" aria-label="User Guide pages">
-            <a class="btn btn-primary" href="user-guide-introduction.html"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Introduction<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Explanation<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+            <a class="btn btn-primary" href="user-guide-introduction.html"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Introduction<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Description<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-workflow.html"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg>Work Flow<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
           </nav>
           <div class="row">
             <a class="btn btn-outline-light" href="User Guide.pdf" download><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Download PDF</a>
@@ -1233,7 +1259,6 @@
           <ul class="toc-key" aria-label="Colour key: who fills each column">
             <li><span class="mk-sq"></span>Taskee</li>
             <li><span class="mk-sq blue"></span>Tasker</li>
-            <li><span class="mk-sq orange"></span>Overseer</li>
             <li><span class="mk-sq auto"></span>System</li>
           </ul>
           <ol id="tocList">
@@ -1258,10 +1283,10 @@
             <li class="toc-part"><span>Part 3</span>Verify and evaluate</li>
             <li><a href="#step-17" data-step="17" class="who-tasker"><span class="n">17</span>Verification</a></li>
             <li><a href="#step-18" data-step="18" class="who-tasker"><span class="n">18</span>Comment / feedback</a></li>
-            <li><a href="#step-19" data-step="19" class="who-overseer"><span class="n">19</span>Performance score</a></li>
+            <li><a href="#step-19" data-step="19" class="who-tasker"><span class="n">19</span>Performance score</a></li>
             <li class="toc-part"><span>Part 4</span>Automatic tracking</li>
             <li><a href="#step-20" data-step="20" class="who-system"><span class="n">20</span>Health</a></li>
-            <li><a href="#step-21" data-step="21" class="who-overseer"><span class="n">21</span>External budget</a></li>
+            <li><a href="#step-21" data-step="21" class="who-tasker"><span class="n">21</span>External budget</a></li>
             <li><a href="#step-22" data-step="22" class="who-system"><span class="n">22</span>Start date</a></li>
             <li><a href="#step-23" data-step="23" class="who-system"><span class="n">23</span>Due date</a></li>
             <li><a href="#step-24" data-step="24" class="who-system"><span class="n">24</span>Original due date</a></li>
@@ -1999,7 +2024,7 @@
           </article>
 
           <!-- STEP 19 -->
-          <article class="sop-step is-wide who-overseer" id="step-19" data-step="19">
+          <article class="sop-step is-wide who-tasker" id="step-19" data-step="19">
             <header class="sop-step-head">
               <span class="sop-step-num">19</span>
               <div><span class="sop-step-cat">Column: Performance Score /3 <span class="sop-badge hod"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>Tasker / HOD</span></span><h3>Score the Taskee’s performance</h3></div>
@@ -2078,7 +2103,7 @@
           </article>
 
           <!-- STEP 21 -->
-          <article class="sop-step who-overseer" id="step-21" data-step="21">
+          <article class="sop-step who-tasker" id="step-21" data-step="21">
             <header class="sop-step-head">
               <span class="sop-step-num">21</span>
               <div><span class="sop-step-cat">Column: External Budget <span class="sop-badge opt">If applicable</span></span><h3>Enter the external budget</h3></div>
@@ -2523,7 +2548,7 @@
         <a class="gn-card is-current" href="#step-1" aria-current="page">
           <span class="gn-here">You’re here</span>
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg></span>
-          <span class="gn-title">Column Explanation</span>
+          <span class="gn-title">Column Description</span>
           <span class="gn-desc">All 33 steps, column by column, each with a worked sample.</span>
           <span class="gn-go">Back to step 1<svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></span>
         </a>
@@ -2536,7 +2561,13 @@
         <a class="gn-card" href="user-guide-progress-monitoring.html">
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></span>
           <span class="gn-title">Progress Monitoring</span>
-          <span class="gn-desc">Filter active tasks, group them and follow the work flow.</span>
+          <span class="gn-desc">Filter active tasks and group them to find the right task fast.</span>
+          <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
+        <a class="gn-card" href="user-guide-workflow.html">
+          <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg></span>
+          <span class="gn-title">Work Flow</span>
+          <span class="gn-desc">How a task moves between the Taskee, the HOD (Tasker) and the system.</span>
           <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
         </a>
         <a class="gn-card" href="user-guide-assignment.html">
@@ -2584,9 +2615,10 @@
           <a href="index.html#partners">Partnership Portfolio</a>
           <a href="index.html#why">Our Approach</a>
           <a href="user-guide-introduction.html">Introduction</a>
-          <a href="user-guide.html">Column Explanation</a>
+          <a href="user-guide.html">Column Description</a>
           <a href="user-guide-create-task.html">Create New Task</a>
           <a href="user-guide-progress-monitoring.html">Progress Monitoring</a>
+          <a href="user-guide-workflow.html">Work Flow</a>
           <a href="user-guide-assignment.html">Assignment</a>
         </div>
       </div>
@@ -2633,6 +2665,14 @@
     if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
   }, { passive:true });
   onScroll();
+
+  /* ---- page menu: keep the current page in view on small screens ---- */
+  var pageMenu = document.querySelector('.hero-actions .row.pages');
+  var pageHere = pageMenu && pageMenu.querySelector('[aria-current="page"]');
+  if(pageMenu && pageHere && pageMenu.scrollWidth > pageMenu.clientWidth + 2){
+    var left = pageHere.getBoundingClientRect().left - pageMenu.getBoundingClientRect().left + pageMenu.scrollLeft;
+    pageMenu.scrollLeft = left - (pageMenu.clientWidth - pageHere.offsetWidth) / 2;
+  }
 
   /* ---- mobile menu ---- */
   var navToggle = document.getElementById('navToggle');

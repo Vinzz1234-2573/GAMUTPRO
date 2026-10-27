@@ -996,6 +996,32 @@
   @media (max-width:1280px){ .gn-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
   @media (max-width:900px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
   @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+  .role-mark{flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px}
+  .role-mark.tasker{background:#3D7FE6}
+  .role-mark.taskee{background:var(--mk-green)}
+  .role-mark.system{background:#fff;box-shadow:inset 0 0 0 2px #3D7FE6;color:#3D7FE6}
+  .intro-roles .role-mark.system .ic{width:15px;height:15px;padding:0;border-radius:0;background:none;color:#3D7FE6}
+
+  /* page menu on one line */
+  .hero-actions .row.pages{display:flex;flex-wrap:nowrap;gap:4px;width:max-content;max-width:calc(100vw - 48px);padding:5px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.06);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hero-actions .row.pages::-webkit-scrollbar{display:none}
+  .hero-actions .row.pages .btn{flex:none;gap:0;padding:10px 17px;border:0;border-radius:999px;background:transparent;box-shadow:none;font:600 14px/1 'Inter',sans-serif;color:rgba(255,255,255,.84);transform:none}
+  .hero-actions .row.pages .btn:hover{background:rgba(255,255,255,.12);color:#fff;transform:none}
+  .hero-actions .row.pages .btn .ic,.hero-actions .row.pages .btn-here-tag{display:none}
+  .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:#fff;color:var(--navy)}
+  .hero-actions .row.pages>.btn:last-child:nth-child(odd){grid-column:auto}
+  /* six guide pages */
+  .gn-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+
+  /* page menu: one line of buttons */
+  .hero-actions .row.pages{gap:8px;padding:3px 0;border:0;border-radius:0;background:none}
+  .hero-actions .row.pages .btn{gap:8px;padding:12px 18px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-hover) 100%);color:#fff;font:600 14px/1 'Inter',sans-serif;transition:transform .2s ease,filter .2s ease}
+  .hero-actions .row.pages .btn:hover{transform:translateY(-2px);filter:brightness(1.08);color:#fff}
+  .hero-actions .row.pages .btn .ic{display:inline-block;width:16px;height:16px}
+  .hero-actions .row.pages .btn .ic ~ .ic{display:none}
+  .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:rgba(199,169,107,.16);border-color:rgba(199,169,107,.8);color:#fff;filter:none;transform:none}
 </style>
 </head>
 <body>
@@ -1060,6 +1086,7 @@
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-assign" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v14.5H6.5A1.5 1.5 0 0 0 5 19z"/><path d="M5 19a1.5 1.5 0 0 0 1.5 1.5H19V17.5M9 7.5h6"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3.5" width="8" height="5.5" rx="1.5"/><rect x="13" y="15" width="8" height="5.5" rx="1.5"/><path d="M7 9v3.5a2 2 0 0 0 2 2h4M11.5 12.5l2 2-2 2"/></symbol>
 </svg>
 
 <header class="nav">
@@ -1108,6 +1135,9 @@
           <div><dt>Date</dt><dd>October 2026</dd></div>
         </dl>
         <div class="hero-actions">
+          <nav class="row pages" aria-label="User Guide pages">
+            <a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Introduction<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Description<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-create-task.html"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-workflow.html"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg>Work Flow<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+          </nav>
           <div class="row">
             <a class="btn btn-outline-light" href="User Guide.pdf" download><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Download PDF</a>
             <!-- GO TO MONDAY: replace the link below with your final monday.com link whenever you are ready -->
@@ -1203,9 +1233,9 @@
               <div>
                 <h4 class="intro-sub">The system enables:</h4>
                 <div class="intro-roles">
-                  <div class="role"><span class="role-name"><span class="mk-av">HOD</span>HOD / Tasker</span><p>Create tasks, assign responsibilities, monitor progress, verify completed work, and evaluate performance.</p></div>
-                  <div class="role"><span class="role-name"><span class="mk-av c2">KP</span>Staff / Taskee</span><p>Carry out assigned tasks, update work status, report progress, and submit completed work for verification.</p></div>
-                  <div class="role"><span class="role-name"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg>System Automation</span><p>Send notifications, update task records, and automatically move completed or cancelled tasks to the appropriate groups.</p></div>
+                  <div class="role"><span class="role-name"><span class="role-mark tasker" aria-hidden="true"></span>HOD / Tasker</span><p>Create tasks, assign responsibilities, monitor progress, verify completed work, and evaluate performance.</p></div>
+                  <div class="role"><span class="role-name"><span class="role-mark taskee" aria-hidden="true"></span>Staff / Taskee</span><p>Carry out assigned tasks, update work status, report progress, and submit completed work for verification.</p></div>
+                  <div class="role"><span class="role-name"><span class="role-mark system" aria-hidden="true"><svg class="ic"><use href="#i-auto"/></svg></span>System Automation</span><p>Send notifications, update task records, and automatically move completed or cancelled tasks to the appropriate groups.</p></div>
                 </div>
               </div>
               <div>
@@ -1237,7 +1267,8 @@
                   <li><a href="user-guide.html"><span class="n">2</span><span><b>Column Description</b><small>Understand the purpose and function of each column.</small></span><span class="go">Open page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span></a></li>
                   <li><a href="user-guide-create-task.html"><span class="n">3</span><span><b>Create New Task</b><small>Create, configure, and assign tasks.</small></span><span class="go">Open page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span></a></li>
                   <li><a href="user-guide-progress-monitoring.html"><span class="n">4</span><span><b>Progress Monitoring</b><small>Track progress, provide feedback, and complete HOD verification.</small></span><span class="go">Open page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span></a></li>
-                  <li><a href="user-guide-assignment.html"><span class="n">5</span><span><b>Assignments</b><small>Complete guided and independent task creation exercises to assess HOD understanding, practical skills, and readiness to use the Task Management Board.</small></span><span class="go">Open page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span></a></li>
+                  <li><a href="user-guide-workflow.html"><span class="n">5</span><span><b>Work Flow</b><small>Follow how a task moves between the Taskee, the HOD (Tasker) and the system, from creation to completion.</small></span><span class="go">Open page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span></a></li>
+                  <li><a href="user-guide-assignment.html"><span class="n">6</span><span><b>Assignments</b><small>Complete guided and independent task creation exercises to assess HOD understanding, practical skills, and readiness to use the Task Management Board.</small></span><span class="go">Open page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span></a></li>
                 </ol>
               </div>
               <div class="sop-field"><span class="sop-label">Purpose</span><p>To ensure all users can manage tasks consistently, efficiently, and with clear accountability.</p></div>
@@ -1268,7 +1299,7 @@
         </a>
         <a class="gn-card" href="user-guide.html">
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg></span>
-          <span class="gn-title">Column Explanation</span>
+          <span class="gn-title">Column Description</span>
           <span class="gn-desc">All 33 steps, column by column, each with a worked sample.</span>
           <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
         </a>
@@ -1281,7 +1312,13 @@
         <a class="gn-card" href="user-guide-progress-monitoring.html">
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></span>
           <span class="gn-title">Progress Monitoring</span>
-          <span class="gn-desc">Filter active tasks, group them and follow the work flow.</span>
+          <span class="gn-desc">Filter active tasks and group them to find the right task fast.</span>
+          <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
+        <a class="gn-card" href="user-guide-workflow.html">
+          <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg></span>
+          <span class="gn-title">Work Flow</span>
+          <span class="gn-desc">How a task moves between the Taskee, the HOD (Tasker) and the system.</span>
           <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
         </a>
         <a class="gn-card" href="user-guide-assignment.html">
@@ -1329,9 +1366,10 @@
           <a href="index.html#partners">Partnership Portfolio</a>
           <a href="index.html#why">Our Approach</a>
           <a href="user-guide-introduction.html">Introduction</a>
-          <a href="user-guide.html">Column Explanation</a>
+          <a href="user-guide.html">Column Description</a>
           <a href="user-guide-create-task.html">Create New Task</a>
           <a href="user-guide-progress-monitoring.html">Progress Monitoring</a>
+          <a href="user-guide-workflow.html">Work Flow</a>
           <a href="user-guide-assignment.html">Assignment</a>
         </div>
       </div>
@@ -1376,6 +1414,14 @@
     if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
   }, { passive:true });
   onScroll();
+
+  /* ---- page menu: keep the current page in view on small screens ---- */
+  var pageMenu = document.querySelector('.hero-actions .row.pages');
+  var pageHere = pageMenu && pageMenu.querySelector('[aria-current="page"]');
+  if(pageMenu && pageHere && pageMenu.scrollWidth > pageMenu.clientWidth + 2){
+    var left = pageHere.getBoundingClientRect().left - pageMenu.getBoundingClientRect().left + pageMenu.scrollLeft;
+    pageMenu.scrollLeft = left - (pageMenu.clientWidth - pageHere.offsetWidth) / 2;
+  }
 
   /* ---- mobile menu ---- */
   var navToggle = document.getElementById('navToggle');

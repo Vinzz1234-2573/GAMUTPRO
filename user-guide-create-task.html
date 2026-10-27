@@ -963,6 +963,27 @@
   @media (max-width:1280px){ .gn-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
   @media (max-width:900px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
   @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+
+  /* page menu on one line */
+  .hero-actions .row.pages{display:flex;flex-wrap:nowrap;gap:4px;width:max-content;max-width:calc(100vw - 48px);padding:5px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.06);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hero-actions .row.pages::-webkit-scrollbar{display:none}
+  .hero-actions .row.pages .btn{flex:none;gap:0;padding:10px 17px;border:0;border-radius:999px;background:transparent;box-shadow:none;font:600 14px/1 'Inter',sans-serif;color:rgba(255,255,255,.84);transform:none}
+  .hero-actions .row.pages .btn:hover{background:rgba(255,255,255,.12);color:#fff;transform:none}
+  .hero-actions .row.pages .btn .ic,.hero-actions .row.pages .btn-here-tag{display:none}
+  .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:#fff;color:var(--navy)}
+  .hero-actions .row.pages>.btn:last-child:nth-child(odd){grid-column:auto}
+  /* six guide pages */
+  .gn-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){ .gn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .gn-grid{grid-template-columns:minmax(0,1fr)} }
+
+  /* page menu: one line of buttons */
+  .hero-actions .row.pages{gap:8px;padding:3px 0;border:0;border-radius:0;background:none}
+  .hero-actions .row.pages .btn{gap:8px;padding:12px 18px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-hover) 100%);color:#fff;font:600 14px/1 'Inter',sans-serif;transition:transform .2s ease,filter .2s ease}
+  .hero-actions .row.pages .btn:hover{transform:translateY(-2px);filter:brightness(1.08);color:#fff}
+  .hero-actions .row.pages .btn .ic{display:inline-block;width:16px;height:16px}
+  .hero-actions .row.pages .btn .ic ~ .ic{display:none}
+  .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:rgba(199,169,107,.16);border-color:rgba(199,169,107,.8);color:#fff;filter:none;transform:none}
 </style>
 </head>
 <body>
@@ -1027,6 +1048,7 @@
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-assign" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v14.5H6.5A1.5 1.5 0 0 0 5 19z"/><path d="M5 19a1.5 1.5 0 0 0 1.5 1.5H19V17.5M9 7.5h6"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3.5" width="8" height="5.5" rx="1.5"/><rect x="13" y="15" width="8" height="5.5" rx="1.5"/><path d="M7 9v3.5a2 2 0 0 0 2 2h4M11.5 12.5l2 2-2 2"/></symbol>
 </svg>
 
 <header class="nav">
@@ -1071,7 +1093,7 @@
         <p class="lead">Set up a new task in the Not Started Tasks group: check board access, fill in the columns, add an update and assign the work, step by step.</p>
         <div class="hero-actions">
           <nav class="row pages" aria-label="User Guide pages">
-            <a class="btn btn-primary" href="user-guide-introduction.html"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Introduction<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Explanation<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+            <a class="btn btn-primary" href="user-guide-introduction.html"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Introduction<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Column Description<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-here" href="#sop" aria-current="page"><svg class="ic" aria-hidden="true"><use href="#i-newtask"/></svg>Create New Task<span class="btn-here-tag">You’re here</span></a><a class="btn btn-primary" href="user-guide-progress-monitoring.html"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg>Progress Monitoring<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-workflow.html"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg>Work Flow<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a><a class="btn btn-primary" href="user-guide-assignment.html"><svg class="ic" aria-hidden="true"><use href="#i-assign"/></svg>Assignment<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
           </nav>
           <div class="row">
             <a class="btn btn-outline-light" href="User Guide.pdf" download><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Download PDF</a>
@@ -1143,8 +1165,8 @@
 
         <div class="sop-steps">
           <div class="intro-card">
-            <p><strong>Introduction.</strong> This section highlights the key steps when creating a new task. Refer to the Column Explanation page for detailed instructions on each column.</p>
-            <a class="btn btn-dark btn-sm" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Open Column Explanation</a>
+            <p><strong>Introduction.</strong> This section highlights the key steps when creating a new task. Refer to the Column Description page for detailed instructions on each column.</p>
+            <a class="btn btn-dark btn-sm" href="user-guide.html"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg>Open Column Description</a>
           </div>
           <article class="sop-step" id="step-1" data-key="1">
             <header class="sop-step-head">
@@ -1194,11 +1216,11 @@
             </header>
             <div class="sop-step-content">
               <div class="sop-copy">
-                <div class="sop-field"><span class="sop-label">Instruction</span><p>Add the task with <strong>+ Add assignment / task</strong>, then fill in each column. Select a column below to open its full instruction in the Column Explanation.</p></div>
+                <div class="sop-field"><span class="sop-label">Instruction</span><p>Add the task with <strong>+ Add assignment / task</strong>, then fill in each column. Select a column below to open its full instruction in the Column Description.</p></div>
                 
-                <div class="sop-note full"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> Refer to the Column Explanation page for detailed instructions on every column.</p></div>
+                <div class="sop-note full"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> Refer to the Column Description page for detailed instructions on every column.</p></div>
               </div>
-              <div class="sop-bare full-w"><div class="col-cards full"><a class="col-card" href="user-guide.html#step-2"><span class="n">1</span><span><h4><span class="mk-sq "></span>assignment / task</h4><p>Enter a unique, clear task name.</p><span class="go">Column Explanation, step 2 →</span></span></a><a class="col-card" href="user-guide.html#step-6"><span class="n">2</span><span><h4><span class="mk-sq "></span>Description / Target</h4><p>Describe the work to be performed and the expected outcome.</p><span class="go">Column Explanation, step 6 →</span></span></a><a class="col-card" href="user-guide.html#step-12"><span class="n">3</span><span><h4><span class="mk-sq blue"></span>Budget?</h4><p>Select Yes if the task involves any expenditure, even a small one.</p><span class="go">Column Explanation, step 12 →</span></span></a><a class="col-card" href="user-guide.html#step-13"><span class="n">4</span><span><h4><span class="mk-sq blue"></span>Budget</h4><p>Enter the estimated amount, for example 500.</p><span class="go">Column Explanation, step 13 →</span></span></a><a class="col-card" href="user-guide.html#step-21"><span class="n">5</span><span><h4><span class="mk-sq orange"></span>External Budget</h4><p>Only if an external contractor, supplier or service provider is involved. Otherwise leave it blank.</p><span class="go">Column Explanation, step 21 →</span></span></a><a class="col-card" href="user-guide.html#step-8"><span class="n">6</span><span><h4><span class="mk-sq "></span>Effort</h4><p>Select High, Medium or Basic, based on complexity and workload.</p><span class="go">Column Explanation, step 8 →</span></span></a><a class="col-card" href="user-guide.html#step-7"><span class="n">7</span><span><h4><span class="mk-sq "></span>Task Schedule</h4><p>Select the task start date and end date.</p><span class="go">Column Explanation, step 7 →</span></span></a><a class="col-card" href="user-guide.html#step-14"><span class="n">8</span><span><h4><span class="mk-sq blue"></span>Tasker</h4><p>Select the person who assigns and oversees the task.</p><span class="go">Column Explanation, step 14 →</span></span></a><a class="col-card" href="user-guide.html#step-15"><span class="n">9</span><span><h4><span class="mk-sq blue"></span>PIC</h4><p>Select this first when the Taskee will be a shared email account.</p><span class="go">Column Explanation, step 15 →</span></span></a><a class="col-card" href="user-guide.html#step-16"><span class="n">10</span><span><h4><span class="mk-sq blue"></span>Taskee</h4><p>Select the person who carries out and completes the task.</p><span class="go">Column Explanation, step 16 →</span></span></a><a class="col-card" href="user-guide.html#step-9"><span class="n">11</span><span><h4><span class="mk-sq "></span>Work Status</h4><p>Keep it as Not Assigned until the details above are complete (see step 7).</p><span class="go">Column Explanation, step 9 →</span></span></a><a class="col-card" href="user-guide.html#step-10"><span class="n">12</span><span><h4><span class="mk-sq "></span>Evidence</h4><p>Attach evidence for the task by adding a file, using the file menu.</p><span class="go">Column Explanation, step 10 →</span></span></a></div></div>
+              <div class="sop-bare full-w"><div class="col-cards full"><a class="col-card" href="user-guide.html#step-2"><span class="n">1</span><span><h4><span class="mk-sq "></span>assignment / task</h4><p>Enter a unique, clear task name.</p><span class="go">Column Description, step 2 →</span></span></a><a class="col-card" href="user-guide.html#step-6"><span class="n">2</span><span><h4><span class="mk-sq "></span>Description / Target</h4><p>Describe the work to be performed and the expected outcome.</p><span class="go">Column Description, step 6 →</span></span></a><a class="col-card" href="user-guide.html#step-12"><span class="n">3</span><span><h4><span class="mk-sq blue"></span>Budget?</h4><p>Select Yes if the task involves any expenditure, even a small one.</p><span class="go">Column Description, step 12 →</span></span></a><a class="col-card" href="user-guide.html#step-13"><span class="n">4</span><span><h4><span class="mk-sq blue"></span>Budget</h4><p>Enter the estimated amount, for example 500.</p><span class="go">Column Description, step 13 →</span></span></a><a class="col-card" href="user-guide.html#step-21"><span class="n">5</span><span><h4><span class="mk-sq orange"></span>External Budget</h4><p>Only if an external contractor, supplier or service provider is involved. Otherwise leave it blank.</p><span class="go">Column Description, step 21 →</span></span></a><a class="col-card" href="user-guide.html#step-8"><span class="n">6</span><span><h4><span class="mk-sq "></span>Effort</h4><p>Select High, Medium or Basic, based on complexity and workload.</p><span class="go">Column Description, step 8 →</span></span></a><a class="col-card" href="user-guide.html#step-7"><span class="n">7</span><span><h4><span class="mk-sq "></span>Task Schedule</h4><p>Select the task start date and end date.</p><span class="go">Column Description, step 7 →</span></span></a><a class="col-card" href="user-guide.html#step-14"><span class="n">8</span><span><h4><span class="mk-sq blue"></span>Tasker</h4><p>Select the person who assigns and oversees the task.</p><span class="go">Column Description, step 14 →</span></span></a><a class="col-card" href="user-guide.html#step-15"><span class="n">9</span><span><h4><span class="mk-sq blue"></span>PIC</h4><p>Select this first when the Taskee will be a shared email account.</p><span class="go">Column Description, step 15 →</span></span></a><a class="col-card" href="user-guide.html#step-16"><span class="n">10</span><span><h4><span class="mk-sq blue"></span>Taskee</h4><p>Select the person who carries out and completes the task.</p><span class="go">Column Description, step 16 →</span></span></a><a class="col-card" href="user-guide.html#step-9"><span class="n">11</span><span><h4><span class="mk-sq "></span>Work Status</h4><p>Keep it as Not Assigned until the details above are complete (see step 7).</p><span class="go">Column Description, step 9 →</span></span></a><a class="col-card" href="user-guide.html#step-10"><span class="n">12</span><span><h4><span class="mk-sq "></span>Evidence</h4><p>Attach evidence for the task by adding a file, using the file menu.</p><span class="go">Column Description, step 10 →</span></span></a></div></div>
             </div>
           </article>
 
@@ -1211,7 +1233,7 @@
               <div class="sop-copy">
                 <div class="sop-field"><span class="sop-label">Instruction</span><p>Open the task’s update bubble to post instructions or follow-up details. Use <strong>@mention</strong> so the right person is notified, and share documents as a <strong>SharePoint or OneDrive link</strong> rather than an attachment.</p></div>
                 <div class="sop-field sop-sample"><span class="sop-label">Sample</span><p>An update that mentions the Taskee: “@Taskee Please apply for a cash advance for this road tax renewal.”</p></div>
-                <div class="sop-note full"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> Paste a SharePoint or OneDrive link first; attach a file only when a link isn’t possible. The full update steps are in <a href="user-guide.html#step-4">Column Explanation, step 4</a>.</p></div>
+                <div class="sop-note full"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> Paste a SharePoint or OneDrive link first; attach a file only when a link isn’t possible. The full update steps are in <a href="user-guide.html#step-4">Column Description, step 4</a>.</p></div>
               </div>
               <figure class="sop-screen"><div class="frame-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Updates panel</div><div class="sop-screen-body"><div class="mk mk-updates">
                     <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--mk-line);font:500 15px/1.3 'Poppins',sans-serif;color:var(--mk-ink)"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Road Tax Renewal (Sample)</div><div class="mk-tabs" aria-hidden="true"><span class="mk-tab is-active"><svg class="ic"><use href="#i-home"/></svg>Updates</span><span class="mk-tab">Files</span><span class="mk-tab">Activity Log</span><span class="mk-tab"><svg class="ic heart"><use href="#i-heart"/></svg>Build Vibe view</span><span class="mk-tab">+</span></div>
@@ -1323,7 +1345,7 @@ Phone: (number)</p></div></div>
         </a>
         <a class="gn-card" href="user-guide.html">
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg></span>
-          <span class="gn-title">Column Explanation</span>
+          <span class="gn-title">Column Description</span>
           <span class="gn-desc">All 33 steps, column by column, each with a worked sample.</span>
           <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
         </a>
@@ -1337,7 +1359,13 @@ Phone: (number)</p></div></div>
         <a class="gn-card" href="user-guide-progress-monitoring.html">
           <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></span>
           <span class="gn-title">Progress Monitoring</span>
-          <span class="gn-desc">Filter active tasks, group them and follow the work flow.</span>
+          <span class="gn-desc">Filter active tasks and group them to find the right task fast.</span>
+          <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
+        <a class="gn-card" href="user-guide-workflow.html">
+          <span class="gn-icon"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg></span>
+          <span class="gn-title">Work Flow</span>
+          <span class="gn-desc">How a task moves between the Taskee, the HOD (Tasker) and the system.</span>
           <span class="gn-go">Open this page<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
         </a>
         <a class="gn-card" href="user-guide-assignment.html">
@@ -1385,9 +1413,10 @@ Phone: (number)</p></div></div>
           <a href="index.html#partners">Partnership Portfolio</a>
           <a href="index.html#why">Our Approach</a>
           <a href="user-guide-introduction.html">Introduction</a>
-          <a href="user-guide.html">Column Explanation</a>
+          <a href="user-guide.html">Column Description</a>
           <a href="user-guide-create-task.html">Create New Task</a>
           <a href="user-guide-progress-monitoring.html">Progress Monitoring</a>
+          <a href="user-guide-workflow.html">Work Flow</a>
           <a href="user-guide-assignment.html">Assignment</a>
         </div>
       </div>
@@ -1432,6 +1461,14 @@ Phone: (number)</p></div></div>
     if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
   }, { passive:true });
   onScroll();
+
+  /* ---- page menu: keep the current page in view on small screens ---- */
+  var pageMenu = document.querySelector('.hero-actions .row.pages');
+  var pageHere = pageMenu && pageMenu.querySelector('[aria-current="page"]');
+  if(pageMenu && pageHere && pageMenu.scrollWidth > pageMenu.clientWidth + 2){
+    var left = pageHere.getBoundingClientRect().left - pageMenu.getBoundingClientRect().left + pageMenu.scrollLeft;
+    pageMenu.scrollLeft = left - (pageMenu.clientWidth - pageHere.offsetWidth) / 2;
+  }
 
   /* ---- mobile menu ---- */
   var navToggle = document.getElementById('navToggle');
