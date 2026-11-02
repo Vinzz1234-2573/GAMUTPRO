@@ -984,6 +984,14 @@
   .hero-actions .row.pages .btn .ic{display:inline-block;width:16px;height:16px}
   .hero-actions .row.pages .btn .ic ~ .ic{display:none}
   .hero-actions .row.pages .btn-here,.hero-actions .row.pages .btn-here:hover{background:rgba(199,169,107,.16);border-color:rgba(199,169,107,.8);color:#fff;filter:none;transform:none}
+  /* subitems: PIC and Spent columns */
+  .mk-sub{overflow-x:auto}
+  .mk-sub table{min-width:620px}
+  .mk-sub th.hl,.mk-sub td.hl{background:#E1EFFF}
+  .mk-sub td.c{text-align:center}
+  .mk-label{display:inline-block;padding:3px 9px;border-radius:4px;background:#E6E9EF;color:var(--mk-ink);font-size:12px;font-weight:500;white-space:nowrap}
+  .mk-sub tr.sum td{border-top:1px solid var(--mk-line);border-bottom:0;font-size:12.5px;line-height:1.2}
+  .mk-sub tr.sum small{display:block;font-size:10.5px;color:var(--mk-muted)}
 </style>
 </head>
 <body>
@@ -1278,15 +1286,18 @@ Phone: (number)</p></div></div>
             </div>
           </article>
 
-          <article class="sop-step" id="step-6" data-key="6">
+          <article class="sop-step is-wide" id="step-6" data-key="6">
             <header class="sop-step-head">
               <span class="sop-step-num">6</span>
               <div><span class="sop-step-cat">Subitems</span><h3>Break the work into subitems</h3></div>
             </header>
             <div class="sop-step-content">
               <div class="sop-copy">
-                <div class="sop-field"><span class="sop-label">Instruction</span><p>Open the task’s arrow to add subitems for each stage of the work, such as Quotation, Invoice, Payment and Collection.</p></div>
-                
+                <div class="sop-field full"><span class="sop-label">Instruction</span><p>Open the task’s arrow to add subitems for each stage of the work, such as Quotation, Invoice, Payment and Collection. Then fill in these two columns on every subitem:</p></div>
+                <ol class="sop-bullets full">
+                  <li><span><strong>PIC</strong>: select the person responsible for this subitem from the dropdown list.</span></li>
+                  <li><span><strong>Spent</strong>: enter the amount spent on this subitem. Type the number only; the board adds RM.</span></li>
+                </ol>
                 <div class="sop-note full"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Note:</strong> Use subitems to track individual work stages. Update their status as each stage progresses.</p></div>
               </div>
               <figure class="sop-screen"><div class="frame-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Subitems</div><div class="sop-screen-body"><div class="mk">
@@ -1294,9 +1305,9 @@ Phone: (number)</p></div></div>
                       <button type="button" class="mk-expander" id="c6Btn" aria-expanded="true" aria-controls="c6Sub" aria-label="Show or hide the subitems"><svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
                       <span>Road Tax Renewal (Sample)</span><span class="mk-count">4</span>
                     </div>
-                    <div class="mk-sub-wrap" id="c6Sub"><div class="mk-sub"><table><thead><tr><th>Subitem</th><th>Owner</th><th>Status</th><th>Date</th><th>Remarks</th></tr></thead><tbody><tr class=is-hl><td>Quotation</td><td class="o"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></td><td class="s"></td><td></td><td></td></tr><tr><td>Invoice</td><td class="o"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></td><td class="s"></td><td></td><td></td></tr><tr><td>Payment</td><td class="o"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></td><td class="s"></td><td></td><td></td></tr><tr><td>Collection</td><td class="o"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></td><td class="s"></td><td></td><td></td></tr><tr><td colspan="5" style="color:var(--mk-muted)">+ Add subitem</td></tr></tbody></table></div></div>
+                    <div class="mk-sub-wrap" id="c6Sub"><div class="mk-sub"><table><thead><tr><th>Subitem</th><th class="hl">PIC</th><th>Status</th><th>Date</th><th class="hl">Spent</th><th>Remarks</th></tr></thead><tbody><tr><td>Quotation</td><td class="hl c"><span class="mk-label">MA</span></td><td class="s"></td><td></td><td class="hl c"></td><td></td></tr><tr><td>Invoice</td><td class="hl c"><span class="mk-label">MA</span></td><td class="s"></td><td></td><td class="hl c"></td><td></td></tr><tr><td>Payment</td><td class="hl c"><span class="mk-label">PC KWAN</span></td><td class="s"></td><td></td><td class="hl c">RM350.00</td><td></td></tr><tr><td>Collection</td><td class="hl c"><span class="mk-label">MA</span></td><td class="s"></td><td></td><td class="hl c"></td><td></td></tr><tr><td colspan="6" style="color:var(--mk-muted)">+ Add subitem</td></tr><tr class="sum"><td></td><td></td><td></td><td></td><td class="c">RM350.00<small>sum</small></td><td></td></tr></tbody></table></div></div>
                   </div>
-                  <p class="mk-hint">Select the arrow to open or close the subitems.</p></div></figure>
+                  <p class="mk-hint"><span>Select the arrow to open or close the subitems. The PIC and Spent columns are highlighted.<span class="swipe-note"> Swipe the table sideways to see every column.</span></span></p></div></figure>
             </div>
           </article>
 
